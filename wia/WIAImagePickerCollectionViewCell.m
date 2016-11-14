@@ -35,6 +35,7 @@
     self.cellSelectionView.alpha = 0;
     self.cellHighlightView.alpha = 0;
     self.cellSelectionImageview.alpha = 0;
+    [self deSelectCell];
 }
 
 - (void)loadPhotoWithManager:(PHImageManager *)manager forAsset:(PHAsset *)asset targetSize:(CGSize)size{

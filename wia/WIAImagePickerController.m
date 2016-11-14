@@ -12,7 +12,7 @@
 
 static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
 
-@interface WIAImagePickerController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface WIAImagePickerController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,PHPhotoLibraryChangeObserver>
 
 @property (nonatomic, strong) PHImageManager *imageManager;
 @property (nonatomic, strong) NSArray *collectionItems;
@@ -31,12 +31,22 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
 - (void)viewDidLoad {
     [super viewDidLoad];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        self.WIANumberOfPhotoColumns = 3;
+        self.WIANumberOfPhotoColumns = 4;
         self.imageManager = [[PHCachingImageManager alloc] init];
         self.selectedPhotos = [NSMutableArray array];
         [self fetchCollections];
         [self updateViewWithCollectionItem:[self.collectionItems firstObject]];
     });
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[PHPhotoLibrary sharedPhotoLibrary] unregisterChangeObserver:self];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -75,9 +85,6 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
     
     if ([self.selectedPhotos containsObject:asset]) {
         [cell selectCell];
-    }
-    else{
-        [cell deSelectCell];
     }
     
     return cell;
@@ -135,8 +142,81 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
     }
 }
 
+- (void)photoLibraryDidChange:(PHChange *)changeInstance {
+    PHFetchResult *fetchResult = self.currentCollectionItem[@"assets"];
+    PHFetchResultChangeDetails *collectionChanges = [changeInstance changeDetailsForFetchResult:fetchResult];
+    if (collectionChanges == nil) {
+        [self fetchCollections];
+        return;
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        PHFetchResult *fetchResult = [collectionChanges fetchResultAfterChanges];
+        NSInteger index = [self.collectionItems indexOfObject:self.currentCollectionItem];
+        self.currentCollectionItem = @{
+                                       @"assets": fetchResult,
+                                       @"collection": self.currentCollectionItem[@"collection"]
+                                       };
+        if (index != NSNotFound) {
+            NSMutableArray *updatedCollectionItems = [self.collectionItems mutableCopy];
+            [updatedCollectionItems replaceObjectAtIndex:index withObject:self.currentCollectionItem];
+            self.collectionItems = [updatedCollectionItems copy];
+        }
+        UICollectionView *collectionView = self.photoCollectionView;
+        
+        if (![collectionChanges hasIncrementalChanges] || [collectionChanges hasMoves]
+            || ([collectionChanges removedIndexes].count > 0
+                && [collectionChanges changedIndexes].count > 0)) {
+                [collectionView reloadData];
+            }
+        else {
+            [collectionView performBatchUpdates:^{
+                
+                NSIndexSet *removedIndexes = [collectionChanges removedIndexes];
+                NSMutableArray *removeIndexPaths = [NSMutableArray arrayWithCapacity:removedIndexes.count];
+                [removedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+                    [removeIndexPaths addObject:[NSIndexPath indexPathForItem:idx+1 inSection:0]];
+                }];
+                if ([removedIndexes count] > 0) {
+                    [collectionView deleteItemsAtIndexPaths:removeIndexPaths];
+                }
+                NSIndexSet *insertedIndexes = [collectionChanges insertedIndexes];
+                NSMutableArray *insertIndexPaths = [NSMutableArray arrayWithCapacity:insertedIndexes.count];
+                [insertedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+                    [insertIndexPaths addObject:[NSIndexPath indexPathForItem:idx+1 inSection:0]];
+                }];
+                if ([insertedIndexes count] > 0) {
+                    [collectionView insertItemsAtIndexPaths:insertIndexPaths];
+                }
+                
+                NSIndexSet *changedIndexes = [collectionChanges changedIndexes];
+                NSMutableArray *changedIndexPaths = [NSMutableArray arrayWithCapacity:changedIndexes.count];
+                [changedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+                    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:idx inSection:0];
+                    if (![removeIndexPaths containsObject:indexPath]) {
+                        [changedIndexPaths addObject:indexPath];
+                    }
+                }];
+                if ([changedIndexes count] > 0) {
+                    [collectionView reloadItemsAtIndexPaths:changedIndexPaths];
+                }
+            } completion:^(BOOL finished) {
+                [self refreshPhotoSelection];
+            }];
+        }
+    });
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Utility Methods
+
+- (UIImage *)yms_orientationNormalizedImage:(UIImage *)image{
+    if (image.imageOrientation == UIImageOrientationUp) return image;
+    UIGraphicsBeginImageContextWithOptions(image.size, NO, image.scale);
+    [image drawInRect:CGRectMake(0.0, 0.0, image.size.width, image.size.height)];
+    UIImage *normalizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return normalizedImage;
+}
 
 - (void)setupCellSize{
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.photoCollectionView.collectionViewLayout;
