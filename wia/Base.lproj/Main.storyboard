@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -66,7 +67,72 @@
                     <view key="view" contentMode="scaleToFill" id="PdO-al-myF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DYj-fh-gGm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="KqQ-av-46g">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WIAImagePickerCollectionViewCell" id="p85-Tu-eUZ" customClass="WIAImagePickerCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zRv-uo-Je9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bS6-C6-soR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ljX-Gc-dXC">
+                                                            <rect key="frame" x="30" y="30" width="15" height="15"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="ljX-Gc-dXC" secondAttribute="trailing" constant="5" id="By6-YZ-jaR"/>
+                                                        <constraint firstItem="ljX-Gc-dXC" firstAttribute="height" secondItem="bS6-C6-soR" secondAttribute="height" multiplier="0.3" id="VxD-v9-GQ2"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ljX-Gc-dXC" secondAttribute="bottom" constant="5" id="f3E-Ea-Ea9"/>
+                                                        <constraint firstItem="ljX-Gc-dXC" firstAttribute="width" secondItem="bS6-C6-soR" secondAttribute="width" multiplier="0.3" id="squ-p2-goa"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="zRv-uo-Je9" firstAttribute="top" secondItem="p85-Tu-eUZ" secondAttribute="top" id="0vg-eR-xdl"/>
+                                            <constraint firstItem="bS6-C6-soR" firstAttribute="trailing" secondItem="zRv-uo-Je9" secondAttribute="trailing" id="65R-fl-hbG"/>
+                                            <constraint firstItem="bS6-C6-soR" firstAttribute="top" secondItem="zRv-uo-Je9" secondAttribute="top" id="N0J-4x-W9N"/>
+                                            <constraint firstItem="zRv-uo-Je9" firstAttribute="leading" secondItem="p85-Tu-eUZ" secondAttribute="leading" id="SXH-lp-0p0"/>
+                                            <constraint firstAttribute="bottom" secondItem="zRv-uo-Je9" secondAttribute="bottom" id="Tkz-YT-Adk"/>
+                                            <constraint firstItem="bS6-C6-soR" firstAttribute="leading" secondItem="zRv-uo-Je9" secondAttribute="leading" id="bh9-sd-Owi"/>
+                                            <constraint firstAttribute="trailing" secondItem="zRv-uo-Je9" secondAttribute="trailing" id="et3-7h-ol0"/>
+                                            <constraint firstItem="bS6-C6-soR" firstAttribute="bottom" secondItem="zRv-uo-Je9" secondAttribute="bottom" id="jrQ-Ta-vQF"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cellImageView" destination="zRv-uo-Je9" id="iBG-1A-9Qp"/>
+                                            <outlet property="cellSelectionView" destination="bS6-C6-soR" id="Trj-rY-kL5"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Xqi-wL-yaH" id="DoW-Sb-YkC"/>
+                                    <outlet property="delegate" destination="Xqi-wL-yaH" id="nGv-Xl-qz2"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DYj-fh-gGm" firstAttribute="top" secondItem="PdO-al-myF" secondAttribute="top" id="LIN-H7-IhQ"/>
+                            <constraint firstItem="DYj-fh-gGm" firstAttribute="leading" secondItem="PdO-al-myF" secondAttribute="leading" id="R7W-9z-3lD"/>
+                            <constraint firstAttribute="bottom" secondItem="DYj-fh-gGm" secondAttribute="bottom" id="TeM-5f-TqR"/>
+                            <constraint firstAttribute="trailing" secondItem="DYj-fh-gGm" secondAttribute="trailing" id="qRf-Za-PIf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Choose photos" id="2PK-IC-cmv">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3Uw-sx-GQt">
@@ -83,10 +149,31 @@
                             <barButtonItem systemItem="camera" id="kR5-Hm-A4D"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="photoCollectionView" destination="DYj-fh-gGm" id="5Y8-ac-YNH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDP-oe-7MV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="934" y="1149"/>
+            <point key="canvasLocation" x="933.60000000000002" y="1148.2758620689656"/>
+        </scene>
+        <!--Image Picker Preview View Controller-->
+        <scene sceneID="KLN-bt-JYA">
+            <objects>
+                <viewController storyboardIdentifier="WIAImagePickerPreviewViewController" id="sww-QT-mY6" customClass="WIAImagePickerPreviewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f1K-NJ-GU9"/>
+                        <viewControllerLayoutGuide type="bottom" id="W79-Vy-9AB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ReL-Ob-kXk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CIQ-Vk-zY1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1602" y="1149"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="wg7-f3-ORb">
