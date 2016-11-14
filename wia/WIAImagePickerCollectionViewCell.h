@@ -12,6 +12,7 @@
 @interface WIAImagePickerCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic, strong) NSString *representedAssetIdentifier;
+@property (nonatomic, strong) UILongPressGestureRecognizer *longPressGestureRecognizer;
 
 - (void)loadPhotoWithManager:(PHImageManager *)manager forAsset:(PHAsset *)asset targetSize:(CGSize)size;
 

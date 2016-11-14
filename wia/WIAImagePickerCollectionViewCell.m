@@ -28,6 +28,8 @@
     [super awakeFromNib];
     [self prepareForReuse];
     self.selectionAlpha = 0.5;
+    self.longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] init];
+    [self addGestureRecognizer:self.longPressGestureRecognizer];
 }
 
 -(void)prepareForReuse{

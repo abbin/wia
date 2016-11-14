@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Photos/Photos.h>
 
 @interface WIAImagePickerPreviewViewController : UIViewController
+
+@property (nonatomic, strong) PHAsset *currentAsset;
+@property (nonatomic, weak) PHImageManager *imageManager;
 
 @end

@@ -9,6 +9,7 @@
 #import "WIAImagePickerController.h"
 #import <Photos/Photos.h>
 #import "WIAImagePickerCollectionViewCell.h"
+#import "WIAImagePickerPreviewViewController.h"
 
 static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
 
@@ -60,6 +61,23 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
     
 }
 
+- (IBAction)presentSinglePhoto:(id)sender{
+    if ([sender isKindOfClass:[UILongPressGestureRecognizer class]]) {
+        UILongPressGestureRecognizer *gesture = sender;
+        if (gesture.state != UIGestureRecognizerStateBegan) {
+            return;
+        }
+        NSIndexPath *indexPath = [self.photoCollectionView indexPathForCell:(WIAImagePickerCollectionViewCell *)gesture.view];
+        PHFetchResult *fetchResult = self.currentCollectionItem[@"assets"];
+        PHAsset *asset = fetchResult[indexPath.item];
+        
+        WIAImagePickerPreviewViewController *presentedViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WIAImagePickerPreviewViewController"];
+        presentedViewController.currentAsset = asset;
+        presentedViewController.imageManager = self.imageManager;
+        [self presentViewController:presentedViewController animated:YES completion:nil];
+    }
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - UICollectionViewDelegate
 
@@ -78,6 +96,7 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
         CGFloat scale = [UIScreen mainScreen].scale * WIAPhotoFetchScaleResizingRatio;
         CGSize imageSize = CGSizeMake(CGRectGetWidth(cell.frame) * scale, CGRectGetHeight(cell.frame) * scale);
         [cell loadPhotoWithManager:self.imageManager forAsset:asset targetSize:imageSize];
+        [cell.longPressGestureRecognizer addTarget:self action:@selector(presentSinglePhoto:)];
     });
     
     PHFetchResult *fetchResult = self.currentCollectionItem[@"assets"];
@@ -174,7 +193,7 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
                 NSIndexSet *removedIndexes = [collectionChanges removedIndexes];
                 NSMutableArray *removeIndexPaths = [NSMutableArray arrayWithCapacity:removedIndexes.count];
                 [removedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-                    [removeIndexPaths addObject:[NSIndexPath indexPathForItem:idx+1 inSection:0]];
+                    [removeIndexPaths addObject:[NSIndexPath indexPathForItem:idx inSection:0]];
                 }];
                 if ([removedIndexes count] > 0) {
                     [collectionView deleteItemsAtIndexPaths:removeIndexPaths];
@@ -182,7 +201,7 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
                 NSIndexSet *insertedIndexes = [collectionChanges insertedIndexes];
                 NSMutableArray *insertIndexPaths = [NSMutableArray arrayWithCapacity:insertedIndexes.count];
                 [insertedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-                    [insertIndexPaths addObject:[NSIndexPath indexPathForItem:idx+1 inSection:0]];
+                    [insertIndexPaths addObject:[NSIndexPath indexPathForItem:idx inSection:0]];
                 }];
                 if ([insertedIndexes count] > 0) {
                     [collectionView insertItemsAtIndexPaths:insertIndexPaths];
@@ -226,7 +245,7 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
     CGFloat minimumInteritemSpacing = layout.minimumInteritemSpacing;
     UIEdgeInsets sectionInset = layout.sectionInset;
     
-    CGFloat totalInteritemSpacing = MAX((self.WIANumberOfPhotoColumns - 1), 0) * minimumInteritemSpacing;
+    CGFloat totalInteritemSpacing = MAX((self.WIANumberOfPhotoColumns), 0) * minimumInteritemSpacing;
     CGFloat totalHorizontalSpacing = totalInteritemSpacing + sectionInset.left + sectionInset.right;
     
     CGFloat size = (CGFloat)floor((arrangementLength - totalHorizontalSpacing) / self.WIANumberOfPhotoColumns);
