@@ -38,28 +38,24 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
     });
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - IBAction
 
 - (IBAction)cancelPicker:(id)sender {
     
 }
 
-
 - (IBAction)donePickingImages:(id)sender {
     
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UICollectionViewDelegate
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     PHFetchResult *fetchResult = self.currentCollectionItem[@"assets"];
     return fetchResult.count;
 }
-
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     WIAImagePickerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WIAImagePickerCollectionViewCell" forIndexPath:indexPath];
@@ -76,6 +72,8 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
     return cell;
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (CGSizeEqualToSize(CGSizeZero, self.cellPortraitSize)) {
@@ -84,16 +82,10 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
     return self.cellPortraitSize;
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    return YES;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
 }
 
@@ -101,20 +93,28 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
     
 }
 
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
     
 }
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Utility Methods
 
 - (void)setupCellSize{
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.photoCollectionView.collectionViewLayout;
     
-    // Fetch shorter length
     CGFloat arrangementLength = MIN(CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
     
     CGFloat minimumInteritemSpacing = layout.minimumInteritemSpacing;
@@ -123,11 +123,9 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
     CGFloat totalInteritemSpacing = MAX((self.WIANumberOfPhotoColumns - 1), 0) * minimumInteritemSpacing;
     CGFloat totalHorizontalSpacing = totalInteritemSpacing + sectionInset.left + sectionInset.right;
     
-    // Caculate size for portrait mode
     CGFloat size = (CGFloat)floor((arrangementLength - totalHorizontalSpacing) / self.WIANumberOfPhotoColumns);
     self.cellPortraitSize = CGSizeMake(size, size);
 }
-
 
 - (void)updateViewWithCollectionItem:(NSDictionary *)collectionItem{
     self.currentCollectionItem = collectionItem;
@@ -136,7 +134,6 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
         [self refreshPhotoSelection];
     });
 }
-
 
 - (void)refreshPhotoSelection{
     PHFetchResult *fetchResult = self.currentCollectionItem[@"assets"];
@@ -147,7 +144,6 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
         }
     }
 }
-
 
 - (void)fetchCollections{
     PHFetchOptions *fetchOptions = [[PHFetchOptions alloc] init];
@@ -175,7 +171,6 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
                 weakFetchAlbums(fetchResult);
             }
         }
-
     };
     
     PHFetchResult *topLevelUserCollections = [PHCollectionList fetchTopLevelUserCollectionsWithOptions:nil];
@@ -189,7 +184,6 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
         PHFetchResult *assetsFetchResult = [PHAsset fetchAssetsInAssetCollection:collection options:options];
         if (assetsFetchResult.count > 0) {
             
-            // put the "all photos" in the first index
             if (collection.assetCollectionSubtype == PHAssetCollectionSubtypeSmartAlbumUserLibrary) {
                 [allAblums insertObject:@{@"collection": collection
                                           , @"assets": assetsFetchResult} atIndex:0];
@@ -202,6 +196,5 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
     }
     self.collectionItems = [allAblums copy];
 }
-
 
 @end
