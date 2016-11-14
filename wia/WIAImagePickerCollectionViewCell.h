@@ -15,4 +15,12 @@
 
 - (void)loadPhotoWithManager:(PHImageManager *)manager forAsset:(PHAsset *)asset targetSize:(CGSize)size;
 
+- (void)selectCell;
+
+- (void)deSelectCell;
+
+- (void)highlightCell;
+
+- (void)unHighlightCell;
+
 @end

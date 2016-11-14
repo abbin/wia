@@ -22,6 +22,7 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
 @property (nonatomic, assign) CGSize cellPortraitSize;
 
 @property (nonatomic, weak) IBOutlet UICollectionView *photoCollectionView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneItem;
 
 @end
 
@@ -69,6 +70,16 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
         [cell loadPhotoWithManager:self.imageManager forAsset:asset targetSize:imageSize];
     });
     
+    PHFetchResult *fetchResult = self.currentCollectionItem[@"assets"];
+    PHAsset *asset = fetchResult[indexPath.item];
+    
+    if ([self.selectedPhotos containsObject:asset]) {
+        [cell selectCell];
+    }
+    else{
+        [cell deSelectCell];
+    }
+    
     return cell;
 }
 
@@ -86,27 +97,42 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    if ([cell isKindOfClass:[WIAImagePickerCollectionViewCell class]]) {
+        [(WIAImagePickerCollectionViewCell *)cell highlightCell];
+    }
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    return YES;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
-    return YES;
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    if ([cell isKindOfClass:[WIAImagePickerCollectionViewCell class]]) {
+        [(WIAImagePickerCollectionViewCell *)cell unHighlightCell];
+    }
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+    PHFetchResult *fetchResult = self.currentCollectionItem[@"assets"];
+    PHAsset *asset = fetchResult[indexPath.item];
+    if ([self.selectedPhotos containsObject:asset]) {
+        [self.selectedPhotos removeObject:asset];
+        UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+        if ([cell isKindOfClass:[WIAImagePickerCollectionViewCell class]]) {
+            [(WIAImagePickerCollectionViewCell *)cell deSelectCell];
+        }
+    }
+    else{
+        [self.selectedPhotos addObject:asset];
+        UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+        if ([cell isKindOfClass:[WIAImagePickerCollectionViewCell class]]) {
+            [(WIAImagePickerCollectionViewCell *)cell selectCell];
+        }
+    }
+    if (self.selectedPhotos.count>0) {
+        self.doneItem.enabled = YES;
+    }
+    else{
+        self.doneItem.enabled = NO;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
