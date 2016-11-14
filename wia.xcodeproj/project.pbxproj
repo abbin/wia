@@ -1,0 +1,543 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EDF6D34C1DD968AE000CED9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF6D34B1DD968AE000CED9D /* main.m */; };
+		EDF6D34F1DD968AE000CED9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF6D34E1DD968AE000CED9D /* AppDelegate.m */; };
+		EDF6D3521DD968AE000CED9D /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF6D3511DD968AE000CED9D /* FirstViewController.m */; };
+		EDF6D3551DD968AE000CED9D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF6D3541DD968AE000CED9D /* SecondViewController.m */; };
+		EDF6D3581DD968AE000CED9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF6D3561DD968AE000CED9D /* Main.storyboard */; };
+		EDF6D35A1DD968AE000CED9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF6D3591DD968AE000CED9D /* Assets.xcassets */; };
+		EDF6D35D1DD968AE000CED9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF6D35B1DD968AE000CED9D /* LaunchScreen.storyboard */; };
+		EDF6D3681DD968AE000CED9D /* wiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF6D3671DD968AE000CED9D /* wiaTests.m */; };
+		EDF6D3731DD968AE000CED9D /* wiaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF6D3721DD968AE000CED9D /* wiaUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EDF6D3641DD968AE000CED9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDF6D33F1DD968AE000CED9D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDF6D3461DD968AE000CED9D;
+			remoteInfo = wia;
+		};
+		EDF6D36F1DD968AE000CED9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDF6D33F1DD968AE000CED9D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDF6D3461DD968AE000CED9D;
+			remoteInfo = wia;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EDF6D3471DD968AE000CED9D /* wia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF6D34B1DD968AE000CED9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EDF6D34D1DD968AE000CED9D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EDF6D34E1DD968AE000CED9D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EDF6D3501DD968AE000CED9D /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		EDF6D3511DD968AE000CED9D /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		EDF6D3531DD968AE000CED9D /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		EDF6D3541DD968AE000CED9D /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		EDF6D3571DD968AE000CED9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EDF6D3591DD968AE000CED9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDF6D35C1DD968AE000CED9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EDF6D35E1DD968AE000CED9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDF6D3631DD968AE000CED9D /* wiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF6D3671DD968AE000CED9D /* wiaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wiaTests.m; sourceTree = "<group>"; };
+		EDF6D3691DD968AE000CED9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDF6D36E1DD968AE000CED9D /* wiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF6D3721DD968AE000CED9D /* wiaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wiaUITests.m; sourceTree = "<group>"; };
+		EDF6D3741DD968AE000CED9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EDF6D3441DD968AE000CED9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDF6D3601DD968AE000CED9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDF6D36B1DD968AE000CED9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EDF6D33E1DD968AE000CED9D = {
+			isa = PBXGroup;
+			children = (
+				EDF6D3491DD968AE000CED9D /* wia */,
+				EDF6D3661DD968AE000CED9D /* wiaTests */,
+				EDF6D3711DD968AE000CED9D /* wiaUITests */,
+				EDF6D3481DD968AE000CED9D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EDF6D3481DD968AE000CED9D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDF6D3471DD968AE000CED9D /* wia.app */,
+				EDF6D3631DD968AE000CED9D /* wiaTests.xctest */,
+				EDF6D36E1DD968AE000CED9D /* wiaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDF6D3491DD968AE000CED9D /* wia */ = {
+			isa = PBXGroup;
+			children = (
+				EDF6D34D1DD968AE000CED9D /* AppDelegate.h */,
+				EDF6D34E1DD968AE000CED9D /* AppDelegate.m */,
+				EDF6D3501DD968AE000CED9D /* FirstViewController.h */,
+				EDF6D3511DD968AE000CED9D /* FirstViewController.m */,
+				EDF6D3531DD968AE000CED9D /* SecondViewController.h */,
+				EDF6D3541DD968AE000CED9D /* SecondViewController.m */,
+				EDF6D3561DD968AE000CED9D /* Main.storyboard */,
+				EDF6D3591DD968AE000CED9D /* Assets.xcassets */,
+				EDF6D35B1DD968AE000CED9D /* LaunchScreen.storyboard */,
+				EDF6D35E1DD968AE000CED9D /* Info.plist */,
+				EDF6D34A1DD968AE000CED9D /* Supporting Files */,
+			);
+			path = wia;
+			sourceTree = "<group>";
+		};
+		EDF6D34A1DD968AE000CED9D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EDF6D34B1DD968AE000CED9D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EDF6D3661DD968AE000CED9D /* wiaTests */ = {
+			isa = PBXGroup;
+			children = (
+				EDF6D3671DD968AE000CED9D /* wiaTests.m */,
+				EDF6D3691DD968AE000CED9D /* Info.plist */,
+			);
+			path = wiaTests;
+			sourceTree = "<group>";
+		};
+		EDF6D3711DD968AE000CED9D /* wiaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EDF6D3721DD968AE000CED9D /* wiaUITests.m */,
+				EDF6D3741DD968AE000CED9D /* Info.plist */,
+			);
+			path = wiaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EDF6D3461DD968AE000CED9D /* wia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDF6D3771DD968AE000CED9D /* Build configuration list for PBXNativeTarget "wia" */;
+			buildPhases = (
+				EDF6D3431DD968AE000CED9D /* Sources */,
+				EDF6D3441DD968AE000CED9D /* Frameworks */,
+				EDF6D3451DD968AE000CED9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wia;
+			productName = wia;
+			productReference = EDF6D3471DD968AE000CED9D /* wia.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EDF6D3621DD968AE000CED9D /* wiaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDF6D37A1DD968AE000CED9D /* Build configuration list for PBXNativeTarget "wiaTests" */;
+			buildPhases = (
+				EDF6D35F1DD968AE000CED9D /* Sources */,
+				EDF6D3601DD968AE000CED9D /* Frameworks */,
+				EDF6D3611DD968AE000CED9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDF6D3651DD968AE000CED9D /* PBXTargetDependency */,
+			);
+			name = wiaTests;
+			productName = wiaTests;
+			productReference = EDF6D3631DD968AE000CED9D /* wiaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EDF6D36D1DD968AE000CED9D /* wiaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDF6D37D1DD968AE000CED9D /* Build configuration list for PBXNativeTarget "wiaUITests" */;
+			buildPhases = (
+				EDF6D36A1DD968AE000CED9D /* Sources */,
+				EDF6D36B1DD968AE000CED9D /* Frameworks */,
+				EDF6D36C1DD968AE000CED9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDF6D3701DD968AE000CED9D /* PBXTargetDependency */,
+			);
+			name = wiaUITests;
+			productName = wiaUITests;
+			productReference = EDF6D36E1DD968AE000CED9D /* wiaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDF6D33F1DD968AE000CED9D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "What I Ate";
+				TargetAttributes = {
+					EDF6D3461DD968AE000CED9D = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = EDXP6Y48QS;
+						ProvisioningStyle = Automatic;
+					};
+					EDF6D3621DD968AE000CED9D = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = EDXP6Y48QS;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EDF6D3461DD968AE000CED9D;
+					};
+					EDF6D36D1DD968AE000CED9D = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = EDXP6Y48QS;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EDF6D3461DD968AE000CED9D;
+					};
+				};
+			};
+			buildConfigurationList = EDF6D3421DD968AE000CED9D /* Build configuration list for PBXProject "wia" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EDF6D33E1DD968AE000CED9D;
+			productRefGroup = EDF6D3481DD968AE000CED9D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDF6D3461DD968AE000CED9D /* wia */,
+				EDF6D3621DD968AE000CED9D /* wiaTests */,
+				EDF6D36D1DD968AE000CED9D /* wiaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EDF6D3451DD968AE000CED9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF6D35D1DD968AE000CED9D /* LaunchScreen.storyboard in Resources */,
+				EDF6D35A1DD968AE000CED9D /* Assets.xcassets in Resources */,
+				EDF6D3581DD968AE000CED9D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDF6D3611DD968AE000CED9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDF6D36C1DD968AE000CED9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EDF6D3431DD968AE000CED9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF6D3551DD968AE000CED9D /* SecondViewController.m in Sources */,
+				EDF6D34F1DD968AE000CED9D /* AppDelegate.m in Sources */,
+				EDF6D3521DD968AE000CED9D /* FirstViewController.m in Sources */,
+				EDF6D34C1DD968AE000CED9D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDF6D35F1DD968AE000CED9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF6D3681DD968AE000CED9D /* wiaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDF6D36A1DD968AE000CED9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF6D3731DD968AE000CED9D /* wiaUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDF6D3651DD968AE000CED9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDF6D3461DD968AE000CED9D /* wia */;
+			targetProxy = EDF6D3641DD968AE000CED9D /* PBXContainerItemProxy */;
+		};
+		EDF6D3701DD968AE000CED9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDF6D3461DD968AE000CED9D /* wia */;
+			targetProxy = EDF6D36F1DD968AE000CED9D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EDF6D3561DD968AE000CED9D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDF6D3571DD968AE000CED9D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EDF6D35B1DD968AE000CED9D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDF6D35C1DD968AE000CED9D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EDF6D3751DD968AE000CED9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EDF6D3761DD968AE000CED9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EDF6D3781DD968AE000CED9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EDXP6Y48QS;
+				INFOPLIST_FILE = wia/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.whatiate.wia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EDF6D3791DD968AE000CED9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EDXP6Y48QS;
+				INFOPLIST_FILE = wia/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.whatiate.wia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EDF6D37B1DD968AE000CED9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = EDXP6Y48QS;
+				INFOPLIST_FILE = wiaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.whatiate.wiaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wia.app/wia";
+			};
+			name = Debug;
+		};
+		EDF6D37C1DD968AE000CED9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = EDXP6Y48QS;
+				INFOPLIST_FILE = wiaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.whatiate.wiaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wia.app/wia";
+			};
+			name = Release;
+		};
+		EDF6D37E1DD968AE000CED9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = EDXP6Y48QS;
+				INFOPLIST_FILE = wiaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.whatiate.wiaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = wia;
+			};
+			name = Debug;
+		};
+		EDF6D37F1DD968AE000CED9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = EDXP6Y48QS;
+				INFOPLIST_FILE = wiaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.whatiate.wiaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = wia;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDF6D3421DD968AE000CED9D /* Build configuration list for PBXProject "wia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDF6D3751DD968AE000CED9D /* Debug */,
+				EDF6D3761DD968AE000CED9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDF6D3771DD968AE000CED9D /* Build configuration list for PBXNativeTarget "wia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDF6D3781DD968AE000CED9D /* Debug */,
+				EDF6D3791DD968AE000CED9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EDF6D37A1DD968AE000CED9D /* Build configuration list for PBXNativeTarget "wiaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDF6D37B1DD968AE000CED9D /* Debug */,
+				EDF6D37C1DD968AE000CED9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EDF6D37D1DD968AE000CED9D /* Build configuration list for PBXNativeTarget "wiaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDF6D37E1DD968AE000CED9D /* Debug */,
+				EDF6D37F1DD968AE000CED9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDF6D33F1DD968AE000CED9D /* Project object */;
+}
