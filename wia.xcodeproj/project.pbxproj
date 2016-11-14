@@ -16,6 +16,8 @@
 		EDF6D35D1DD968AE000CED9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF6D35B1DD968AE000CED9D /* LaunchScreen.storyboard */; };
 		EDF6D3681DD968AE000CED9D /* wiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF6D3671DD968AE000CED9D /* wiaTests.m */; };
 		EDF6D3731DD968AE000CED9D /* wiaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF6D3721DD968AE000CED9D /* wiaUITests.m */; };
+		EDF6D3A51DD97357000CED9D /* WIAImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF6D3A41DD97357000CED9D /* WIAImagePickerController.m */; };
+		EDF6D3A81DD9747E000CED9D /* UIViewController+WIAImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF6D3A71DD9747E000CED9D /* UIViewController+WIAImagePickerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		EDF6D36E1DD968AE000CED9D /* wiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF6D3721DD968AE000CED9D /* wiaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wiaUITests.m; sourceTree = "<group>"; };
 		EDF6D3741DD968AE000CED9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDF6D3A31DD97357000CED9D /* WIAImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIAImagePickerController.h; sourceTree = "<group>"; };
+		EDF6D3A41DD97357000CED9D /* WIAImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIAImagePickerController.m; sourceTree = "<group>"; };
+		EDF6D3A61DD9747E000CED9D /* UIViewController+WIAImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+WIAImagePickerController.h"; sourceTree = "<group>"; };
+		EDF6D3A71DD9747E000CED9D /* UIViewController+WIAImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+WIAImagePickerController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,10 @@
 				EDF6D3511DD968AE000CED9D /* FirstViewController.m */,
 				EDF6D3531DD968AE000CED9D /* SecondViewController.h */,
 				EDF6D3541DD968AE000CED9D /* SecondViewController.m */,
+				EDF6D3A31DD97357000CED9D /* WIAImagePickerController.h */,
+				EDF6D3A41DD97357000CED9D /* WIAImagePickerController.m */,
+				EDF6D3A61DD9747E000CED9D /* UIViewController+WIAImagePickerController.h */,
+				EDF6D3A71DD9747E000CED9D /* UIViewController+WIAImagePickerController.m */,
 				EDF6D3561DD968AE000CED9D /* Main.storyboard */,
 				EDF6D3591DD968AE000CED9D /* Assets.xcassets */,
 				EDF6D35B1DD968AE000CED9D /* LaunchScreen.storyboard */,
@@ -282,6 +292,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDF6D3551DD968AE000CED9D /* SecondViewController.m in Sources */,
+				EDF6D3A51DD97357000CED9D /* WIAImagePickerController.m in Sources */,
+				EDF6D3A81DD9747E000CED9D /* UIViewController+WIAImagePickerController.m in Sources */,
 				EDF6D34F1DD968AE000CED9D /* AppDelegate.m in Sources */,
 				EDF6D3521DD968AE000CED9D /* FirstViewController.m in Sources */,
 				EDF6D34C1DD968AE000CED9D /* main.m in Sources */,
@@ -522,6 +534,7 @@
 				EDF6D3791DD968AE000CED9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDF6D37A1DD968AE000CED9D /* Build configuration list for PBXNativeTarget "wiaTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +543,7 @@
 				EDF6D37C1DD968AE000CED9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDF6D37D1DD968AE000CED9D /* Build configuration list for PBXNativeTarget "wiaUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +552,7 @@
 				EDF6D37F1DD968AE000CED9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import "UIViewController+WIAImagePickerController.m"
 
 @interface FirstViewController ()
 
@@ -25,5 +26,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)initializeImagePicker:(id)sender {
+    [self presentWIAImagePickerController];
+}
 
 @end
