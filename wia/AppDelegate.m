@@ -10,6 +10,7 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <CloudKit/CloudKit.h>
+#import "WIAFirstLaunchViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,11 +20,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
 #ifdef DEBUG
     NSLog(@"DEBUG");
 #else
     [self initilizeFabric];
 #endif
+    
+    if (YES) {
+        UINavigationController *firstLaunch = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"WIAFirstLaunchViewController"];
+        [firstLaunch setNavigationBarHidden:YES];
+        self.window.rootViewController = firstLaunch;
+    }
+    
     return YES;
 }
 

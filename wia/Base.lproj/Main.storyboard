@@ -260,10 +260,10 @@
             </objects>
             <point key="canvasLocation" x="1688.8" y="359.37031484257875"/>
         </scene>
-        <!--View Controller-->
+        <!--First Launch View Controller-->
         <scene sceneID="AQQ-Xx-czY">
             <objects>
-                <viewController id="5Kr-uC-De2" sceneMemberID="viewController">
+                <viewController id="5Kr-uC-De2" customClass="WIAFirstLaunchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3xx-uJ-go1"/>
                         <viewControllerLayoutGuide type="bottom" id="tet-xp-ko8"/>
@@ -271,12 +271,13 @@
                     <view key="view" contentMode="scaleToFill" id="ALJ-9Y-Ekn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dgH-0j-pKk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUy-wa-jhP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-182" y="-1137"/>
+            <point key="canvasLocation" x="1164" y="-1137.481259370315"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -370,6 +371,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQp-Ck-eRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2428" y="-321.58920539730138"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7Bk-Hh-zyF">
+            <objects>
+                <navigationController storyboardIdentifier="WIAFirstLaunchViewController" automaticallyAdjustsScrollViewInsets="NO" id="RMh-bZ-iQg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RuN-Ag-gpJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5Kr-uC-De2" kind="relationship" relationship="rootViewController" id="Quq-qC-v0y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ayR-1P-YFJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="224.80000000000001" y="-1137.481259370315"/>
         </scene>
     </scenes>
     <resources>

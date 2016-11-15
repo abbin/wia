@@ -11,6 +11,7 @@
 		7C86D154596FB8267514AF89 /* libPods-wia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 385D2C3083707B31E0653F56 /* libPods-wia.a */; };
 		E13183BCCE102C14214D17FE /* libPods-wiaUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F39C99D367901380FF3EC8CD /* libPods-wiaUITests.a */; };
 		ED515FEC1DDB488C005621D0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED515FEB1DDB488C005621D0 /* CloudKit.framework */; };
+		ED515FF81DDB5F28005621D0 /* WIAFirstLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED515FF71DDB5F28005621D0 /* WIAFirstLaunchViewController.m */; };
 		EDEB3E561DDB1A84009A49F6 /* WIAAddAndReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEB3E551DDB1A84009A49F6 /* WIAAddAndReviewViewController.m */; };
 		EDF6D34C1DD968AE000CED9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF6D34B1DD968AE000CED9D /* main.m */; };
 		EDF6D34F1DD968AE000CED9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF6D34E1DD968AE000CED9D /* AppDelegate.m */; };
@@ -55,6 +56,8 @@
 		E9A4764B5EDBE335C69733A7 /* Pods-wiaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wiaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wiaTests/Pods-wiaTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED515FEA1DDB487D005621D0 /* wia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wia.entitlements; sourceTree = "<group>"; };
 		ED515FEB1DDB488C005621D0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		ED515FF61DDB5F28005621D0 /* WIAFirstLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIAFirstLaunchViewController.h; sourceTree = "<group>"; };
+		ED515FF71DDB5F28005621D0 /* WIAFirstLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIAFirstLaunchViewController.m; sourceTree = "<group>"; };
 		EDEB3E541DDB1A84009A49F6 /* WIAAddAndReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIAAddAndReviewViewController.h; sourceTree = "<group>"; };
 		EDEB3E551DDB1A84009A49F6 /* WIAAddAndReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIAAddAndReviewViewController.m; sourceTree = "<group>"; };
 		EDF6D3471DD968AE000CED9D /* wia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +205,15 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
+		ED515FF51DDB5F0E005621D0 /* First launch */ = {
+			isa = PBXGroup;
+			children = (
+				ED515FF61DDB5F28005621D0 /* WIAFirstLaunchViewController.h */,
+				ED515FF71DDB5F28005621D0 /* WIAFirstLaunchViewController.m */,
+			);
+			name = "First launch";
+			sourceTree = "<group>";
+		};
 		EDF6D33E1DD968AE000CED9D = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +242,7 @@
 				ED515FEA1DDB487D005621D0 /* wia.entitlements */,
 				EDF6D34D1DD968AE000CED9D /* AppDelegate.h */,
 				EDF6D34E1DD968AE000CED9D /* AppDelegate.m */,
+				ED515FF51DDB5F0E005621D0 /* First launch */,
 				ED515FED1DDB5E65005621D0 /* Tab bar */,
 				ED515FF11DDB5EB5005621D0 /* Image picker */,
 				EDF6D3561DD968AE000CED9D /* Main.storyboard */,
@@ -593,6 +606,7 @@
 				EDF6D3521DD968AE000CED9D /* FirstViewController.m in Sources */,
 				EDEB3E561DDB1A84009A49F6 /* WIAAddAndReviewViewController.m in Sources */,
 				EDF6D3AE1DD98B0B000CED9D /* WIAImagePickerCollectionViewCell.m in Sources */,
+				ED515FF81DDB5F28005621D0 /* WIAFirstLaunchViewController.m in Sources */,
 				EDF6D34C1DD968AE000CED9D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
