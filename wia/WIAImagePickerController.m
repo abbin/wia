@@ -32,7 +32,7 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
 - (void)viewDidLoad {
     [super viewDidLoad];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        self.WIANumberOfPhotoColumns = 4;
+        self.WIANumberOfPhotoColumns = 3;
         self.imageManager = [[PHCachingImageManager alloc] init];
         self.selectedPhotos = [NSMutableArray array];
         [self fetchCollections];
@@ -67,14 +67,23 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
         if (gesture.state != UIGestureRecognizerStateBegan) {
             return;
         }
-        NSIndexPath *indexPath = [self.photoCollectionView indexPathForCell:(WIAImagePickerCollectionViewCell *)gesture.view];
+        WIAImagePickerCollectionViewCell *cell = (WIAImagePickerCollectionViewCell *)gesture.view;
+        NSIndexPath *indexPath = [self.photoCollectionView indexPathForCell:cell];
         PHFetchResult *fetchResult = self.currentCollectionItem[@"assets"];
         PHAsset *asset = fetchResult[indexPath.item];
         
-        WIAImagePickerPreviewViewController *presentedViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WIAImagePickerPreviewViewController"];
-        presentedViewController.currentAsset = asset;
-        presentedViewController.imageManager = self.imageManager;
-        [self presentViewController:presentedViewController animated:YES completion:nil];
+        [UIView animateWithDuration:0.1 animations:^{
+            cell.transform = CGAffineTransformMakeScale(0.95, 0.95);
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.1 animations:^{
+                cell.transform = CGAffineTransformIdentity;
+            } completion:^(BOOL finished) {
+                WIAImagePickerPreviewViewController *presentedViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WIAImagePickerPreviewViewController"];
+                presentedViewController.currentAsset = asset;
+                presentedViewController.imageManager = self.imageManager;
+                [self presentViewController:presentedViewController animated:YES completion:nil];
+            }];
+        }];
     }
 }
 
