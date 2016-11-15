@@ -126,6 +126,82 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ED515FED1DDB5E65005621D0 /* Tab bar */ = {
+			isa = PBXGroup;
+			children = (
+				ED515FEE1DDB5E7B005621D0 /* Nearby */,
+				ED515FEF1DDB5E84005621D0 /* Second */,
+			);
+			name = "Tab bar";
+			sourceTree = "<group>";
+		};
+		ED515FEE1DDB5E7B005621D0 /* Nearby */ = {
+			isa = PBXGroup;
+			children = (
+				EDF6D3501DD968AE000CED9D /* FirstViewController.h */,
+				EDF6D3511DD968AE000CED9D /* FirstViewController.m */,
+				ED515FF01DDB5E93005621D0 /* Add */,
+			);
+			name = Nearby;
+			sourceTree = "<group>";
+		};
+		ED515FEF1DDB5E84005621D0 /* Second */ = {
+			isa = PBXGroup;
+			children = (
+				EDF6D3531DD968AE000CED9D /* SecondViewController.h */,
+				EDF6D3541DD968AE000CED9D /* SecondViewController.m */,
+			);
+			name = Second;
+			sourceTree = "<group>";
+		};
+		ED515FF01DDB5E93005621D0 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				EDEB3E541DDB1A84009A49F6 /* WIAAddAndReviewViewController.h */,
+				EDEB3E551DDB1A84009A49F6 /* WIAAddAndReviewViewController.m */,
+			);
+			name = Add;
+			sourceTree = "<group>";
+		};
+		ED515FF11DDB5EB5005621D0 /* Image picker */ = {
+			isa = PBXGroup;
+			children = (
+				EDF6D3A31DD97357000CED9D /* WIAImagePickerController.h */,
+				EDF6D3A41DD97357000CED9D /* WIAImagePickerController.m */,
+				ED515FF21DDB5EC2005621D0 /* CollectionView cell */,
+				ED515FF31DDB5EDA005621D0 /* Image preview */,
+				ED515FF41DDB5EE4005621D0 /* Helper */,
+			);
+			name = "Image picker";
+			sourceTree = "<group>";
+		};
+		ED515FF21DDB5EC2005621D0 /* CollectionView cell */ = {
+			isa = PBXGroup;
+			children = (
+				EDF6D3AC1DD98B0B000CED9D /* WIAImagePickerCollectionViewCell.h */,
+				EDF6D3AD1DD98B0B000CED9D /* WIAImagePickerCollectionViewCell.m */,
+			);
+			name = "CollectionView cell";
+			sourceTree = "<group>";
+		};
+		ED515FF31DDB5EDA005621D0 /* Image preview */ = {
+			isa = PBXGroup;
+			children = (
+				EDF6D3A91DD989A3000CED9D /* WIAImagePickerPreviewViewController.h */,
+				EDF6D3AA1DD989A3000CED9D /* WIAImagePickerPreviewViewController.m */,
+			);
+			name = "Image preview";
+			sourceTree = "<group>";
+		};
+		ED515FF41DDB5EE4005621D0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				EDF6D3A61DD9747E000CED9D /* UIViewController+WIAImagePickerController.h */,
+				EDF6D3A71DD9747E000CED9D /* UIViewController+WIAImagePickerController.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		EDF6D33E1DD968AE000CED9D = {
 			isa = PBXGroup;
 			children = (
@@ -154,20 +230,8 @@
 				ED515FEA1DDB487D005621D0 /* wia.entitlements */,
 				EDF6D34D1DD968AE000CED9D /* AppDelegate.h */,
 				EDF6D34E1DD968AE000CED9D /* AppDelegate.m */,
-				EDF6D3501DD968AE000CED9D /* FirstViewController.h */,
-				EDF6D3511DD968AE000CED9D /* FirstViewController.m */,
-				EDF6D3531DD968AE000CED9D /* SecondViewController.h */,
-				EDF6D3541DD968AE000CED9D /* SecondViewController.m */,
-				EDEB3E541DDB1A84009A49F6 /* WIAAddAndReviewViewController.h */,
-				EDEB3E551DDB1A84009A49F6 /* WIAAddAndReviewViewController.m */,
-				EDF6D3A31DD97357000CED9D /* WIAImagePickerController.h */,
-				EDF6D3A41DD97357000CED9D /* WIAImagePickerController.m */,
-				EDF6D3AC1DD98B0B000CED9D /* WIAImagePickerCollectionViewCell.h */,
-				EDF6D3AD1DD98B0B000CED9D /* WIAImagePickerCollectionViewCell.m */,
-				EDF6D3A91DD989A3000CED9D /* WIAImagePickerPreviewViewController.h */,
-				EDF6D3AA1DD989A3000CED9D /* WIAImagePickerPreviewViewController.m */,
-				EDF6D3A61DD9747E000CED9D /* UIViewController+WIAImagePickerController.h */,
-				EDF6D3A71DD9747E000CED9D /* UIViewController+WIAImagePickerController.m */,
+				ED515FED1DDB5E65005621D0 /* Tab bar */,
+				ED515FF11DDB5EB5005621D0 /* Image picker */,
 				EDF6D3561DD968AE000CED9D /* Main.storyboard */,
 				EDF6D3591DD968AE000CED9D /* Assets.xcassets */,
 				EDF6D35B1DD968AE000CED9D /* LaunchScreen.storyboard */,
