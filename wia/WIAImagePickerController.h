@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class WIAImagePickerController;
+
+@protocol WIAImagePickerControllerDelegate <NSObject>
+
+- (void)WIAImagePickerController:(WIAImagePickerController*) picker didFinishPickingImages:(NSArray*)images animated:(BOOL)animated;
+- (void)WIAImagePickerControllerDidCancel:(WIAImagePickerController*) picker;
+
+@end
+
+
 @interface WIAImagePickerController : UIViewController
+
+@property (weak, nonatomic) id <WIAImagePickerControllerDelegate> delegate;
 
 @end

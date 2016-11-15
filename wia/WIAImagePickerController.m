@@ -11,10 +11,11 @@
 #import "WIAImagePickerCollectionViewCell.h"
 #import "WIAImagePickerPreviewViewController.h"
 #import <GreedoCollectionViewLayout.h>
+#import "UIViewController+WIAImagePickerController.h"
 
 static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
 
-@interface WIAImagePickerController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,PHPhotoLibraryChangeObserver,GreedoCollectionViewLayoutDataSource>
+@interface WIAImagePickerController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,PHPhotoLibraryChangeObserver,GreedoCollectionViewLayoutDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) PHImageManager *imageManager;
 @property (nonatomic, strong) NSArray *collectionItems;
@@ -24,6 +25,9 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
 
 @property (nonatomic, weak) IBOutlet UICollectionView *photoCollectionView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraItem;
+
+typedef void(^imageFetchBlock)(NSMutableArray *images);
 
 @end
 
@@ -55,11 +59,24 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
 #pragma mark - IBAction
 
 - (IBAction)cancelPicker:(id)sender {
-    
+    if ([self.delegate respondsToSelector:@selector(WIAImagePickerControllerDidCancel:)]) {
+        [self.delegate WIAImagePickerControllerDidCancel:self];
+    }
 }
 
 - (IBAction)donePickingImages:(id)sender {
-    
+    [self getImagesFromAssets:^(NSMutableArray *images) {
+        if ([self.delegate respondsToSelector:@selector(WIAImagePickerController:didFinishPickingImages:animated:)]) {
+            [self.delegate WIAImagePickerController:self didFinishPickingImages:images animated:YES];
+        }
+    }];
+}
+
+- (IBAction)initializeCamera:(id)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    [self presentWIACameraControllerWithDelegate:self];
 }
 
 - (IBAction)presentSinglePhoto:(id)sender{
@@ -86,6 +103,33 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
             }];
         }];
     }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UIImagePickerControllerDelegate
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    self.view.alpha = 0;
+    self.navigationController.navigationBarHidden = YES;
+    UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
+    if (self.selectedPhotos.count>0) {
+        [self getImagesFromAssets:^(NSMutableArray *images) {
+            [images addObject:chosenImage];
+            if ([self.delegate respondsToSelector:@selector(WIAImagePickerController:didFinishPickingImages:animated:)]) {
+                [self.delegate WIAImagePickerController:self didFinishPickingImages:images animated:NO];
+            }
+        }];
+    }
+    else{
+        if ([self.delegate respondsToSelector:@selector(WIAImagePickerController:didFinishPickingImages:animated:)]) {
+            [self.delegate WIAImagePickerController:self didFinishPickingImages:@[chosenImage] animated:NO];
+        }
+    }
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -154,10 +198,12 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
         }
     }
     else{
-        [self.selectedPhotos addObject:asset];
-        UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-        if ([cell isKindOfClass:[WIAImagePickerCollectionViewCell class]]) {
-            [(WIAImagePickerCollectionViewCell *)cell selectCell];
+        if ((self.selectedPhotos.count < 3)) {
+            [self.selectedPhotos addObject:asset];
+            UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+            if ([cell isKindOfClass:[WIAImagePickerCollectionViewCell class]]) {
+                [(WIAImagePickerCollectionViewCell *)cell selectCell];
+            }
         }
     }
     if (self.selectedPhotos.count>0) {
@@ -165,6 +211,13 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
     }
     else{
         self.doneItem.enabled = NO;
+    }
+    
+    if (self.selectedPhotos.count>2) {
+        self.cameraItem.enabled = NO;
+    }
+    else{
+        self.cameraItem.enabled = YES;
     }
 }
 
@@ -253,8 +306,27 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
         _collectionViewSizeCalculator = [[GreedoCollectionViewLayout alloc] initWithCollectionView:self.photoCollectionView];
         _collectionViewSizeCalculator.dataSource = self;
     }
-    
     return _collectionViewSizeCalculator;
+}
+
+- (void)getImagesFromAssets:(imageFetchBlock)completionBlock{
+    PHImageManager *imageManager = [[PHImageManager alloc] init];
+    
+    PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
+    options.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
+    options.resizeMode = PHImageRequestOptionsResizeModeExact;
+    
+    NSMutableArray *mutableImages = [NSMutableArray array];
+    
+    for (PHAsset *asset in self.selectedPhotos) {
+        CGSize targetSize = CGSizeMake(asset.pixelWidth, asset.pixelHeight);
+        [imageManager requestImageForAsset:asset targetSize:targetSize contentMode:PHImageContentModeDefault options:options resultHandler:^(UIImage *image, NSDictionary *info) {
+            [mutableImages addObject:image];
+            if (self.selectedPhotos.count == mutableImages.count) {
+                completionBlock(mutableImages);
+            }
+        }];
+    }
 }
 
 - (UIImage *)yms_orientationNormalizedImage:(UIImage *)image{

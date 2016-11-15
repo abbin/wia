@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WIAImagePickerController.h"
 
 @interface UIViewController (WIAImagePickerController)
 
--(void)presentWIAImagePickerController;
+-(void)presentWIAImagePickerControllerWithDelegate:(id<WIAImagePickerControllerDelegate>)delegate;
+-(void)presentWIACameraControllerWithDelegate:(id<UIImagePickerControllerDelegate, UINavigationControllerDelegate>)delegate;
 
 @end

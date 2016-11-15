@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "UIViewController+WIAImagePickerController.m"
+#import "WIAAddAndReviewViewController.h"
 
 @interface FirstViewController ()
 
@@ -27,8 +28,15 @@
 }
 
 
-- (IBAction)initializeImagePicker:(id)sender {
-    [self presentWIAImagePickerController];
+- (IBAction)initializeImagePicker:(id)sender { 
+    UINavigationController *addNav = [self.storyboard instantiateViewControllerWithIdentifier:@"WIAAddAndReviewViewController"];
+    addNav.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    addNav.navigationBarHidden = YES;
+    WIAAddAndReviewViewController *addVc = [addNav.viewControllers firstObject];
+    addVc.view.alpha = 0;
+    [self presentViewController:addNav animated:NO completion:^{
+        [addVc presentPickerWithDelegate:addVc];
+    }];
 }
 
 @end

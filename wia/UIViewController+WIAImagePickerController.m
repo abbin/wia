@@ -12,11 +12,10 @@
 
 @implementation UIViewController (WIAImagePickerController)
 
--(void)presentWIAImagePickerController{
+-(void)presentWIAImagePickerControllerWithDelegate:(id<WIAImagePickerControllerDelegate>)delegate{
     PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
-    
     if (status == PHAuthorizationStatusAuthorized){
-        [self presentPicker];
+        [self presentPickerWithDelegate:delegate];
     }
     else if (status == PHAuthorizationStatusDenied
              || status == PHAuthorizationStatusRestricted){
@@ -34,7 +33,7 @@
         [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
             dispatch_async(dispatch_get_main_queue(), ^() {
                 if (status == PHAuthorizationStatusAuthorized) {
-                    [self presentPicker];
+                    [self presentPickerWithDelegate:delegate];
                 }
             });
         }];
@@ -42,8 +41,46 @@
     }
 }
 
--(void)presentPicker{
+-(void)presentWIACameraControllerWithDelegate:(id<UIImagePickerControllerDelegate, UINavigationControllerDelegate>)delegate{
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+        if(status == AVAuthorizationStatusAuthorized){
+            UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+            imagePickerController.delegate = delegate;
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+            [self presentViewController:imagePickerController animated:YES completion:nil];
+        }
+        else if(status == AVAuthorizationStatusDenied || status == AVAuthorizationStatusRestricted){
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Allow camera access?", nil) message:NSLocalizedString(@"Need your permission to take a photo", nil) preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *dismissAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:nil];
+            UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Settings", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+            }];
+            [alertController addAction:dismissAction];
+            [alertController addAction:settingsAction];
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
+        else if(status == AVAuthorizationStatusNotDetermined){
+            [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+                dispatch_async(dispatch_get_main_queue(), ^() {
+                    if(granted){
+                        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+                        imagePickerController.delegate = delegate;
+                        imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+                        [self presentViewController:imagePickerController animated:YES completion:nil];
+                    }
+                });
+            }];
+        }
+    }
+}
+
+-(void)presentPickerWithDelegate:(id<WIAImagePickerControllerDelegate>)delegate{
     UINavigationController *imagePickerNav = [self.storyboard instantiateViewControllerWithIdentifier:@"WIAImagePickerController"];
+    imagePickerNav.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    
+    WIAImagePickerController *vc = [imagePickerNav.viewControllers firstObject];
+    vc.delegate = delegate;
     [self presentViewController:imagePickerNav animated:YES completion:nil];
 }
 

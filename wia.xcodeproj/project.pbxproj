@@ -10,6 +10,7 @@
 		06044577E5D6ED6BFA57334A /* libPods-wiaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBDBCE3A1C971EFDA876B56 /* libPods-wiaTests.a */; };
 		7C86D154596FB8267514AF89 /* libPods-wia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 385D2C3083707B31E0653F56 /* libPods-wia.a */; };
 		E13183BCCE102C14214D17FE /* libPods-wiaUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F39C99D367901380FF3EC8CD /* libPods-wiaUITests.a */; };
+		EDEB3E561DDB1A84009A49F6 /* WIAAddAndReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEB3E551DDB1A84009A49F6 /* WIAAddAndReviewViewController.m */; };
 		EDF6D34C1DD968AE000CED9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF6D34B1DD968AE000CED9D /* main.m */; };
 		EDF6D34F1DD968AE000CED9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF6D34E1DD968AE000CED9D /* AppDelegate.m */; };
 		EDF6D3521DD968AE000CED9D /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF6D3511DD968AE000CED9D /* FirstViewController.m */; };
@@ -51,6 +52,8 @@
 		CB24C4B6B70D071F4F5DFAD6 /* Pods-wia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wia/Pods-wia.debug.xcconfig"; sourceTree = "<group>"; };
 		D3D38947710EFE240E2A6D23 /* Pods-wiaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wiaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wiaUITests/Pods-wiaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E9A4764B5EDBE335C69733A7 /* Pods-wiaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wiaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wiaTests/Pods-wiaTests.release.xcconfig"; sourceTree = "<group>"; };
+		EDEB3E541DDB1A84009A49F6 /* WIAAddAndReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIAAddAndReviewViewController.h; sourceTree = "<group>"; };
+		EDEB3E551DDB1A84009A49F6 /* WIAAddAndReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIAAddAndReviewViewController.m; sourceTree = "<group>"; };
 		EDF6D3471DD968AE000CED9D /* wia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF6D34B1DD968AE000CED9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EDF6D34D1DD968AE000CED9D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				EDF6D3511DD968AE000CED9D /* FirstViewController.m */,
 				EDF6D3531DD968AE000CED9D /* SecondViewController.h */,
 				EDF6D3541DD968AE000CED9D /* SecondViewController.m */,
+				EDEB3E541DDB1A84009A49F6 /* WIAAddAndReviewViewController.h */,
+				EDEB3E551DDB1A84009A49F6 /* WIAAddAndReviewViewController.m */,
 				EDF6D3A31DD97357000CED9D /* WIAImagePickerController.h */,
 				EDF6D3A41DD97357000CED9D /* WIAImagePickerController.m */,
 				EDF6D3AC1DD98B0B000CED9D /* WIAImagePickerCollectionViewCell.h */,
@@ -494,6 +499,7 @@
 				EDF6D3A81DD9747E000CED9D /* UIViewController+WIAImagePickerController.m in Sources */,
 				EDF6D34F1DD968AE000CED9D /* AppDelegate.m in Sources */,
 				EDF6D3521DD968AE000CED9D /* FirstViewController.m in Sources */,
+				EDEB3E561DDB1A84009A49F6 /* WIAAddAndReviewViewController.m in Sources */,
 				EDF6D3AE1DD98B0B000CED9D /* WIAImagePickerCollectionViewCell.m in Sources */,
 				EDF6D34C1DD968AE000CED9D /* main.m in Sources */,
 			);
