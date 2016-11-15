@@ -55,7 +55,7 @@
             </objects>
             <point key="canvasLocation" x="1688.8" y="-320.68965517241384"/>
         </scene>
-        <!--Add And Review View Controller-->
+        <!--Details-->
         <scene sceneID="Q09-Zi-SAi">
             <objects>
                 <viewController id="KnW-yY-3nB" customClass="WIAAddAndReviewViewController" sceneMemberID="viewController">
@@ -68,7 +68,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="KqK-IM-COL"/>
+                    <navigationItem key="navigationItem" title="Details" id="KqK-IM-COL">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="SMf-6B-jf3">
+                            <connections>
+                                <action selector="cancelUpload:" destination="KnW-yY-3nB" id="ywm-ba-VjB"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="GFF-TF-LFN">
+                            <connections>
+                                <action selector="saveUpload:" destination="KnW-yY-3nB" id="upq-UR-ZDe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bmX-fo-wVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

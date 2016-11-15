@@ -28,7 +28,7 @@
     self.view.alpha = 1;
     self.navigationController.navigationBarHidden = NO;
     [picker dismissViewControllerAnimated:animated completion:^{
-        
+        NSLog(@"%@",images);
     }];
 }
 
@@ -38,14 +38,19 @@
     }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)saveUpload:(id)sender {
+    
 }
-*/
+
+- (IBAction)cancelUpload:(id)sender {
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Are you sure?" message:@"The photos you selected have not finished uploading" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *yes = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [actionSheet addAction:yes];
+    [actionSheet addAction:cancel];
+    [self presentViewController:actionSheet animated:YES completion:nil];
+}
 
 @end
