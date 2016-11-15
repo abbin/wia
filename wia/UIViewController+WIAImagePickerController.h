@@ -11,7 +11,7 @@
 
 @interface UIViewController (WIAImagePickerController)
 
--(void)presentWIAImagePickerControllerWithDelegate:(id<WIAImagePickerControllerDelegate>)delegate;
+-(void)presentWIAImagePickerController;
 -(void)presentWIACameraControllerWithDelegate:(id<UIImagePickerControllerDelegate, UINavigationControllerDelegate>)delegate;
 
 @end

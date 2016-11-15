@@ -28,15 +28,8 @@
 }
 
 
-- (IBAction)initializeImagePicker:(id)sender { 
-    UINavigationController *addNav = [self.storyboard instantiateViewControllerWithIdentifier:@"WIAAddAndReviewViewController"];
-    addNav.modalPresentationStyle = UIModalPresentationOverFullScreen;
-    addNav.navigationBarHidden = YES;
-    WIAAddAndReviewViewController *addVc = [addNav.viewControllers firstObject];
-    addVc.view.alpha = 0;
-    [self presentViewController:addNav animated:NO completion:^{
-        [addVc presentPickerWithDelegate:addVc];
-    }];
+- (IBAction)initializeImagePicker:(id)sender {
+    [self presentWIAImagePickerController];
 }
 
 @end

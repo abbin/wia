@@ -9,13 +9,14 @@
 #import "UIViewController+WIAImagePickerController.h"
 #import <Photos/Photos.h>
 #import "WIAImagePickerController.h"
+#import "WIAAddAndReviewViewController.h"
 
 @implementation UIViewController (WIAImagePickerController)
 
--(void)presentWIAImagePickerControllerWithDelegate:(id<WIAImagePickerControllerDelegate>)delegate{
+-(void)presentWIAImagePickerController{
     PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
     if (status == PHAuthorizationStatusAuthorized){
-        [self presentPickerWithDelegate:delegate];
+        [self launchPicker];
     }
     else if (status == PHAuthorizationStatusDenied
              || status == PHAuthorizationStatusRestricted){
@@ -33,7 +34,7 @@
         [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
             dispatch_async(dispatch_get_main_queue(), ^() {
                 if (status == PHAuthorizationStatusAuthorized) {
-                    [self presentPickerWithDelegate:delegate];
+                    [self launchPicker];
                 }
             });
         }];
@@ -75,13 +76,22 @@
     }
 }
 
--(void)presentPickerWithDelegate:(id<WIAImagePickerControllerDelegate>)delegate{
-    UINavigationController *imagePickerNav = [self.storyboard instantiateViewControllerWithIdentifier:@"WIAImagePickerController"];
-    imagePickerNav.modalPresentationStyle = UIModalPresentationOverFullScreen;
+-(void)launchPicker{
     
-    WIAImagePickerController *vc = [imagePickerNav.viewControllers firstObject];
-    vc.delegate = delegate;
-    [self presentViewController:imagePickerNav animated:YES completion:nil];
+    UINavigationController *addNav = [self.storyboard instantiateViewControllerWithIdentifier:@"WIAAddAndReviewViewController"];
+    addNav.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    addNav.navigationBarHidden = YES;
+    WIAAddAndReviewViewController *addVc = [addNav.viewControllers firstObject];
+    addVc.view.alpha = 0;
+    
+    [self presentViewController:addNav animated:NO completion:^{
+        UINavigationController *imagePickerNav = [self.storyboard instantiateViewControllerWithIdentifier:@"WIAImagePickerController"];
+        imagePickerNav.modalPresentationStyle = UIModalPresentationOverFullScreen;
+        
+        WIAImagePickerController *vc = [imagePickerNav.viewControllers firstObject];
+        vc.delegate = addVc;
+        [addVc presentViewController:imagePickerNav animated:YES completion:nil];
+    }];
 }
 
 @end

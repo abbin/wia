@@ -26,14 +26,14 @@
 
 - (void)initilizeFabric{
     [Fabric with:@[[Crashlytics class]]];
-//    CKContainer *container = [CKContainer defaultContainer];
-//    [container accountStatusWithCompletionHandler:^(CKAccountStatus accountStatus, NSError *error) {
-//        if (accountStatus == CKAccountStatusAvailable) {
-//            [container fetchUserRecordIDWithCompletionHandler:^(CKRecordID * _Nullable recordID, NSError * _Nullable error) {
-//                [CrashlyticsKit setUserIdentifier:recordID.recordName];
-//            }];
-//        }
-//    }];
+    CKContainer *container = [CKContainer defaultContainer];
+    [container accountStatusWithCompletionHandler:^(CKAccountStatus accountStatus, NSError *error) {
+        if (accountStatus == CKAccountStatusAvailable) {
+            [container fetchUserRecordIDWithCompletionHandler:^(CKRecordID * _Nullable recordID, NSError * _Nullable error) {
+                [CrashlyticsKit setUserIdentifier:recordID.recordName];
+            }];
+        }
+    }];
 }
 
 
