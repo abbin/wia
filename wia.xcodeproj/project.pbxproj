@@ -223,6 +223,7 @@
 				EDF6D3451DD968AE000CED9D /* Resources */,
 				D943C32243DCE093E63BE497 /* [CP] Embed Pods Frameworks */,
 				F62B71CFF98B51E1ABBAA5EC /* [CP] Copy Pods Resources */,
+				EDEB3E571DDB2A98009A49F6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -456,6 +457,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wia/Pods-wia-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EDEB3E571DDB2A98009A49F6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 1786cf2c7ac82b5ec8a35411f91a89dc9de11d4e 4f1012b0d0ad5ec8e15d3f60b9ab6c6fd676085e54b39ce563bf5693b07f76c2";
+		};
 		F4FB46F892A5A63DA14105E1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -649,6 +663,7 @@
 			baseConfigurationReference = CB24C4B6B70D071F4F5DFAD6 /* Pods-wia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = EDXP6Y48QS;
 				INFOPLIST_FILE = wia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

@@ -8,6 +8,8 @@ target 'wia' do
   # Pods for wia
 
 pod 'GreedoLayout'
+pod 'Fabric'
+pod 'Crashlytics'
 
   target 'wiaTests' do
     inherit! :search_paths

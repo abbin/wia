@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+#import <CloudKit/CloudKit.h>
 
 @interface AppDelegate ()
 
@@ -16,8 +19,21 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self initilizeFabric];
     return YES;
+}
+
+
+- (void)initilizeFabric{
+    [Fabric with:@[[Crashlytics class]]];
+//    CKContainer *container = [CKContainer defaultContainer];
+//    [container accountStatusWithCompletionHandler:^(CKAccountStatus accountStatus, NSError *error) {
+//        if (accountStatus == CKAccountStatusAvailable) {
+//            [container fetchUserRecordIDWithCompletionHandler:^(CKRecordID * _Nullable recordID, NSError * _Nullable error) {
+//                [CrashlyticsKit setUserIdentifier:recordID.recordName];
+//            }];
+//        }
+//    }];
 }
 
 

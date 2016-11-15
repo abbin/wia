@@ -1,12 +1,19 @@
 PODS:
+  - Crashlytics (3.8.3):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.11)
   - GreedoLayout (1.2.0)
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - GreedoLayout
 
 SPEC CHECKSUMS:
+  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   GreedoLayout: b1a1adc6ed5f281353225e3eb21d18cedee8e513
 
-PODFILE CHECKSUM: 01baa6646768eed65b45842d480f86ec8dd6f207
+PODFILE CHECKSUM: 8585a0859ebfeb457c8358879c128d97d51253a3
 
 COCOAPODS: 1.1.1
