@@ -1,0 +1,708 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2D84F9B8477E212B8F14425BC2BA1B03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		5496F742020305D74E516FBB5747D4C1 /* GreedoCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0758BE0D38B604AC8D4B339CD6A85628 /* GreedoCollectionViewLayout.m */; };
+		5B19AC06F719F71045D38D60CF14B285 /* Pods-wiaUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E83F8587A1875F1610F7EB617675F5AD /* Pods-wiaUITests-dummy.m */; };
+		5E4B9A8EE839607C43D67D339E2C154B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		658084A074EB5961FA51FE5C874F0D31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		6973A99869C17B1DE91C6057D185ADB6 /* GreedoLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DCB5DBD9DF78937A4ED9BCD58C22EB /* GreedoLayout-dummy.m */; };
+		82AC387D0FE7D993D1A99E94F7006ED5 /* GreedoCollectionViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D201DFC2E316A4BEEBBF172A2781AB3 /* GreedoCollectionViewLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9360D41AA0D48919FA92BDAF0A4E2F24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		A4A2041AF571A99D886C8CEFD9B5AB4D /* GreedoSizeCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = C1FF225C94DC3D7B0F03EAAFD6AC3149 /* GreedoSizeCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA7D527D3A700486C2CF47175B13B903 /* Pods-wiaTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED15BCD0523561EC82BDABFF980D4F2E /* Pods-wiaTests-dummy.m */; };
+		C79BBF2D414FAD6949EFB64C0245A2D5 /* GreedoSizeCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E401B6E0DA089F8607A5B5B99BA4EA /* GreedoSizeCalculator.m */; };
+		CD933246CB1E384FFC14DA52EFE82D7A /* Pods-wia-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B963C100C7203B83D7DB69EF8B9036B4 /* Pods-wia-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		05AD42B706D124088CDD99A24C036494 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 039358D1B66472C14A066D195F6D77DE;
+			remoteInfo = GreedoLayout;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00887BC7544B0661054D89E98BF1B2FF /* Pods-wiaUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-wiaUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		05DCB5DBD9DF78937A4ED9BCD58C22EB /* GreedoLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GreedoLayout-dummy.m"; sourceTree = "<group>"; };
+		0758BE0D38B604AC8D4B339CD6A85628 /* GreedoCollectionViewLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GreedoCollectionViewLayout.m; path = GreedoLayout/GreedoCollectionViewLayout.m; sourceTree = "<group>"; };
+		0FE6B2F09783566A70C403C77D348BC8 /* Pods-wia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-wia.release.xcconfig"; sourceTree = "<group>"; };
+		3049110A6AAAAD5441DEAD3701359FED /* GreedoLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GreedoLayout.xcconfig; sourceTree = "<group>"; };
+		35C9ADBEF7B73C10D4A7B6DEAE8D3231 /* Pods-wiaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-wiaTests.release.xcconfig"; sourceTree = "<group>"; };
+		38D8D92C37E15A515842F79943CC4B76 /* GreedoLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GreedoLayout-prefix.pch"; sourceTree = "<group>"; };
+		3AEAB8B1C6C47ECA31986140C9D74247 /* Pods-wiaTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-wiaTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3C4F13021BFAC0368E66BAA864325D55 /* Pods-wia-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-wia-resources.sh"; sourceTree = "<group>"; };
+		3E55226C9171557FE4F5A957F10B74A6 /* Pods-wiaTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-wiaTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		482A0135F89CA3A021240B8BCCBE027A /* libGreedoLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libGreedoLayout.a; path = libGreedoLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		51F009442EDEFA02890825F74A3A70A5 /* Pods-wiaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-wiaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5ECEE3E9A3187C34107855CDDD368AD1 /* Pods-wiaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-wiaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6682CFE817E39A32401CF31DA57D8EE8 /* libPods-wia.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-wia.a"; path = "libPods-wia.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7045FE9375FB1D82FA28EBA30143ADB4 /* Pods-wiaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-wiaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		714A02DAACA08086ADFB4E7469DEBFE1 /* Pods-wiaTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-wiaTests-resources.sh"; sourceTree = "<group>"; };
+		72CE13F5FCB61168AD428F1C41C76F92 /* Pods-wia-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-wia-acknowledgements.plist"; sourceTree = "<group>"; };
+		75884870FD09C3F065E3DA23F06B4AB8 /* libPods-wiaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-wiaTests.a"; path = "libPods-wiaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D201DFC2E316A4BEEBBF172A2781AB3 /* GreedoCollectionViewLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GreedoCollectionViewLayout.h; path = GreedoLayout/GreedoCollectionViewLayout.h; sourceTree = "<group>"; };
+		86D0940639756F8BEEB19B983E8E7AC9 /* Pods-wia-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-wia-frameworks.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A6D16F1E2710226202D34A50FC506153 /* Pods-wia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-wia.debug.xcconfig"; sourceTree = "<group>"; };
+		B2B6F6B49710891071D8067F7C3507CB /* Pods-wia-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-wia-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B5E9EFF4B563FD4D90960617FAA6D62B /* Pods-wiaUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-wiaUITests-resources.sh"; sourceTree = "<group>"; };
+		B963C100C7203B83D7DB69EF8B9036B4 /* Pods-wia-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-wia-dummy.m"; sourceTree = "<group>"; };
+		B9DCB5AEFAEF28125FEA39E8EA7577CE /* Pods-wiaUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-wiaUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C1FF225C94DC3D7B0F03EAAFD6AC3149 /* GreedoSizeCalculator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GreedoSizeCalculator.h; path = GreedoLayout/GreedoSizeCalculator.h; sourceTree = "<group>"; };
+		C6E401B6E0DA089F8607A5B5B99BA4EA /* GreedoSizeCalculator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GreedoSizeCalculator.m; path = GreedoLayout/GreedoSizeCalculator.m; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D81CAF055DE4FCD49F756BDD54A77BE9 /* libPods-wiaUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-wiaUITests.a"; path = "libPods-wiaUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E83F8587A1875F1610F7EB617675F5AD /* Pods-wiaUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-wiaUITests-dummy.m"; sourceTree = "<group>"; };
+		ED15BCD0523561EC82BDABFF980D4F2E /* Pods-wiaTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-wiaTests-dummy.m"; sourceTree = "<group>"; };
+		F0C977A48AB287A7602EEC9D487817B5 /* Pods-wiaUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-wiaUITests-frameworks.sh"; sourceTree = "<group>"; };
+		FFA7F966974E57E0BB01C6192D9D962A /* Pods-wiaTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-wiaTests-frameworks.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		41DD4B3F6B75867B5415E9E280388201 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				658084A074EB5961FA51FE5C874F0D31 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8A60C868559FD8AAF8E3D2322CFF672 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9360D41AA0D48919FA92BDAF0A4E2F24 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBB45CECB81F3F789D083A3DD817A9E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D84F9B8477E212B8F14425BC2BA1B03 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D86D4B2368CDBD69431646A1A72C4401 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E4B9A8EE839607C43D67D339E2C154B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0267527CB6C5CFE1B681458E25382BEA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3049110A6AAAAD5441DEAD3701359FED /* GreedoLayout.xcconfig */,
+				05DCB5DBD9DF78937A4ED9BCD58C22EB /* GreedoLayout-dummy.m */,
+				38D8D92C37E15A515842F79943CC4B76 /* GreedoLayout-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GreedoLayout";
+			sourceTree = "<group>";
+		};
+		1F9A7A4AD88011F011F32E7EE0B69226 /* Pods-wiaTests */ = {
+			isa = PBXGroup;
+			children = (
+				3AEAB8B1C6C47ECA31986140C9D74247 /* Pods-wiaTests-acknowledgements.markdown */,
+				3E55226C9171557FE4F5A957F10B74A6 /* Pods-wiaTests-acknowledgements.plist */,
+				ED15BCD0523561EC82BDABFF980D4F2E /* Pods-wiaTests-dummy.m */,
+				FFA7F966974E57E0BB01C6192D9D962A /* Pods-wiaTests-frameworks.sh */,
+				714A02DAACA08086ADFB4E7469DEBFE1 /* Pods-wiaTests-resources.sh */,
+				51F009442EDEFA02890825F74A3A70A5 /* Pods-wiaTests.debug.xcconfig */,
+				35C9ADBEF7B73C10D4A7B6DEAE8D3231 /* Pods-wiaTests.release.xcconfig */,
+			);
+			name = "Pods-wiaTests";
+			path = "Target Support Files/Pods-wiaTests";
+			sourceTree = "<group>";
+		};
+		3FC5EB5C8F4F1768D2539FC66D1C1567 /* Pods-wia */ = {
+			isa = PBXGroup;
+			children = (
+				B2B6F6B49710891071D8067F7C3507CB /* Pods-wia-acknowledgements.markdown */,
+				72CE13F5FCB61168AD428F1C41C76F92 /* Pods-wia-acknowledgements.plist */,
+				B963C100C7203B83D7DB69EF8B9036B4 /* Pods-wia-dummy.m */,
+				86D0940639756F8BEEB19B983E8E7AC9 /* Pods-wia-frameworks.sh */,
+				3C4F13021BFAC0368E66BAA864325D55 /* Pods-wia-resources.sh */,
+				A6D16F1E2710226202D34A50FC506153 /* Pods-wia.debug.xcconfig */,
+				0FE6B2F09783566A70C403C77D348BC8 /* Pods-wia.release.xcconfig */,
+			);
+			name = "Pods-wia";
+			path = "Target Support Files/Pods-wia";
+			sourceTree = "<group>";
+		};
+		5B28D6A5EA98841E2202C5EBAFE34FEF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7AC422D148EFE1F2A795D3C67B511125 /* GreedoLayout */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6404532780B0818B9B5289E344A85B66 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3FC5EB5C8F4F1768D2539FC66D1C1567 /* Pods-wia */,
+				1F9A7A4AD88011F011F32E7EE0B69226 /* Pods-wiaTests */,
+				65FA2AF2FE1C8DE9393455C070C7047D /* Pods-wiaUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		65FA2AF2FE1C8DE9393455C070C7047D /* Pods-wiaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B9DCB5AEFAEF28125FEA39E8EA7577CE /* Pods-wiaUITests-acknowledgements.markdown */,
+				00887BC7544B0661054D89E98BF1B2FF /* Pods-wiaUITests-acknowledgements.plist */,
+				E83F8587A1875F1610F7EB617675F5AD /* Pods-wiaUITests-dummy.m */,
+				F0C977A48AB287A7602EEC9D487817B5 /* Pods-wiaUITests-frameworks.sh */,
+				B5E9EFF4B563FD4D90960617FAA6D62B /* Pods-wiaUITests-resources.sh */,
+				7045FE9375FB1D82FA28EBA30143ADB4 /* Pods-wiaUITests.debug.xcconfig */,
+				5ECEE3E9A3187C34107855CDDD368AD1 /* Pods-wiaUITests.release.xcconfig */,
+			);
+			name = "Pods-wiaUITests";
+			path = "Target Support Files/Pods-wiaUITests";
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7AC422D148EFE1F2A795D3C67B511125 /* GreedoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				7D201DFC2E316A4BEEBBF172A2781AB3 /* GreedoCollectionViewLayout.h */,
+				0758BE0D38B604AC8D4B339CD6A85628 /* GreedoCollectionViewLayout.m */,
+				C1FF225C94DC3D7B0F03EAAFD6AC3149 /* GreedoSizeCalculator.h */,
+				C6E401B6E0DA089F8607A5B5B99BA4EA /* GreedoSizeCalculator.m */,
+				0267527CB6C5CFE1B681458E25382BEA /* Support Files */,
+			);
+			name = GreedoLayout;
+			path = GreedoLayout;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				5B28D6A5EA98841E2202C5EBAFE34FEF /* Pods */,
+				B889D5A06C3FFE91D87A19E24084F9CA /* Products */,
+				6404532780B0818B9B5289E344A85B66 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		B889D5A06C3FFE91D87A19E24084F9CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				482A0135F89CA3A021240B8BCCBE027A /* libGreedoLayout.a */,
+				6682CFE817E39A32401CF31DA57D8EE8 /* libPods-wia.a */,
+				75884870FD09C3F065E3DA23F06B4AB8 /* libPods-wiaTests.a */,
+				D81CAF055DE4FCD49F756BDD54A77BE9 /* libPods-wiaUITests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CFBA47564FF240DC9981BEFD35471EED /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82AC387D0FE7D993D1A99E94F7006ED5 /* GreedoCollectionViewLayout.h in Headers */,
+				A4A2041AF571A99D886C8CEFD9B5AB4D /* GreedoSizeCalculator.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		039358D1B66472C14A066D195F6D77DE /* GreedoLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30016D300ADA0A3E20B63637D504350B /* Build configuration list for PBXNativeTarget "GreedoLayout" */;
+			buildPhases = (
+				1B740B18FE1CA3D704FF773614D838CE /* Sources */,
+				41DD4B3F6B75867B5415E9E280388201 /* Frameworks */,
+				CFBA47564FF240DC9981BEFD35471EED /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GreedoLayout;
+			productName = GreedoLayout;
+			productReference = 482A0135F89CA3A021240B8BCCBE027A /* libGreedoLayout.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		32EBBBEFC6C34DE60D34FAEB53505941 /* Pods-wiaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84C7F5DADD96CE99D2662F060A395E09 /* Build configuration list for PBXNativeTarget "Pods-wiaUITests" */;
+			buildPhases = (
+				E184ED901306A2574D778C9E780C3A87 /* Sources */,
+				BBB45CECB81F3F789D083A3DD817A9E6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-wiaUITests";
+			productName = "Pods-wiaUITests";
+			productReference = D81CAF055DE4FCD49F756BDD54A77BE9 /* libPods-wiaUITests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		351D34E91C04881A75841EC8BEC5BD11 /* Pods-wia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06CD0E575BDA913DA26216360F0FC0F2 /* Build configuration list for PBXNativeTarget "Pods-wia" */;
+			buildPhases = (
+				5463DFB41C32456FBB1AE251CDB57905 /* Sources */,
+				D86D4B2368CDBD69431646A1A72C4401 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3455AEDFF5982221526D8251213AE1C3 /* PBXTargetDependency */,
+			);
+			name = "Pods-wia";
+			productName = "Pods-wia";
+			productReference = 6682CFE817E39A32401CF31DA57D8EE8 /* libPods-wia.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4AF35EB22760A54F17C72CC7D6B49A65 /* Pods-wiaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB7637064ADCC28A7D65559BF351B704 /* Build configuration list for PBXNativeTarget "Pods-wiaTests" */;
+			buildPhases = (
+				63AE1F92FD138353E778C23D2B57DE8E /* Sources */,
+				B8A60C868559FD8AAF8E3D2322CFF672 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-wiaTests";
+			productName = "Pods-wiaTests";
+			productReference = 75884870FD09C3F065E3DA23F06B4AB8 /* libPods-wiaTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = B889D5A06C3FFE91D87A19E24084F9CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				039358D1B66472C14A066D195F6D77DE /* GreedoLayout */,
+				351D34E91C04881A75841EC8BEC5BD11 /* Pods-wia */,
+				4AF35EB22760A54F17C72CC7D6B49A65 /* Pods-wiaTests */,
+				32EBBBEFC6C34DE60D34FAEB53505941 /* Pods-wiaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B740B18FE1CA3D704FF773614D838CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5496F742020305D74E516FBB5747D4C1 /* GreedoCollectionViewLayout.m in Sources */,
+				6973A99869C17B1DE91C6057D185ADB6 /* GreedoLayout-dummy.m in Sources */,
+				C79BBF2D414FAD6949EFB64C0245A2D5 /* GreedoSizeCalculator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5463DFB41C32456FBB1AE251CDB57905 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD933246CB1E384FFC14DA52EFE82D7A /* Pods-wia-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63AE1F92FD138353E778C23D2B57DE8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA7D527D3A700486C2CF47175B13B903 /* Pods-wiaTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E184ED901306A2574D778C9E780C3A87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B19AC06F719F71045D38D60CF14B285 /* Pods-wiaUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3455AEDFF5982221526D8251213AE1C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GreedoLayout;
+			target = 039358D1B66472C14A066D195F6D77DE /* GreedoLayout */;
+			targetProxy = 05AD42B706D124088CDD99A24C036494 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		13385B81E53830B84775E9B667DC5D22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3049110A6AAAAD5441DEAD3701359FED /* GreedoLayout.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GreedoLayout/GreedoLayout-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		41682BEBE0A55B6EF13D053E30A29741 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3049110A6AAAAD5441DEAD3701359FED /* GreedoLayout.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GreedoLayout/GreedoLayout-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		41EDAF0EA1974877E0FA7E6F6FED3914 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35C9ADBEF7B73C10D4A7B6DEAE8D3231 /* Pods-wiaTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		45BA4F8205ECE4367716CE4BFEA523AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7045FE9375FB1D82FA28EBA30143ADB4 /* Pods-wiaUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		5F33A159E57652FAD5D4DAA0691E4A0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51F009442EDEFA02890825F74A3A70A5 /* Pods-wiaTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6FEBC049129A6069A374D02256D8D998 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6D16F1E2710226202D34A50FC506153 /* Pods-wia.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8124DEB288227BB5421A1E41DF66E2E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FE6B2F09783566A70C403C77D348BC8 /* Pods-wia.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		8863D2846F5CB4E962AAE597CC62FD67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ECEE3E9A3187C34107855CDDD368AD1 /* Pods-wiaUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B7324857C38B065FEB1EEE3105C2367A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06CD0E575BDA913DA26216360F0FC0F2 /* Build configuration list for PBXNativeTarget "Pods-wia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FEBC049129A6069A374D02256D8D998 /* Debug */,
+				8124DEB288227BB5421A1E41DF66E2E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */,
+				B7324857C38B065FEB1EEE3105C2367A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30016D300ADA0A3E20B63637D504350B /* Build configuration list for PBXNativeTarget "GreedoLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13385B81E53830B84775E9B667DC5D22 /* Debug */,
+				41682BEBE0A55B6EF13D053E30A29741 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84C7F5DADD96CE99D2662F060A395E09 /* Build configuration list for PBXNativeTarget "Pods-wiaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45BA4F8205ECE4367716CE4BFEA523AD /* Debug */,
+				8863D2846F5CB4E962AAE597CC62FD67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB7637064ADCC28A7D65559BF351B704 /* Build configuration list for PBXNativeTarget "Pods-wiaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F33A159E57652FAD5D4DAA0691E4A0B /* Debug */,
+				41EDAF0EA1974877E0FA7E6F6FED3914 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

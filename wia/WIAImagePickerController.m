@@ -10,17 +10,17 @@
 #import <Photos/Photos.h>
 #import "WIAImagePickerCollectionViewCell.h"
 #import "WIAImagePickerPreviewViewController.h"
+#import <GreedoCollectionViewLayout.h>
 
 static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
 
-@interface WIAImagePickerController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,PHPhotoLibraryChangeObserver>
+@interface WIAImagePickerController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,PHPhotoLibraryChangeObserver,GreedoCollectionViewLayoutDataSource>
 
 @property (nonatomic, strong) PHImageManager *imageManager;
 @property (nonatomic, strong) NSArray *collectionItems;
 @property (nonatomic, strong) NSDictionary *currentCollectionItem;
 @property (nonatomic, strong) NSMutableArray *selectedPhotos;
-@property (nonatomic, assign) NSUInteger WIANumberOfPhotoColumns;
-@property (nonatomic, assign) CGSize cellPortraitSize;
+@property (strong, nonatomic) GreedoCollectionViewLayout *collectionViewSizeCalculator;
 
 @property (nonatomic, weak) IBOutlet UICollectionView *photoCollectionView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneItem;
@@ -31,8 +31,9 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.collectionViewSizeCalculator.rowMaximumHeight = 150;
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        self.WIANumberOfPhotoColumns = 3;
         self.imageManager = [[PHCachingImageManager alloc] init];
         self.selectedPhotos = [NSMutableArray array];
         [self fetchCollections];
@@ -122,10 +123,7 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    if (CGSizeEqualToSize(CGSizeZero, self.cellPortraitSize)) {
-        [self setupCellSize];
-    }
-    return self.cellPortraitSize;
+    return [self.collectionViewSizeCalculator sizeForPhotoAtIndexPath:indexPath];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -235,7 +233,29 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - GreedoCollectionViewLayoutDataSource
+
+-(CGSize)greedoCollectionViewLayout:(GreedoCollectionViewLayout *)layout originalImageSizeAtIndexPath:(NSIndexPath *)indexPath{
+    PHFetchResult *fetchResult = self.currentCollectionItem[@"assets"];
+    if (indexPath.item < fetchResult.count) {
+        PHAsset *asset = fetchResult[indexPath.item];
+        return CGSizeMake(asset.pixelWidth, asset.pixelHeight);
+    }
+    
+    return CGSizeMake(0.1, 0.1);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Utility Methods
+
+- (GreedoCollectionViewLayout *)collectionViewSizeCalculator{
+    if (!_collectionViewSizeCalculator) {
+        _collectionViewSizeCalculator = [[GreedoCollectionViewLayout alloc] initWithCollectionView:self.photoCollectionView];
+        _collectionViewSizeCalculator.dataSource = self;
+    }
+    
+    return _collectionViewSizeCalculator;
+}
 
 - (UIImage *)yms_orientationNormalizedImage:(UIImage *)image{
     if (image.imageOrientation == UIImageOrientationUp) return image;
@@ -244,21 +264,6 @@ static const CGFloat WIAPhotoFetchScaleResizingRatio = 0.75;
     UIImage *normalizedImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return normalizedImage;
-}
-
-- (void)setupCellSize{
-    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.photoCollectionView.collectionViewLayout;
-    
-    CGFloat arrangementLength = MIN(CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
-    
-    CGFloat minimumInteritemSpacing = layout.minimumInteritemSpacing;
-    UIEdgeInsets sectionInset = layout.sectionInset;
-    
-    CGFloat totalInteritemSpacing = MAX((self.WIANumberOfPhotoColumns), 0) * minimumInteritemSpacing;
-    CGFloat totalHorizontalSpacing = totalInteritemSpacing + sectionInset.left + sectionInset.right;
-    
-    CGFloat size = (CGFloat)floor((arrangementLength - totalHorizontalSpacing) / self.WIANumberOfPhotoColumns);
-    self.cellPortraitSize = CGSizeMake(size, size);
 }
 
 - (void)updateViewWithCollectionItem:(NSDictionary *)collectionItem{

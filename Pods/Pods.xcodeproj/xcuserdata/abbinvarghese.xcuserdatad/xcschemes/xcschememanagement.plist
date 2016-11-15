@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>GreedoLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-wia.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-wiaTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-wiaUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>039358D1B66472C14A066D195F6D77DE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>32EBBBEFC6C34DE60D34FAEB53505941</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>351D34E91C04881A75841EC8BEC5BD11</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4AF35EB22760A54F17C72CC7D6B49A65</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
