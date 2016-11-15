@@ -19,7 +19,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+#ifdef DEBUG
+    NSLog(@"DEBUG");
+#else
     [self initilizeFabric];
+#endif
     return YES;
 }
 

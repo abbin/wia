@@ -30,6 +30,8 @@
     self.selectionAlpha = 0.3;
     self.longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] init];
     [self addGestureRecognizer:self.longPressGestureRecognizer];
+    self.cellSelectionImageview.layer.cornerRadius = 12.5;
+    self.cellSelectionImageview.layer.masksToBounds = YES;
 }
 
 -(void)prepareForReuse{

@@ -121,7 +121,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ljX-Gc-dXC">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenCheck" translatesAutoresizingMaskIntoConstraints="NO" id="ljX-Gc-dXC">
                                                     <rect key="frame" x="91" y="91" width="25" height="25"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -355,6 +355,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="GreenCheck" width="25" height="25"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>

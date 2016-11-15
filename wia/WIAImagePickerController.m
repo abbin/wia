@@ -35,7 +35,7 @@ typedef void(^imageFetchBlock)(NSMutableArray *images);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.collectionViewSizeCalculator.rowMaximumHeight = 150;
+    self.collectionViewSizeCalculator.rowMaximumHeight = 200;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         self.imageManager = [[PHCachingImageManager alloc] init];
