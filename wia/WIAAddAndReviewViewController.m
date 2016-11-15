@@ -19,24 +19,8 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(void)WIAImagePickerController:(WIAImagePickerController *)picker didFinishPickingImages:(NSArray *)images animated:(BOOL)animated{
-    self.view.alpha = 1;
-    self.navigationController.navigationBarHidden = NO;
-    [picker dismissViewControllerAnimated:animated completion:^{
-        NSLog(@"%@",images);
-    }];
-}
-
--(void)WIAImagePickerControllerDidCancel:(WIAImagePickerController *)picker{
-    [picker dismissViewControllerAnimated:YES completion:^{
-        [self dismissViewControllerAnimated:NO completion:nil];
-    }];
-}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - IBAction
 
 - (IBAction)saveUpload:(id)sender {
     
@@ -51,6 +35,23 @@
     [actionSheet addAction:yes];
     [actionSheet addAction:cancel];
     [self presentViewController:actionSheet animated:YES completion:nil];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - WIAImagePickerControllerDelegate
+
+-(void)WIAImagePickerController:(WIAImagePickerController *)picker didFinishPickingImages:(NSArray *)images animated:(BOOL)animated{
+    self.view.alpha = 1;
+    self.navigationController.navigationBarHidden = NO;
+    [picker dismissViewControllerAnimated:animated completion:^{
+        NSLog(@"%@",images);
+    }];
+}
+
+-(void)WIAImagePickerControllerDidCancel:(WIAImagePickerController *)picker{
+    [picker dismissViewControllerAnimated:YES completion:^{
+        [self dismissViewControllerAnimated:NO completion:nil];
+    }];
 }
 
 @end

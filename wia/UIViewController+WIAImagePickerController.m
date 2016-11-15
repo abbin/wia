@@ -77,7 +77,6 @@
 }
 
 -(void)launchPicker{
-    
     UINavigationController *addNav = [self.storyboard instantiateViewControllerWithIdentifier:@"WIAAddAndReviewViewController"];
     addNav.modalPresentationStyle = UIModalPresentationOverFullScreen;
     addNav.navigationBarHidden = YES;

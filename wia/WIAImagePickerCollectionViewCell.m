@@ -42,6 +42,13 @@
     [self deSelectCell];
 }
 
+- (void)setThumbnailImage:(UIImage *)thumbnailImage{
+    _thumbnailImage = thumbnailImage;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.cellImageView.image = thumbnailImage;
+    });
+}
+
 - (void)loadPhotoWithManager:(PHImageManager *)manager forAsset:(PHAsset *)asset targetSize:(CGSize)size{
     self.imageManager = manager;
     self.imageRequestID = [self.imageManager requestImageForAsset:asset
@@ -54,13 +61,6 @@
                                                             self.thumbnailImage = result;
                                                         }
                                                     }];
-}
-
-- (void)setThumbnailImage:(UIImage *)thumbnailImage{
-    _thumbnailImage = thumbnailImage;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.cellImageView.image = thumbnailImage;
-    });
 }
 
 - (void)selectCell{
