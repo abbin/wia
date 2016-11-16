@@ -17,6 +17,7 @@
 		EDB974DB1DDC5CD700CB7AD1 /* WIAPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB974DA1DDC5CD700CB7AD1 /* WIAPageContentViewController.m */; };
 		EDB974DE1DDC73E700CB7AD1 /* WIANameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB974DD1DDC73E700CB7AD1 /* WIANameViewController.m */; };
 		EDB974E11DDC811A00CB7AD1 /* WIALocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB974E01DDC811A00CB7AD1 /* WIALocationViewController.m */; };
+		EDB974E41DDCB5CD00CB7AD1 /* WIAAccountSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB974E31DDCB5CD00CB7AD1 /* WIAAccountSetUpViewController.m */; };
 		EDEB3E561DDB1A84009A49F6 /* WIAAddAndReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEB3E551DDB1A84009A49F6 /* WIAAddAndReviewViewController.m */; };
 		EDF6D34C1DD968AE000CED9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF6D34B1DD968AE000CED9D /* main.m */; };
 		EDF6D34F1DD968AE000CED9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF6D34E1DD968AE000CED9D /* AppDelegate.m */; };
@@ -72,6 +73,8 @@
 		EDB974DD1DDC73E700CB7AD1 /* WIANameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIANameViewController.m; sourceTree = "<group>"; };
 		EDB974DF1DDC811A00CB7AD1 /* WIALocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIALocationViewController.h; sourceTree = "<group>"; };
 		EDB974E01DDC811A00CB7AD1 /* WIALocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIALocationViewController.m; sourceTree = "<group>"; };
+		EDB974E21DDCB5CD00CB7AD1 /* WIAAccountSetUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIAAccountSetUpViewController.h; sourceTree = "<group>"; };
+		EDB974E31DDCB5CD00CB7AD1 /* WIAAccountSetUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIAAccountSetUpViewController.m; sourceTree = "<group>"; };
 		EDEB3E541DDB1A84009A49F6 /* WIAAddAndReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIAAddAndReviewViewController.h; sourceTree = "<group>"; };
 		EDEB3E551DDB1A84009A49F6 /* WIAAddAndReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIAAddAndReviewViewController.m; sourceTree = "<group>"; };
 		EDF6D3471DD968AE000CED9D /* wia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,13 +226,15 @@
 			isa = PBXGroup;
 			children = (
 				ED515FF61DDB5F28005621D0 /* WIAFirstLaunchViewController.h */,
-				EDB974D91DDC5CD700CB7AD1 /* WIAPageContentViewController.h */,
 				ED515FF71DDB5F28005621D0 /* WIAFirstLaunchViewController.m */,
+				EDB974D91DDC5CD700CB7AD1 /* WIAPageContentViewController.h */,
 				EDB974DA1DDC5CD700CB7AD1 /* WIAPageContentViewController.m */,
 				EDB974DC1DDC73E700CB7AD1 /* WIANameViewController.h */,
 				EDB974DD1DDC73E700CB7AD1 /* WIANameViewController.m */,
 				EDB974DF1DDC811A00CB7AD1 /* WIALocationViewController.h */,
 				EDB974E01DDC811A00CB7AD1 /* WIALocationViewController.m */,
+				EDB974E21DDCB5CD00CB7AD1 /* WIAAccountSetUpViewController.h */,
+				EDB974E31DDCB5CD00CB7AD1 /* WIAAccountSetUpViewController.m */,
 			);
 			name = "First launch";
 			sourceTree = "<group>";
@@ -630,6 +635,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDB974E41DDCB5CD00CB7AD1 /* WIAAccountSetUpViewController.m in Sources */,
 				EDF6D3AB1DD989A3000CED9D /* WIAImagePickerPreviewViewController.m in Sources */,
 				EDB974DB1DDC5CD700CB7AD1 /* WIAPageContentViewController.m in Sources */,
 				EDF6D3551DD968AE000CED9D /* SecondViewController.m in Sources */,

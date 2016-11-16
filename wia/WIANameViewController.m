@@ -8,12 +8,15 @@
 
 #import "WIANameViewController.h"
 #import "WIALocationViewController.h"
+#import "WIAColor.h"
 
 @interface WIANameViewController ()
 
 @property (strong, nonatomic) IBOutlet UIToolbar *toolBar;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *nextItem;
+@property (weak, nonatomic) IBOutlet UIButton *privacyPolicyButton;
+@property (weak, nonatomic) IBOutlet UIButton *termsOfServiceButton;
 
 @end
 
@@ -22,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.nameTextField.inputAccessoryView = self.toolBar;
+    [self.termsOfServiceButton setTitleColor:[WIAColor mainColor] forState:UIControlStateNormal];
+    [self.privacyPolicyButton setTitleColor:[WIAColor mainColor] forState:UIControlStateNormal];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -39,9 +44,11 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"%@",self.nameTextField.text);
     if ([segue.identifier isEqualToString:@"WIALocationViewControllerSegue"]) {
         WIALocationViewController *vc = segue.destinationViewController;
-        vc.userName = self.nameTextField.text;
+        NSString* result = [self.nameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        vc.userName = result;
     }
 }
 
