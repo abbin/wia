@@ -39,7 +39,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>So you can photograph all the delicious things you&amp;apos;re eating and drinking</string>
+	<string>So you can photograph all the delicious things you are eating and drinking</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>So you can share great food shots from your photo library</string>
 	<key>UILaunchStoryboardName</key>

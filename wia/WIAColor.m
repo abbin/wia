@@ -14,9 +14,9 @@
 
 + (UIColor*)mainColor{
     // Color Options
-    // UIColorFromRGB(0xBC1128);
-    // UIColorFromRGB(0xFF3B31);
-    // UIColorFromRGB(0xFF2D55);
+    // UIColorFromRGB(0xBC1128); - red from stackoverflow
+    // UIColorFromRGB(0xFF3B31); - light red from apple
+    // UIColorFromRGB(0xFF2D55); - darkbright red from apple
     return UIColorFromRGB(0x345EF2);
 }
 

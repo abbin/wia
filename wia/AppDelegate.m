@@ -29,7 +29,6 @@
     
     if (YES) {
         UINavigationController *firstLaunch = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"WIAFirstLaunchViewController"];
-        [firstLaunch setNavigationBarHidden:YES];
         self.window.rootViewController = firstLaunch;
     }
     
