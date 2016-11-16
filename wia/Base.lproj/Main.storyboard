@@ -5,6 +5,8 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -271,13 +273,51 @@
                     <view key="view" contentMode="scaleToFill" id="ALJ-9Y-Ekn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FirstLaunchBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ept-wJ-cco">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9tP-lT-ONa">
+                                <rect key="frame" x="15" y="575.5" width="345" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8gB-Rx-qBx"/>
+                                </constraints>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ms-zZ-H9A">
+                                <rect key="frame" x="15" y="336.5" width="345" height="194"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2ms-zZ-H9A" secondAttribute="height" multiplier="16:9" id="Uuq-yf-DRl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2ms-zZ-H9A" secondAttribute="trailing" constant="15" id="3lH-z3-UFS"/>
+                            <constraint firstItem="2ms-zZ-H9A" firstAttribute="leading" secondItem="ALJ-9Y-Ekn" secondAttribute="leading" constant="15" id="BI2-BQ-8fl"/>
+                            <constraint firstItem="ept-wJ-cco" firstAttribute="leading" secondItem="ALJ-9Y-Ekn" secondAttribute="leading" id="W9g-4X-2xZ"/>
+                            <constraint firstItem="9tP-lT-ONa" firstAttribute="centerY" secondItem="ALJ-9Y-Ekn" secondAttribute="centerY" multiplier="1.8" id="Zlc-gJ-s90"/>
+                            <constraint firstItem="ept-wJ-cco" firstAttribute="top" secondItem="ALJ-9Y-Ekn" secondAttribute="top" id="bKn-Xd-8Ye"/>
+                            <constraint firstAttribute="bottom" secondItem="ept-wJ-cco" secondAttribute="bottom" id="efb-T2-ZkH"/>
+                            <constraint firstAttribute="trailing" secondItem="9tP-lT-ONa" secondAttribute="trailing" constant="15" id="pBg-mv-5ek"/>
+                            <constraint firstAttribute="trailing" secondItem="ept-wJ-cco" secondAttribute="trailing" id="qKd-i4-PQ1"/>
+                            <constraint firstItem="2ms-zZ-H9A" firstAttribute="centerY" secondItem="ALJ-9Y-Ekn" secondAttribute="centerY" multiplier="1.3" id="r2R-j8-Xux"/>
+                            <constraint firstItem="9tP-lT-ONa" firstAttribute="leading" secondItem="ALJ-9Y-Ekn" secondAttribute="leading" constant="15" id="vOR-S5-frn"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dgH-0j-pKk"/>
+                    <connections>
+                        <outlet property="nextButton" destination="9tP-lT-ONa" id="CLL-Rb-ATE"/>
+                        <outlet property="playerView" destination="2ms-zZ-H9A" id="GdP-Zc-h2x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUy-wa-jhP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1164" y="-1137.481259370315"/>
+            <point key="canvasLocation" x="1391" y="-1137"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -388,10 +428,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ayR-1P-YFJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="224.80000000000001" y="-1137.481259370315"/>
+            <point key="canvasLocation" x="727" y="-1137"/>
         </scene>
     </scenes>
     <resources>
+        <image name="FirstLaunchBackground" width="288" height="512"/>
         <image name="GreenCheck" width="25" height="25"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
