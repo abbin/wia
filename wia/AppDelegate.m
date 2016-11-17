@@ -11,6 +11,7 @@
 #import <Crashlytics/Crashlytics.h>
 #import <CloudKit/CloudKit.h>
 #import "WIAFirstLaunchViewController.h"
+#import "WIAColor.h"
 
 @interface AppDelegate ()
 
@@ -27,10 +28,12 @@
     [self initilizeFabric];
 #endif
     
-    if (YES) {
-        UINavigationController *firstLaunch = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"WIAFirstLaunchViewController"];
-        self.window.rootViewController = firstLaunch;
-    }
+//    if (YES) {
+//        UINavigationController *firstLaunch = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"WIAFirstLaunchViewController"];
+//        self.window.rootViewController = firstLaunch;
+//    }
+    
+    [[UIView appearance] setTintColor:[WIAColor mainColor]];
     
     return YES;
 }
@@ -45,6 +48,10 @@
             }];
         }
     }];
+}
+
+- (void)switchRootViewControllerWith:(UIViewController*)controller{
+    self.window.rootViewController = controller;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -7,6 +7,7 @@
 //
 
 #import "WIAImagePickerCollectionViewCell.h"
+#import "WIAColor.h"
 
 @interface WIAImagePickerCollectionViewCell ()
 
@@ -32,6 +33,8 @@
     [self addGestureRecognizer:self.longPressGestureRecognizer];
     self.cellSelectionImageview.layer.cornerRadius = 12.5;
     self.cellSelectionImageview.layer.masksToBounds = YES;
+    
+    self.cellSelectionImageview.image = [self.cellSelectionImageview.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 }
 
 -(void)prepareForReuse{

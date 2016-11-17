@@ -8,7 +8,6 @@
 
 #import "WIANameViewController.h"
 #import "WIALocationViewController.h"
-#import "WIAColor.h"
 
 @interface WIANameViewController ()
 
@@ -25,8 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.nameTextField.inputAccessoryView = self.toolBar;
-    [self.termsOfServiceButton setTitleColor:[WIAColor mainColor] forState:UIControlStateNormal];
-    [self.privacyPolicyButton setTitleColor:[WIAColor mainColor] forState:UIControlStateNormal];
 }
 
 -(void)viewDidAppear:(BOOL)animated{

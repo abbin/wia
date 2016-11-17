@@ -7,6 +7,7 @@
 //
 
 #import "WIAAccountSetUpViewController.h"
+#import "AppDelegate.h"
 
 @interface WIAAccountSetUpViewController ()
 
@@ -38,16 +39,16 @@
                     self.logLabel.alpha = 1.0;
                 } completion:^(BOOL finished) {
                     if (self.shouldAnimate) {
-                        [UIView animateWithDuration:0.3 delay:4 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                        [UIView animateWithDuration:0.3 delay:3 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
                             self.logLabel.alpha = 0.0;
                         } completion:^(BOOL finished) {
-                            self.logLabel.text = @"Taking a break..cause I'm tried";
+                            self.logLabel.text = @"Taking a break...";
                             if (self.shouldAnimate) {
                                 [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
                                     self.logLabel.alpha = 1.0;
                                 } completion:^(BOOL finished) {
                                     if (self.shouldAnimate) {
-                                        [UIView animateWithDuration:0.3 delay:4 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                                        [UIView animateWithDuration:0.3 delay:5 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
                                             self.logLabel.alpha = 0.0;
                                         } completion:^(BOOL finished) {
                                             self.logLabel.text = @"Back doing stuff...";
@@ -56,7 +57,7 @@
                                                     self.logLabel.alpha = 1.0;
                                                 } completion:^(BOOL finished) {
                                                     if (self.shouldAnimate) {
-                                                        [UIView animateWithDuration:0.3 delay:5 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                                                        [UIView animateWithDuration:0.3 delay:4 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
                                                             self.logLabel.alpha = 0.0;
                                                         } completion:^(BOOL finished) {
                                                             self.logLabel.text = @"This is taking too long...🤔";
@@ -65,7 +66,7 @@
                                                                     self.logLabel.alpha = 1.0;
                                                                 } completion:^(BOOL finished) {
                                                                     if (self.shouldAnimate) {
-                                                                        [UIView animateWithDuration:0.3 delay:4 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                                                                        [UIView animateWithDuration:0.3 delay:3 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
                                                                             self.logLabel.alpha = 0.0;
                                                                         } completion:^(BOOL finished) {
                                                                             self.logLabel.text = @"Ok, Finishing up...";
@@ -73,7 +74,9 @@
                                                                                 [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
                                                                                     self.logLabel.alpha = 1.0;
                                                                                 } completion:^(BOOL finished) {
-                                                                                    
+                                                                                    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+                                                                                    UITabBarController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"WIATabBarController"];
+                                                                                    [delegate switchRootViewControllerWith:controller];
                                                                                 }];
                                                                             }
                                                                         }];
