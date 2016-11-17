@@ -41,7 +41,6 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"%@",self.nameTextField.text);
     if ([segue.identifier isEqualToString:@"WIALocationViewControllerSegue"]) {
         WIALocationViewController *vc = segue.destinationViewController;
         NSString* result = [self.nameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];

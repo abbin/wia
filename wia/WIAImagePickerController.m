@@ -36,7 +36,7 @@ typedef void(^imageFetchBlock)(NSMutableArray *images);
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.collectionViewSizeCalculator.rowMaximumHeight = 200;
-    
+    self.photoCollectionView.alpha = 0;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         self.imageManager = [[PHCachingImageManager alloc] init];
         self.selectedPhotos = [NSMutableArray array];
@@ -329,20 +329,23 @@ typedef void(^imageFetchBlock)(NSMutableArray *images);
     }
 }
 
-- (UIImage *)yms_orientationNormalizedImage:(UIImage *)image{
-    if (image.imageOrientation == UIImageOrientationUp) return image;
-    UIGraphicsBeginImageContextWithOptions(image.size, NO, image.scale);
-    [image drawInRect:CGRectMake(0.0, 0.0, image.size.width, image.size.height)];
-    UIImage *normalizedImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return normalizedImage;
-}
+//- (UIImage *)yms_orientationNormalizedImage:(UIImage *)image{
+//    if (image.imageOrientation == UIImageOrientationUp) return image;
+//    UIGraphicsBeginImageContextWithOptions(image.size, NO, image.scale);
+//    [image drawInRect:CGRectMake(0.0, 0.0, image.size.width, image.size.height)];
+//    UIImage *normalizedImage = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    return normalizedImage;
+//}
 
 - (void)updateViewWithCollectionItem:(NSDictionary *)collectionItem{
     self.currentCollectionItem = collectionItem;
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.photoCollectionView reloadData];
         [self refreshPhotoSelection];
+        [UIView animateWithDuration:0.2 animations:^{
+            self.photoCollectionView.alpha = 1;
+        }];
     });
 }
 

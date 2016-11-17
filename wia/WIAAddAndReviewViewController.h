@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "WIAImagePickerController.h"
 
-@interface WIAAddAndReviewViewController : UIViewController<WIAImagePickerControllerDelegate>
+@interface WIAAddAndReviewViewController : UITableViewController<WIAImagePickerControllerDelegate>
 
 @end

@@ -12,6 +12,14 @@
 		E13183BCCE102C14214D17FE /* libPods-wiaUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F39C99D367901380FF3EC8CD /* libPods-wiaUITests.a */; };
 		ED515FEC1DDB488C005621D0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED515FEB1DDB488C005621D0 /* CloudKit.framework */; };
 		ED515FF81DDB5F28005621D0 /* WIAFirstLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED515FF71DDB5F28005621D0 /* WIAFirstLaunchViewController.m */; };
+		ED828B7D1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED828B7B1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.m */; };
+		ED828B7E1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED828B7C1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.xib */; };
+		ED828B841DDDC87600B6BD25 /* WIARatingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED828B821DDDC87600B6BD25 /* WIARatingTableViewCell.m */; };
+		ED828B851DDDC87600B6BD25 /* WIARatingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED828B831DDDC87600B6BD25 /* WIARatingTableViewCell.xib */; };
+		ED828B8A1DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED828B881DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.m */; };
+		ED828B8B1DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED828B891DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.xib */; };
+		ED828B901DDDF92900B6BD25 /* WIAImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED828B8E1DDDF92900B6BD25 /* WIAImageCollectionViewCell.m */; };
+		ED828B911DDDF92900B6BD25 /* WIAImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED828B8F1DDDF92900B6BD25 /* WIAImageCollectionViewCell.xib */; };
 		ED91A8BA1DDC3BFE008D98E7 /* IMG_0102.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED91A8B91DDC3BFE008D98E7 /* IMG_0102.mp4 */; };
 		EDB974D81DDC57DA00CB7AD1 /* WIAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB974D71DDC57DA00CB7AD1 /* WIAColor.m */; };
 		EDB974DB1DDC5CD700CB7AD1 /* WIAPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB974DA1DDC5CD700CB7AD1 /* WIAPageContentViewController.m */; };
@@ -64,6 +72,18 @@
 		ED515FEB1DDB488C005621D0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		ED515FF61DDB5F28005621D0 /* WIAFirstLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIAFirstLaunchViewController.h; sourceTree = "<group>"; };
 		ED515FF71DDB5F28005621D0 /* WIAFirstLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIAFirstLaunchViewController.m; sourceTree = "<group>"; };
+		ED828B7A1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIATextFieldTableViewCell.h; sourceTree = "<group>"; };
+		ED828B7B1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIATextFieldTableViewCell.m; sourceTree = "<group>"; };
+		ED828B7C1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WIATextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		ED828B811DDDC87600B6BD25 /* WIARatingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIARatingTableViewCell.h; sourceTree = "<group>"; };
+		ED828B821DDDC87600B6BD25 /* WIARatingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIARatingTableViewCell.m; sourceTree = "<group>"; };
+		ED828B831DDDC87600B6BD25 /* WIARatingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WIARatingTableViewCell.xib; sourceTree = "<group>"; };
+		ED828B871DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIACollectionViewTableViewCell.h; sourceTree = "<group>"; };
+		ED828B881DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIACollectionViewTableViewCell.m; sourceTree = "<group>"; };
+		ED828B891DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WIACollectionViewTableViewCell.xib; sourceTree = "<group>"; };
+		ED828B8D1DDDF92900B6BD25 /* WIAImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIAImageCollectionViewCell.h; sourceTree = "<group>"; };
+		ED828B8E1DDDF92900B6BD25 /* WIAImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIAImageCollectionViewCell.m; sourceTree = "<group>"; };
+		ED828B8F1DDDF92900B6BD25 /* WIAImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WIAImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		ED91A8B91DDC3BFE008D98E7 /* IMG_0102.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_0102.mp4; sourceTree = "<group>"; };
 		EDB974D61DDC57DA00CB7AD1 /* WIAColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIAColor.h; sourceTree = "<group>"; };
 		EDB974D71DDC57DA00CB7AD1 /* WIAColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIAColor.m; sourceTree = "<group>"; };
@@ -179,6 +199,7 @@
 			children = (
 				EDEB3E541DDB1A84009A49F6 /* WIAAddAndReviewViewController.h */,
 				EDEB3E551DDB1A84009A49F6 /* WIAAddAndReviewViewController.m */,
+				ED828B791DDDB2DC00B6BD25 /* TableView cell */,
 			);
 			name = Add;
 			sourceTree = "<group>";
@@ -237,6 +258,57 @@
 				EDB974E31DDCB5CD00CB7AD1 /* WIAAccountSetUpViewController.m */,
 			);
 			name = "First launch";
+			sourceTree = "<group>";
+		};
+		ED828B791DDDB2DC00B6BD25 /* TableView cell */ = {
+			isa = PBXGroup;
+			children = (
+				ED828B861DDDF5D700B6BD25 /* CollectionView cell */,
+				ED828B801DDDC86100B6BD25 /* Rating Cell */,
+				ED828B7F1DDDC85500B6BD25 /* TextField cell */,
+			);
+			name = "TableView cell";
+			sourceTree = "<group>";
+		};
+		ED828B7F1DDDC85500B6BD25 /* TextField cell */ = {
+			isa = PBXGroup;
+			children = (
+				ED828B7A1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.h */,
+				ED828B7B1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.m */,
+				ED828B7C1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.xib */,
+			);
+			name = "TextField cell";
+			sourceTree = "<group>";
+		};
+		ED828B801DDDC86100B6BD25 /* Rating Cell */ = {
+			isa = PBXGroup;
+			children = (
+				ED828B811DDDC87600B6BD25 /* WIARatingTableViewCell.h */,
+				ED828B821DDDC87600B6BD25 /* WIARatingTableViewCell.m */,
+				ED828B831DDDC87600B6BD25 /* WIARatingTableViewCell.xib */,
+			);
+			name = "Rating Cell";
+			sourceTree = "<group>";
+		};
+		ED828B861DDDF5D700B6BD25 /* CollectionView cell */ = {
+			isa = PBXGroup;
+			children = (
+				ED828B871DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.h */,
+				ED828B881DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.m */,
+				ED828B891DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.xib */,
+				ED828B8C1DDDF90D00B6BD25 /* CollectionView cell */,
+			);
+			name = "CollectionView cell";
+			sourceTree = "<group>";
+		};
+		ED828B8C1DDDF90D00B6BD25 /* CollectionView cell */ = {
+			isa = PBXGroup;
+			children = (
+				ED828B8D1DDDF92900B6BD25 /* WIAImageCollectionViewCell.h */,
+				ED828B8E1DDDF92900B6BD25 /* WIAImageCollectionViewCell.m */,
+				ED828B8F1DDDF92900B6BD25 /* WIAImageCollectionViewCell.xib */,
+			);
+			name = "CollectionView cell";
 			sourceTree = "<group>";
 		};
 		EDB974D51DDC57C400CB7AD1 /* Color */ = {
@@ -456,7 +528,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED828B7E1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.xib in Resources */,
+				ED828B8B1DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.xib in Resources */,
+				ED828B911DDDF92900B6BD25 /* WIAImageCollectionViewCell.xib in Resources */,
 				EDF6D35D1DD968AE000CED9D /* LaunchScreen.storyboard in Resources */,
+				ED828B851DDDC87600B6BD25 /* WIARatingTableViewCell.xib in Resources */,
 				EDF6D35A1DD968AE000CED9D /* Assets.xcassets in Resources */,
 				ED91A8BA1DDC3BFE008D98E7 /* IMG_0102.mp4 in Resources */,
 				EDF6D3581DD968AE000CED9D /* Main.storyboard in Resources */,
@@ -635,14 +711,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED828B8A1DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.m in Sources */,
 				EDB974E41DDCB5CD00CB7AD1 /* WIAAccountSetUpViewController.m in Sources */,
 				EDF6D3AB1DD989A3000CED9D /* WIAImagePickerPreviewViewController.m in Sources */,
 				EDB974DB1DDC5CD700CB7AD1 /* WIAPageContentViewController.m in Sources */,
+				ED828B7D1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.m in Sources */,
 				EDF6D3551DD968AE000CED9D /* SecondViewController.m in Sources */,
 				EDF6D3A51DD97357000CED9D /* WIAImagePickerController.m in Sources */,
 				EDF6D3A81DD9747E000CED9D /* UIViewController+WIAImagePickerController.m in Sources */,
 				EDF6D34F1DD968AE000CED9D /* AppDelegate.m in Sources */,
 				EDF6D3521DD968AE000CED9D /* FirstViewController.m in Sources */,
+				ED828B841DDDC87600B6BD25 /* WIARatingTableViewCell.m in Sources */,
+				ED828B901DDDF92900B6BD25 /* WIAImageCollectionViewCell.m in Sources */,
 				EDEB3E561DDB1A84009A49F6 /* WIAAddAndReviewViewController.m in Sources */,
 				EDB974D81DDC57DA00CB7AD1 /* WIAColor.m in Sources */,
 				EDB974E11DDC811A00CB7AD1 /* WIALocationViewController.m in Sources */,

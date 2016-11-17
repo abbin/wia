@@ -12,4 +12,6 @@
 
 + (UIColor*)mainColor;
 
++ (UIColor*)colorForRating:(CGFloat)rating;
+
 @end

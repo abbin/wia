@@ -22,4 +22,34 @@
     return UIColorFromRGB(0x345EF2);
 }
 
++ (UIColor*)colorForRating:(CGFloat)rating{
+    if (rating>4.5) {
+        return UIColorFromRGB(0x4CD964);
+    }
+    else if (rating>4){
+        return UIColorFromRGB(0x79D64B);
+    }
+    else if (rating>3.5){
+        return UIColorFromRGB(0xA6D332);
+    }
+    else if (rating>3){
+        return UIColorFromRGB(0xD2CF19);
+    }
+    else if (rating>2.5){
+        return UIColorFromRGB(0xFFCC00);
+    }
+    else if (rating>2){
+        return UIColorFromRGB(0xFCA70C);
+    }
+    else if (rating>1.5){
+        return UIColorFromRGB(0xF98217);
+    }
+    else if (rating>1){
+        return UIColorFromRGB(0xF65D23);
+    }
+    else{
+        return UIColorFromRGB(0xF3382E);
+    }
+}
+
 @end

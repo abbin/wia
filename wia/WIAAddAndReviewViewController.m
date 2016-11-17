@@ -7,8 +7,21 @@
 //
 
 #import "WIAAddAndReviewViewController.h"
+#import "WIATextFieldTableViewCell.h"
+#import "WIARatingTableViewCell.h"
+#import "WIACollectionViewTableViewCell.h"
 
-@interface WIAAddAndReviewViewController ()
+typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
+    WIADetailTablewViewSectionImagePreview = 0,
+    WIADetailTablewViewSectionItem,
+    WIADetailTablewViewSectionRestaurant,
+    WIADetailTablewViewSectionRating,
+    WIADetailTablewViewSectionReview
+};
+
+@interface WIAAddAndReviewViewController ()<UITableViewDelegate,UITableViewDataSource,WIATextFieldTableViewCellDelegate>
+
+@property (strong, nonatomic) NSArray *images;
 
 @end
 
@@ -16,7 +29,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
+    [self.tableView registerNib:[UINib nibWithNibName:@"WIATextFieldTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"WIATextFieldTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"WIARatingTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"WIARatingTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"WIACollectionViewTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"WIACollectionViewTableViewCell"];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -43,15 +59,95 @@
 -(void)WIAImagePickerController:(WIAImagePickerController *)picker didFinishPickingImages:(NSArray *)images animated:(BOOL)animated{
     self.view.alpha = 1;
     self.navigationController.navigationBarHidden = NO;
-    [picker dismissViewControllerAnimated:animated completion:^{
-        NSLog(@"%@",images);
-    }];
+    self.images = images;
+    [self.tableView reloadData];
+    [picker dismissViewControllerAnimated:animated completion:nil];
 }
 
 -(void)WIAImagePickerControllerDidCancel:(WIAImagePickerController *)picker{
     [picker dismissViewControllerAnimated:YES completion:^{
         [self dismissViewControllerAnimated:NO completion:nil];
     }];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UITableViewDelegate
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 5;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == WIADetailTablewViewSectionRating) {
+        WIARatingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIARatingTableViewCell"];
+        return cell;
+    }
+    else if (indexPath.section == WIADetailTablewViewSectionImagePreview){
+        WIACollectionViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIACollectionViewTableViewCell"];
+        cell.cellImages = self.images;
+        return cell;
+    }
+    else{
+        WIATextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATextFieldTableViewCell"];
+        cell.delegate = self;
+        
+        if (indexPath.section == WIADetailTablewViewSectionItem) {
+            cell.cellImage = [UIImage imageNamed:@"Burger"];
+            cell.cellPlaceHolder = @"tap here to tag an item";
+        }
+        else if (indexPath.section == WIADetailTablewViewSectionRestaurant){
+            cell.cellImage = [UIImage imageNamed:@"Restaurant"];
+            cell.cellPlaceHolder = @"tap here to tag a restaurant";
+        }
+        return cell;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UITableViewDelegate
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    switch (section) {
+        case WIADetailTablewViewSectionImagePreview:
+            return @"Preview";
+            break;
+        case WIADetailTablewViewSectionItem:
+            return @"Item";
+            break;
+        case WIADetailTablewViewSectionRestaurant:
+            return @"Restaurant";
+            break;
+        case WIADetailTablewViewSectionRating:
+            return @"Rating";
+            break;
+        case WIADetailTablewViewSectionReview:
+            return @"Review";
+            break;
+            
+        default:
+            return @"";
+            break;
+    }
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == WIADetailTablewViewSectionImagePreview) {
+        return (self.view.frame.size.width-30)*9/16;
+    }
+    else{
+        return 50;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - WIATextFieldTableViewCellDelegate
+
+-(BOOL)WIATextFieldTableViewCellShouldBeginEditing:(UITextField *)textField withIndexPath:(NSIndexPath *)indexPath{
+    return NO;
 }
 
 @end

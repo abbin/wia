@@ -58,36 +58,6 @@
             </objects>
             <point key="canvasLocation" x="1688.8" y="-320.68965517241384"/>
         </scene>
-        <!--Details-->
-        <scene sceneID="Q09-Zi-SAi">
-            <objects>
-                <viewController id="KnW-yY-3nB" customClass="WIAAddAndReviewViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5lg-Ni-u1S"/>
-                        <viewControllerLayoutGuide type="bottom" id="8yo-sl-WO3"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QpW-5l-YeT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Details" id="KqK-IM-COL">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="SMf-6B-jf3">
-                            <connections>
-                                <action selector="cancelUpload:" destination="KnW-yY-3nB" id="ywm-ba-VjB"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="GFF-TF-LFN">
-                            <connections>
-                                <action selector="saveUpload:" destination="KnW-yY-3nB" id="upq-UR-ZDe"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bmX-fo-wVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3190" y="-321"/>
-        </scene>
         <!--Choose photos-->
         <scene sceneID="Dsg-NS-cNY">
             <objects>
@@ -711,12 +681,42 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="KnW-yY-3nB" kind="relationship" relationship="rootViewController" id="DA7-LU-Z8L"/>
+                        <segue destination="9GJ-pE-fwq" kind="relationship" relationship="rootViewController" id="ld5-W0-ejk"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQp-Ck-eRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2428" y="-321.58920539730138"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="RSP-Uv-ff3">
+            <objects>
+                <tableViewController id="9GJ-pE-fwq" customClass="WIAAddAndReviewViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="50" sectionHeaderHeight="18" sectionFooterHeight="18" id="Lad-52-JKC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="9GJ-pE-fwq" id="H1x-6O-tkb"/>
+                            <outlet property="delegate" destination="9GJ-pE-fwq" id="VL9-wq-hKk"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Details" id="5WA-Ds-EQy">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mLE-Bd-8o5">
+                            <connections>
+                                <action selector="cancelUpload:" destination="9GJ-pE-fwq" id="90u-8a-Wn6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Je6-pS-5rq">
+                            <connections>
+                                <action selector="saveUpload:" destination="9GJ-pE-fwq" id="XxD-DH-hqn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hyi-jG-iGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3178" y="-322"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Bk-Hh-zyF">
