@@ -35,6 +35,10 @@
     // Configure the view for the selected state
 }
 
+-(void)setCellInputAccessoryView:(UICollectionView *)cellInputAccessoryView{
+    _cellTextField.inputAccessoryView = cellInputAccessoryView;
+}
+
 -(void)setCellPlaceHolder:(NSString *)cellPlaceHolder{
     _cellTextField.placeholder = cellPlaceHolder;
 }
@@ -51,12 +55,25 @@
     return _cellTextField.text;
 }
 
+- (IBAction)textFieldEditingChanged:(UITextField *)sender {
+    if ([self.delegate respondsToSelector:@selector(WIATextFieldTableViewCellEditingChanged:withIndexPath:)]) {
+        [self.delegate WIATextFieldTableViewCellEditingChanged:self.cellTextField withIndexPath:self.cellIndexPath];
+    }
+}
+
+
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     if ([self.delegate respondsToSelector:@selector(WIATextFieldTableViewCellShouldBeginEditing:withIndexPath:)]) {
         return [self.delegate WIATextFieldTableViewCellShouldBeginEditing:self.cellTextField withIndexPath:self.cellIndexPath];
     }
     else{
         return YES;
+    }
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    if ([self.delegate respondsToSelector:@selector(WIATextFieldTableViewCellDidBeginEditing:withIndexPath:)]) {
+        [self.delegate WIATextFieldTableViewCellDidBeginEditing:self.cellTextField withIndexPath:self.cellIndexPath];
     }
 }
 

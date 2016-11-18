@@ -10,6 +10,11 @@
 #import "WIATextFieldTableViewCell.h"
 #import "WIARatingTableViewCell.h"
 #import "WIACollectionViewTableViewCell.h"
+#import "WIATextViewTableViewCell.h"
+#import "WIAItemPickerController.h"
+#import "WIASearchResultCollectionViewCell.h"
+#import "WIAColor.h"
+#import "WIAManager.h"
 
 typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
     WIADetailTablewViewSectionImagePreview = 0,
@@ -19,20 +24,55 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
     WIADetailTablewViewSectionReview
 };
 
-@interface WIAAddAndReviewViewController ()<UITableViewDelegate,UITableViewDataSource,WIATextFieldTableViewCellDelegate>
+@interface WIAAddAndReviewViewController ()<UITableViewDelegate,UITableViewDataSource,WIATextViewTableViewCellDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,WIATextFieldTableViewCellDelegate>
 
 @property (strong, nonatomic) NSArray *images;
+@property (strong, nonatomic) NSMutableArray *itemSearchResults;
+@property (strong, nonatomic) NSMutableArray *restaurantSearchResults;
 
+@property (nonatomic, strong) UICollectionView *itemSearchResultCollectionView;
+@property (nonatomic, strong) UICollectionView *restaurantSearchResultCollectionView;
 @end
 
 @implementation WIAAddAndReviewViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.itemSearchResults = [NSMutableArray arrayWithObject:@"Start typing..."];
+    self.restaurantSearchResults = [NSMutableArray arrayWithObject:@"Start typing..."];
+    
     self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
     [self.tableView registerNib:[UINib nibWithNibName:@"WIATextFieldTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"WIATextFieldTableViewCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"WIARatingTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"WIARatingTableViewCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"WIACollectionViewTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"WIACollectionViewTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"WIATextViewTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"WIATextViewTableViewCell"];
+    
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
+    flowLayout.estimatedItemSize = CGSizeMake(self.view.frame.size.width, 44);
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    flowLayout.minimumInteritemSpacing = 0;
+    flowLayout.minimumLineSpacing = 0;
+    
+    self.itemSearchResultCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44) collectionViewLayout:flowLayout];
+    self.itemSearchResultCollectionView.delegate = self;
+    self.itemSearchResultCollectionView.dataSource = self;
+    self.itemSearchResultCollectionView.backgroundColor = [WIAColor keyBoardColor];
+    self.itemSearchResultCollectionView.showsHorizontalScrollIndicator = NO;
+    [self.itemSearchResultCollectionView registerNib:[UINib nibWithNibName:@"WIASearchResultCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"WIASearchResultCollectionViewCell"];
+    
+    UICollectionViewFlowLayout *flowLayout2 = [[UICollectionViewFlowLayout alloc]init];
+    flowLayout2.estimatedItemSize = CGSizeMake(self.view.frame.size.width, 44);
+    flowLayout2.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    flowLayout2.minimumInteritemSpacing = 0;
+    flowLayout2.minimumLineSpacing = 0;
+    
+    self.restaurantSearchResultCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44) collectionViewLayout:flowLayout2];
+    self.restaurantSearchResultCollectionView.delegate = self;
+    self.restaurantSearchResultCollectionView.dataSource = self;
+    self.restaurantSearchResultCollectionView.backgroundColor = [WIAColor keyBoardColor];
+    self.restaurantSearchResultCollectionView.showsHorizontalScrollIndicator = NO;
+    [self.restaurantSearchResultCollectionView registerNib:[UINib nibWithNibName:@"WIASearchResultCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"WIASearchResultCollectionViewCell"];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -91,17 +131,25 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
         cell.cellImages = self.images;
         return cell;
     }
+    else if (indexPath.section == WIADetailTablewViewSectionReview){
+        WIATextViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATextViewTableViewCell"];
+        cell.delegate = self;
+        return cell;
+    }
     else{
         WIATextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATextFieldTableViewCell"];
+        cell.cellIndexPath = indexPath;
         cell.delegate = self;
         
         if (indexPath.section == WIADetailTablewViewSectionItem) {
             cell.cellImage = [UIImage imageNamed:@"Burger"];
-            cell.cellPlaceHolder = @"tap here to tag an item";
+            cell.cellPlaceHolder = @"tag an item";
+            cell.cellInputAccessoryView = self.itemSearchResultCollectionView;
         }
         else if (indexPath.section == WIADetailTablewViewSectionRestaurant){
             cell.cellImage = [UIImage imageNamed:@"Restaurant"];
-            cell.cellPlaceHolder = @"tap here to tag a restaurant";
+            cell.cellPlaceHolder = @"tag a restaurant";
+            cell.cellInputAccessoryView = self.restaurantSearchResultCollectionView;
         }
         return cell;
     }
@@ -116,16 +164,16 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
             return @"Preview";
             break;
         case WIADetailTablewViewSectionItem:
-            return @"Item";
+            return @"Item Name";
             break;
         case WIADetailTablewViewSectionRestaurant:
-            return @"Restaurant";
+            return @"Restaurant Name";
             break;
         case WIADetailTablewViewSectionRating:
-            return @"Rating";
+            return @"Item Rating";
             break;
         case WIADetailTablewViewSectionReview:
-            return @"Review";
+            return @"Item Review";
             break;
             
         default:
@@ -135,7 +183,7 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == WIADetailTablewViewSectionImagePreview) {
+    if (indexPath.section == WIADetailTablewViewSectionImagePreview || indexPath.section == WIADetailTablewViewSectionReview) {
         return (self.view.frame.size.width-30)*9/16;
     }
     else{
@@ -144,10 +192,107 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UICollectionViewDataSource
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    if ([collectionView isEqual:self.itemSearchResultCollectionView]) {
+        if (self.itemSearchResults.count>0) {
+            return self.itemSearchResults.count;
+        }
+        else{
+            return 1;
+        }
+    }
+    else{
+        if (self.restaurantSearchResults.count>0) {
+            return self.restaurantSearchResults.count;
+        }
+        else{
+            return 1;
+        }
+    }
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    WIASearchResultCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WIASearchResultCollectionViewCell" forIndexPath:indexPath];
+    if ([collectionView isEqual:self.itemSearchResultCollectionView]) {
+        if ([self.itemSearchResults[indexPath.row] isKindOfClass:[CKRecord class]]) {
+            
+        }
+        else{
+            if ([self.itemSearchResults[indexPath.row] isEqualToString:@"Start typing..."]) {
+                cell.cellText =  self.itemSearchResults[indexPath.row];
+            }
+            else{
+                cell.cellText =  [NSString stringWithFormat:@"Add '%@' as a new item",self.itemSearchResults[indexPath.row]];
+            }
+        }
+    }
+    else{
+        if ([self.restaurantSearchResults[indexPath.row] isKindOfClass:[CKRecord class]]) {
+            
+        }
+        else{
+            if ([self.restaurantSearchResults[indexPath.row] isEqualToString:@"Start typing..."]) {
+                cell.cellText =  self.restaurantSearchResults[indexPath.row];
+            }
+            else{
+                cell.cellText =  [NSString stringWithFormat:@"Add '%@' as a new restaurant",self.restaurantSearchResults[indexPath.row]];
+            }
+        }
+    }
+    return cell;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - WIATextFieldTableViewCellDelegate
 
--(BOOL)WIATextFieldTableViewCellShouldBeginEditing:(UITextField *)textField withIndexPath:(NSIndexPath *)indexPath{
-    return NO;
+-(void)WIATextFieldTableViewCellEditingChanged:(UITextField *)textField withIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == WIADetailTablewViewSectionItem) {
+        if (textField.text.length>0) {
+            NSString *searchText = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            [WIAManager searchForItemWith:searchText completionHandler:^(NSArray<CKRecord *> * _Nullable results, NSError * _Nullable error) {
+                if (results.count>0) {
+                    
+                }
+                else{
+                    [self.itemSearchResults removeAllObjects];
+                    [self.itemSearchResults addObject:searchText];
+                }
+            }];
+        }
+        else{
+            [self.itemSearchResults removeAllObjects];
+            [self.itemSearchResults addObject:@"Start typing..."];
+        }
+        [self.itemSearchResultCollectionView reloadData];
+    }
+    else{
+        if (textField.text.length>0) {
+            NSString *searchText = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            [WIAManager searchForRestaurantWith:searchText completionHandler:^(NSArray<CKRecord *> * _Nullable results, NSError * _Nullable error) {
+                if (results.count>0) {
+                    
+                }
+                else{
+                    [self.restaurantSearchResults removeAllObjects];
+                    [self.restaurantSearchResults addObject:searchText];
+                }
+            }];
+        }
+        else{
+            [self.restaurantSearchResults removeAllObjects];
+            [self.restaurantSearchResults addObject:@"Start typing..."];
+        }
+        [self.restaurantSearchResultCollectionView reloadData];
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - WIATextViewTableViewCellDelegate
+
+-(void)WIATextViewTableViewCellDidChange:(UITextView *)textView{
+    
 }
 
 @end

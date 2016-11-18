@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class WIATextFieldTableViewCell;
-
 @protocol WIATextFieldTableViewCellDelegate <NSObject>
 
--(BOOL)WIATextFieldTableViewCellShouldBeginEditing:(UITextField *)textField withIndexPath:(NSIndexPath*)indexPath;
+@optional
+
+- (BOOL)WIATextFieldTableViewCellShouldBeginEditing:(UITextField *)textField withIndexPath:(NSIndexPath*)indexPath;
+- (void)WIATextFieldTableViewCellEditingChanged:(UITextField *)textField withIndexPath:(NSIndexPath*)indexPath;
+- (void)WIATextFieldTableViewCellDidBeginEditing:(UITextField *)textField withIndexPath:(NSIndexPath*)indexPath;
 
 @end
 
@@ -22,6 +24,7 @@
 @property (strong, nonatomic) NSString *cellText;
 @property (strong, nonatomic) NSString *cellPlaceHolder;
 @property (strong, nonatomic) UIImage *cellImage;
+@property (strong, nonatomic) UICollectionView *cellInputAccessoryView;
 
 @property (weak, nonatomic) id <WIATextFieldTableViewCellDelegate> delegate;
 

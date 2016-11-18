@@ -21,6 +21,12 @@
 		ED828B901DDDF92900B6BD25 /* WIAImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED828B8E1DDDF92900B6BD25 /* WIAImageCollectionViewCell.m */; };
 		ED828B911DDDF92900B6BD25 /* WIAImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED828B8F1DDDF92900B6BD25 /* WIAImageCollectionViewCell.xib */; };
 		ED91A8BA1DDC3BFE008D98E7 /* IMG_0102.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED91A8B91DDC3BFE008D98E7 /* IMG_0102.mp4 */; };
+		EDA121931DDECCD1004E4A11 /* WIATextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA121911DDECCD1004E4A11 /* WIATextViewTableViewCell.m */; };
+		EDA121941DDECCD1004E4A11 /* WIATextViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDA121921DDECCD1004E4A11 /* WIATextViewTableViewCell.xib */; };
+		EDA121981DDED331004E4A11 /* WIAItemPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA121971DDED331004E4A11 /* WIAItemPickerController.m */; };
+		EDA1219D1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA1219B1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.m */; };
+		EDA1219E1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDA1219C1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.xib */; };
+		EDA121A11DDEF5FC004E4A11 /* WIAManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA121A01DDEF5FC004E4A11 /* WIAManager.m */; };
 		EDB974D81DDC57DA00CB7AD1 /* WIAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB974D71DDC57DA00CB7AD1 /* WIAColor.m */; };
 		EDB974DB1DDC5CD700CB7AD1 /* WIAPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB974DA1DDC5CD700CB7AD1 /* WIAPageContentViewController.m */; };
 		EDB974DE1DDC73E700CB7AD1 /* WIANameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB974DD1DDC73E700CB7AD1 /* WIANameViewController.m */; };
@@ -85,6 +91,16 @@
 		ED828B8E1DDDF92900B6BD25 /* WIAImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIAImageCollectionViewCell.m; sourceTree = "<group>"; };
 		ED828B8F1DDDF92900B6BD25 /* WIAImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WIAImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		ED91A8B91DDC3BFE008D98E7 /* IMG_0102.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_0102.mp4; sourceTree = "<group>"; };
+		EDA121901DDECCD1004E4A11 /* WIATextViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIATextViewTableViewCell.h; sourceTree = "<group>"; };
+		EDA121911DDECCD1004E4A11 /* WIATextViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIATextViewTableViewCell.m; sourceTree = "<group>"; };
+		EDA121921DDECCD1004E4A11 /* WIATextViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WIATextViewTableViewCell.xib; sourceTree = "<group>"; };
+		EDA121961DDED331004E4A11 /* WIAItemPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIAItemPickerController.h; sourceTree = "<group>"; };
+		EDA121971DDED331004E4A11 /* WIAItemPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIAItemPickerController.m; sourceTree = "<group>"; };
+		EDA1219A1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIASearchResultCollectionViewCell.h; sourceTree = "<group>"; };
+		EDA1219B1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIASearchResultCollectionViewCell.m; sourceTree = "<group>"; };
+		EDA1219C1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WIASearchResultCollectionViewCell.xib; sourceTree = "<group>"; };
+		EDA1219F1DDEF5FC004E4A11 /* WIAManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIAManager.h; sourceTree = "<group>"; };
+		EDA121A01DDEF5FC004E4A11 /* WIAManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIAManager.m; sourceTree = "<group>"; };
 		EDB974D61DDC57DA00CB7AD1 /* WIAColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIAColor.h; sourceTree = "<group>"; };
 		EDB974D71DDC57DA00CB7AD1 /* WIAColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIAColor.m; sourceTree = "<group>"; };
 		EDB974D91DDC5CD700CB7AD1 /* WIAPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIAPageContentViewController.h; sourceTree = "<group>"; };
@@ -199,6 +215,8 @@
 			children = (
 				EDEB3E541DDB1A84009A49F6 /* WIAAddAndReviewViewController.h */,
 				EDEB3E551DDB1A84009A49F6 /* WIAAddAndReviewViewController.m */,
+				EDA121991DDED837004E4A11 /* CollectionView cell */,
+				EDA121951DDED2B5004E4A11 /* Item picker */,
 				ED828B791DDDB2DC00B6BD25 /* TableView cell */,
 			);
 			name = Add;
@@ -263,6 +281,7 @@
 		ED828B791DDDB2DC00B6BD25 /* TableView cell */ = {
 			isa = PBXGroup;
 			children = (
+				EDA1218F1DDECCB1004E4A11 /* TextView cell */,
 				ED828B861DDDF5D700B6BD25 /* CollectionView cell */,
 				ED828B801DDDC86100B6BD25 /* Rating Cell */,
 				ED828B7F1DDDC85500B6BD25 /* TextField cell */,
@@ -311,6 +330,35 @@
 			name = "CollectionView cell";
 			sourceTree = "<group>";
 		};
+		EDA1218F1DDECCB1004E4A11 /* TextView cell */ = {
+			isa = PBXGroup;
+			children = (
+				EDA121901DDECCD1004E4A11 /* WIATextViewTableViewCell.h */,
+				EDA121911DDECCD1004E4A11 /* WIATextViewTableViewCell.m */,
+				EDA121921DDECCD1004E4A11 /* WIATextViewTableViewCell.xib */,
+			);
+			name = "TextView cell";
+			sourceTree = "<group>";
+		};
+		EDA121951DDED2B5004E4A11 /* Item picker */ = {
+			isa = PBXGroup;
+			children = (
+				EDA121961DDED331004E4A11 /* WIAItemPickerController.h */,
+				EDA121971DDED331004E4A11 /* WIAItemPickerController.m */,
+			);
+			name = "Item picker";
+			sourceTree = "<group>";
+		};
+		EDA121991DDED837004E4A11 /* CollectionView cell */ = {
+			isa = PBXGroup;
+			children = (
+				EDA1219A1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.h */,
+				EDA1219B1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.m */,
+				EDA1219C1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.xib */,
+			);
+			name = "CollectionView cell";
+			sourceTree = "<group>";
+		};
 		EDB974D51DDC57C400CB7AD1 /* Color */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +396,8 @@
 				ED515FEA1DDB487D005621D0 /* wia.entitlements */,
 				EDF6D34D1DD968AE000CED9D /* AppDelegate.h */,
 				EDF6D34E1DD968AE000CED9D /* AppDelegate.m */,
+				EDA1219F1DDEF5FC004E4A11 /* WIAManager.h */,
+				EDA121A01DDEF5FC004E4A11 /* WIAManager.m */,
 				EDB974D51DDC57C400CB7AD1 /* Color */,
 				ED515FF51DDB5F0E005621D0 /* First launch */,
 				ED515FED1DDB5E65005621D0 /* Tab bar */,
@@ -473,6 +523,7 @@
 		EDF6D33F1DD968AE000CED9D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WIA;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "What I Ate";
 				TargetAttributes = {
@@ -531,11 +582,13 @@
 				ED828B7E1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.xib in Resources */,
 				ED828B8B1DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.xib in Resources */,
 				ED828B911DDDF92900B6BD25 /* WIAImageCollectionViewCell.xib in Resources */,
+				EDA121941DDECCD1004E4A11 /* WIATextViewTableViewCell.xib in Resources */,
 				EDF6D35D1DD968AE000CED9D /* LaunchScreen.storyboard in Resources */,
 				ED828B851DDDC87600B6BD25 /* WIARatingTableViewCell.xib in Resources */,
 				EDF6D35A1DD968AE000CED9D /* Assets.xcassets in Resources */,
 				ED91A8BA1DDC3BFE008D98E7 /* IMG_0102.mp4 in Resources */,
 				EDF6D3581DD968AE000CED9D /* Main.storyboard in Resources */,
+				EDA1219E1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,6 +767,8 @@
 				ED828B8A1DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.m in Sources */,
 				EDB974E41DDCB5CD00CB7AD1 /* WIAAccountSetUpViewController.m in Sources */,
 				EDF6D3AB1DD989A3000CED9D /* WIAImagePickerPreviewViewController.m in Sources */,
+				EDA121981DDED331004E4A11 /* WIAItemPickerController.m in Sources */,
+				EDA121A11DDEF5FC004E4A11 /* WIAManager.m in Sources */,
 				EDB974DB1DDC5CD700CB7AD1 /* WIAPageContentViewController.m in Sources */,
 				ED828B7D1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.m in Sources */,
 				EDF6D3551DD968AE000CED9D /* SecondViewController.m in Sources */,
@@ -728,8 +783,10 @@
 				EDB974E11DDC811A00CB7AD1 /* WIALocationViewController.m in Sources */,
 				EDB974DE1DDC73E700CB7AD1 /* WIANameViewController.m in Sources */,
 				EDF6D3AE1DD98B0B000CED9D /* WIAImagePickerCollectionViewCell.m in Sources */,
+				EDA121931DDECCD1004E4A11 /* WIATextViewTableViewCell.m in Sources */,
 				ED515FF81DDB5F28005621D0 /* WIAFirstLaunchViewController.m in Sources */,
 				EDF6D34C1DD968AE000CED9D /* main.m in Sources */,
+				EDA1219D1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

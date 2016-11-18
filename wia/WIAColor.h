@@ -14,4 +14,6 @@
 
 + (UIColor*)colorForRating:(CGFloat)rating;
 
++ (UIColor*)keyBoardColor;
+
 @end

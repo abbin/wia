@@ -22,6 +22,10 @@
     return UIColorFromRGB(0x345EF2);
 }
 
++ (UIColor*)keyBoardColor{
+    return UIColorFromRGB(0xbbc2c9);
+}
+
 + (UIColor*)colorForRating:(CGFloat)rating{
     if (rating>4.5) {
         return UIColorFromRGB(0x4CD964);
