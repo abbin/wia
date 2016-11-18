@@ -11,10 +11,11 @@
 #import "WIARatingTableViewCell.h"
 #import "WIACollectionViewTableViewCell.h"
 #import "WIATextViewTableViewCell.h"
-#import "WIAItemPickerController.h"
 #import "WIASearchResultCollectionViewCell.h"
 #import "WIAColor.h"
 #import "WIAManager.h"
+#import "WIACreateItemViewController.h"
+#import "WIACreateRestaurantViewController.h"
 
 typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
     WIADetailTablewViewSectionImagePreview = 0,
@@ -73,6 +74,11 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
     self.restaurantSearchResultCollectionView.backgroundColor = [WIAColor keyBoardColor];
     self.restaurantSearchResultCollectionView.showsHorizontalScrollIndicator = NO;
     [self.restaurantSearchResultCollectionView registerNib:[UINib nibWithNibName:@"WIASearchResultCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"WIASearchResultCollectionViewCell"];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.tableView endEditing:YES];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -242,6 +248,36 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
         }
     }
     return cell;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UICollectionViewDelegate
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if ([collectionView isEqual:self.itemSearchResultCollectionView]){
+        if ([self.itemSearchResults[indexPath.row] isKindOfClass:[CKRecord class]]) {
+            
+        }
+        else{
+            NSString *string = self.itemSearchResults[indexPath.row];
+            if (![string isEqualToString:@"Start typing..."]) {
+                WIACreateItemViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"WIACreateItemViewController"];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+        }
+    }
+    else{
+        if ([self.restaurantSearchResults[indexPath.row] isKindOfClass:[CKRecord class]]) {
+            
+        }
+        else{
+            NSString *string = self.restaurantSearchResults[indexPath.row];
+            if (![string isEqualToString:@"Start typing..."]) {
+                WIACreateRestaurantViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"WIACreateRestaurantViewController"];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+        }
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
