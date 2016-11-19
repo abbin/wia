@@ -10,6 +10,10 @@
 
 @implementation WIAManager
 
++ (void)searchForCuisineWith:(NSString *)string completionHandler:(void (^)(NSArray<CKRecord *> * _Nullable results, NSError * _Nullable error))completionHandler{
+    completionHandler([NSArray new], nil);
+}
+
 + (void)searchForItemWith:(NSString *)string completionHandler:(void (^)(NSArray<CKRecord *> * _Nullable results, NSError * _Nullable error))completionHandler{
     completionHandler([NSArray new], nil);
 }

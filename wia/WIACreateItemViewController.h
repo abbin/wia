@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WIACreateItemViewController : UIViewController
+@interface WIACreateItemViewController : UITableViewController
 
 @end

@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
     WIADetailTablewViewSectionReview
 };
 
-@interface WIAAddAndReviewViewController ()<UITableViewDelegate,UITableViewDataSource,WIATextViewTableViewCellDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,WIATextFieldTableViewCellDelegate>
+@interface WIAAddAndReviewViewController ()<UITableViewDelegate,UITableViewDataSource,WIATextViewTableViewCellDelegate,UICollectionViewDelegate,UICollectionViewDataSource,WIATextFieldTableViewCellDelegate>
 
 @property (strong, nonatomic) NSArray *images;
 @property (strong, nonatomic) NSMutableArray *itemSearchResults;
@@ -146,6 +146,7 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
         WIATextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATextFieldTableViewCell"];
         cell.cellIndexPath = indexPath;
         cell.delegate = self;
+        cell.cellAutocorrectionType = UITextAutocorrectionTypeNo;
         
         if (indexPath.section == WIADetailTablewViewSectionItem) {
             cell.cellImage = [UIImage imageNamed:@"Burger"];
@@ -190,7 +191,7 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == WIADetailTablewViewSectionImagePreview || indexPath.section == WIADetailTablewViewSectionReview) {
-        return (self.view.frame.size.width-30)*9/16;
+        return 100;
     }
     else{
         return 50;

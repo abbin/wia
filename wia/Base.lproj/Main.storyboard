@@ -718,41 +718,41 @@
             </objects>
             <point key="canvasLocation" x="3178" y="-322"/>
         </scene>
-        <!--Create Item View Controller-->
-        <scene sceneID="wbQ-N0-vPj">
+        <!--Item details-->
+        <scene sceneID="vQ5-up-1AE">
             <objects>
-                <viewController storyboardIdentifier="WIACreateItemViewController" id="lSt-8t-1h5" customClass="WIACreateItemViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="c46-iL-wlq"/>
-                        <viewControllerLayoutGuide type="bottom" id="TtH-0Y-6fC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CfM-td-8Vh">
+                <tableViewController storyboardIdentifier="WIACreateItemViewController" title="Item details" id="gZZ-vZ-Wxc" customClass="WIACreateItemViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Tjt-Wh-iOL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WvL-NU-hos" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <connections>
+                            <outlet property="dataSource" destination="gZZ-vZ-Wxc" id="Myd-rh-wCW"/>
+                            <outlet property="delegate" destination="gZZ-vZ-Wxc" id="npP-Yu-40v"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2nb-4h-BHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3972" y="-322"/>
+            <point key="canvasLocation" x="3859" y="-323"/>
         </scene>
         <!--Create Restaurant View Controller-->
-        <scene sceneID="L5L-Fv-YtB">
+        <scene sceneID="jsS-au-07X">
             <objects>
-                <viewController storyboardIdentifier="WIACreateRestaurantViewController" id="DOH-Q5-sl8" customClass="WIACreateRestaurantViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="B7X-tV-J6p"/>
-                        <viewControllerLayoutGuide type="bottom" id="0Sk-mQ-l6P"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1fC-hm-Ac9">
+                <tableViewController storyboardIdentifier="WIACreateRestaurantViewController" id="jua-bT-SPg" customClass="WIACreateRestaurantViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="exK-tq-8ej">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="86f-K1-hks" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <connections>
+                            <outlet property="dataSource" destination="jua-bT-SPg" id="dYu-xW-pdt"/>
+                            <outlet property="delegate" destination="jua-bT-SPg" id="rxh-9A-86R"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N7p-Kl-nzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4652" y="-322"/>
+            <point key="canvasLocation" x="4600" y="-326"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Bk-Hh-zyF">

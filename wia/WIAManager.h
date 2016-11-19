@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WIAManager : NSObject
 
++ (void)searchForCuisineWith:(NSString *)string completionHandler:(void (^)(NSArray<CKRecord *> * _Nullable results, NSError * _Nullable error))completionHandler;
 + (void)searchForItemWith:(NSString *)string completionHandler:(void (^)(NSArray<CKRecord *> * _Nullable results, NSError * _Nullable error))completionHandler;
 + (void)searchForRestaurantWith:(NSString *)string completionHandler:(void (^)(NSArray<CKRecord *> * _Nullable results, NSError * _Nullable error))completionHandler;
 

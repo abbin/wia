@@ -18,13 +18,13 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chillax" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEI-qX-MUE">
-                        <rect key="frame" x="10" y="5" width="323" height="19.5"/>
+                        <rect key="frame" x="10" y="5" width="324" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NH 47, Bypass, Chalikkavattom, Kochi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEK-QR-czC">
-                        <rect key="frame" x="10" y="24.5" width="323" height="14.5"/>
+                        <rect key="frame" x="10" y="24.5" width="324" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -33,22 +33,22 @@
                         <rect key="frame" x="343" y="0.0" width="1" height="44"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="1" id="5zr-7S-TDn"/>
+                            <constraint firstAttribute="width" constant="1" id="1kV-A2-ypf"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="TY8-03-359" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ELw-Nv-LPO"/>
-                <constraint firstAttribute="trailing" secondItem="TY8-03-359" secondAttribute="trailing" id="QPy-41-DC5"/>
-                <constraint firstItem="TY8-03-359" firstAttribute="leading" secondItem="kEI-qX-MUE" secondAttribute="trailing" constant="10" id="T80-zb-863"/>
-                <constraint firstItem="TY8-03-359" firstAttribute="leading" secondItem="SEK-QR-czC" secondAttribute="trailing" constant="10" id="V06-Z2-N8t"/>
-                <constraint firstItem="kEI-qX-MUE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Xf8-d2-6dT"/>
-                <constraint firstItem="SEK-QR-czC" firstAttribute="top" secondItem="kEI-qX-MUE" secondAttribute="bottom" id="Z2D-OX-E7i"/>
-                <constraint firstItem="kEI-qX-MUE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="ci6-8b-TvP"/>
-                <constraint firstAttribute="bottom" secondItem="SEK-QR-czC" secondAttribute="bottom" constant="5" id="hpA-Av-DBd"/>
-                <constraint firstItem="SEK-QR-czC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="kmS-c3-8na"/>
-                <constraint firstAttribute="bottom" secondItem="TY8-03-359" secondAttribute="bottom" id="upa-74-D4b"/>
+                <constraint firstItem="SEK-QR-czC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="9gI-KE-tPf"/>
+                <constraint firstAttribute="trailing" secondItem="kEI-qX-MUE" secondAttribute="trailing" constant="10" id="CxX-vo-Tb0"/>
+                <constraint firstAttribute="bottom" secondItem="SEK-QR-czC" secondAttribute="bottom" constant="5" id="DQY-zo-lFZ"/>
+                <constraint firstAttribute="bottom" secondItem="TY8-03-359" secondAttribute="bottom" id="FSu-LW-wue"/>
+                <constraint firstItem="TY8-03-359" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KS6-Al-D8U"/>
+                <constraint firstItem="kEI-qX-MUE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Xih-iG-7WC"/>
+                <constraint firstItem="kEI-qX-MUE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="Yqr-WT-z1T"/>
+                <constraint firstItem="SEK-QR-czC" firstAttribute="top" secondItem="kEI-qX-MUE" secondAttribute="bottom" id="bBP-gr-rfQ"/>
+                <constraint firstAttribute="trailing" secondItem="SEK-QR-czC" secondAttribute="trailing" constant="10" id="fU6-gL-1po"/>
+                <constraint firstAttribute="trailing" secondItem="TY8-03-359" secondAttribute="trailing" id="hbH-eX-haI"/>
             </constraints>
             <size key="customSize" width="344" height="44"/>
             <connections>
