@@ -736,11 +736,11 @@
             </objects>
             <point key="canvasLocation" x="3859" y="-323"/>
         </scene>
-        <!--Create Restaurant View Controller-->
+        <!--Restaurant details-->
         <scene sceneID="jsS-au-07X">
             <objects>
-                <tableViewController storyboardIdentifier="WIACreateRestaurantViewController" id="jua-bT-SPg" customClass="WIACreateRestaurantViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="exK-tq-8ej">
+                <tableViewController storyboardIdentifier="WIACreateRestaurantViewController" title="Restaurant details" id="jua-bT-SPg" customClass="WIACreateRestaurantViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="exK-tq-8ej">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

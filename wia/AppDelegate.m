@@ -28,10 +28,10 @@
     [self initilizeFabric];
 #endif
     
-//    if (YES) {
-//        UINavigationController *firstLaunch = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"WIAFirstLaunchViewController"];
-//        self.window.rootViewController = firstLaunch;
-//    }
+    if (YES) {
+        UINavigationController *firstLaunch = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"WIAFirstLaunchViewController"];
+        self.window.rootViewController = firstLaunch;
+    }
     
     [[UIView appearance] setTintColor:[WIAColor mainColor]];
     

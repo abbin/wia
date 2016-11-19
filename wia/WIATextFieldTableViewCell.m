@@ -10,7 +10,6 @@
 
 @interface WIATextFieldTableViewCell ()<UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *cellImageView;
 @property (weak, nonatomic) IBOutlet UITextField *cellTextField;
 
 @end
@@ -25,7 +24,6 @@
 -(void)prepareForReuse{
     [super prepareForReuse];
     self.cellTextField.inputAccessoryView = nil;
-    self.cellImageView.image = nil;
     self.cellTextField.placeholder = nil;
     self.cellTextField.text = nil;
     self.cellTextField.keyboardType = UIKeyboardTypeDefault;
@@ -52,10 +50,6 @@
 
 -(void)setCellPlaceHolder:(NSString *)cellPlaceHolder{
     _cellTextField.placeholder = cellPlaceHolder;
-}
-
--(void)setCellImage:(UIImage *)cellImage{
-    _cellImageView.image = cellImage;
 }
 
 -(void)setCellText:(NSString *)cellText{

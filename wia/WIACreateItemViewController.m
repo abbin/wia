@@ -13,7 +13,7 @@
 #import "WIASearchResultCollectionViewCell.h"
 #import "WIAManager.h"
 
-typedef NS_ENUM(NSInteger, WIAItemDetailTablewViewSection) {
+typedef NS_ENUM(NSInteger, WIAItemDetailTableViewSection) {
     WIAItemDetailTablewViewSectionName = 0,
     WIAItemDetailTablewViewSectionPrice,
     WIAItemDetailTablewViewSectionCusine,
@@ -36,6 +36,12 @@ typedef NS_ENUM(NSInteger, WIAItemDetailTablewViewSection) {
     [self.tableView registerNib:[UINib nibWithNibName:@"WIATextViewTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"WIATextViewTableViewCell"];
     
     self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
+    
+    self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.tableView.frame];
+    imageView.image = [UIImage imageNamed:@"FirstLaunchBackground"];
+    imageView.alpha  = 0.5;
+    self.tableView.backgroundView = imageView;
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.estimatedItemSize = CGSizeMake(self.view.frame.size.width, 44);
@@ -75,16 +81,13 @@ typedef NS_ENUM(NSInteger, WIAItemDetailTablewViewSection) {
         cell.cellIndexPath = indexPath;
         
         if (indexPath.section == WIAItemDetailTablewViewSectionName) {
-            cell.cellImage = [UIImage imageNamed:@"Burger"];
-            cell.cellPlaceHolder = @"name of the item";
+            cell.cellPlaceHolder = @"type here";
         }
         else if (indexPath.section == WIAItemDetailTablewViewSectionPrice){
-            cell.cellImage = [UIImage imageNamed:@"PriceTag"];
-            cell.cellPlaceHolder = @"price of the item";
+            cell.cellPlaceHolder = @"type here";
             cell.cellKeyBoardType = UIKeyboardTypeDecimalPad;
         }
         else{
-            cell.cellImage = [UIImage imageNamed:@"ChopSticks"];
             cell.cellPlaceHolder = @"e.g. Chinese, Italian";
             cell.cellAutocorrectionType = UITextAutocorrectionTypeNo;
             cell.cellInputAccessoryView = self.cuisineSearchResultCollectionView;
@@ -116,7 +119,7 @@ typedef NS_ENUM(NSInteger, WIAItemDetailTablewViewSection) {
         return 100;
     }
     else{
-        return 50;
+        return 44;
     }
 }
 

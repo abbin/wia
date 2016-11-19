@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,18 +18,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xnH-Ex-PhS">
-                        <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
+                        <rect key="frame" x="20" y="0.0" width="280" height="43.5"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OKl-li-CIU">
-                                <rect key="frame" x="0.0" y="0.0" width="43.5" height="43.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="OKl-li-CIU" secondAttribute="height" multiplier="1:1" id="6HC-QJ-4IG"/>
-                                </constraints>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uPt-ga-Mau">
-                                <rect key="frame" x="52" y="0.0" width="228" height="44"/>
+                                <rect key="frame" x="20" y="0.0" width="250" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <connections>
                                     <action selector="textFieldEditingChanged:" destination="KGk-i7-Jjw" eventType="editingChanged" id="1mk-R8-stg"/>
@@ -38,27 +32,25 @@
                                 </connections>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.048935145547945202" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.89602322048611116" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OKl-li-CIU" firstAttribute="top" secondItem="xnH-Ex-PhS" secondAttribute="top" id="Fsy-Qz-XIc"/>
-                            <constraint firstItem="uPt-ga-Mau" firstAttribute="leading" secondItem="OKl-li-CIU" secondAttribute="trailing" constant="8" id="GoC-nz-LO6"/>
-                            <constraint firstItem="uPt-ga-Mau" firstAttribute="top" secondItem="xnH-Ex-PhS" secondAttribute="top" id="L7P-yR-Yvc"/>
-                            <constraint firstItem="OKl-li-CIU" firstAttribute="leading" secondItem="xnH-Ex-PhS" secondAttribute="leading" id="O0S-bS-5PO"/>
-                            <constraint firstAttribute="trailing" secondItem="uPt-ga-Mau" secondAttribute="trailing" constant="10" id="XEg-xS-1pk"/>
-                            <constraint firstAttribute="bottom" secondItem="OKl-li-CIU" secondAttribute="bottom" id="h1W-ym-eeE"/>
-                            <constraint firstAttribute="bottom" secondItem="uPt-ga-Mau" secondAttribute="bottom" id="qvL-rp-OmI"/>
+                            <constraint firstAttribute="bottom" secondItem="uPt-ga-Mau" secondAttribute="bottom" id="QiO-yx-BIo"/>
+                            <constraint firstItem="uPt-ga-Mau" firstAttribute="top" secondItem="xnH-Ex-PhS" secondAttribute="top" id="hyq-cD-7No"/>
+                            <constraint firstAttribute="trailing" secondItem="uPt-ga-Mau" secondAttribute="trailing" constant="10" id="lrI-Bw-jhN"/>
+                            <constraint firstItem="uPt-ga-Mau" firstAttribute="leading" secondItem="xnH-Ex-PhS" secondAttribute="leading" constant="20" id="qNw-Ke-Ezn"/>
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="xnH-Ex-PhS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="WQB-NF-tbN"/>
-                    <constraint firstAttribute="trailing" secondItem="xnH-Ex-PhS" secondAttribute="trailing" constant="15" id="b6S-yh-hMF"/>
-                    <constraint firstItem="xnH-Ex-PhS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="d5H-Al-ugx"/>
-                    <constraint firstAttribute="bottom" secondItem="xnH-Ex-PhS" secondAttribute="bottom" id="mJA-rM-KXY"/>
+                    <constraint firstAttribute="trailing" secondItem="xnH-Ex-PhS" secondAttribute="trailing" constant="20" id="1hC-ml-ycS"/>
+                    <constraint firstItem="xnH-Ex-PhS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="CFf-kq-sMf"/>
+                    <constraint firstAttribute="bottom" secondItem="xnH-Ex-PhS" secondAttribute="bottom" id="chZ-64-jCL"/>
+                    <constraint firstItem="xnH-Ex-PhS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hwD-gU-hcX"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="cellImageView" destination="OKl-li-CIU" id="GiB-5l-1Sr"/>
                 <outlet property="cellTextField" destination="uPt-ga-Mau" id="Fdq-rO-8Im"/>
             </connections>
         </tableViewCell>

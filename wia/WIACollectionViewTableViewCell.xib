@@ -19,7 +19,7 @@
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rcD-AS-qBw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="128.5"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="5" id="bE9-A0-7ev">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -32,6 +32,7 @@
                         </connections>
                     </collectionView>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="rcD-AS-qBw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Kya-vg-2Cb"/>
                     <constraint firstItem="rcD-AS-qBw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Mf9-eC-Kss"/>
@@ -39,6 +40,7 @@
                     <constraint firstAttribute="bottom" secondItem="rcD-AS-qBw" secondAttribute="bottom" id="v9c-v4-nRh"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="cellCollectionView" destination="rcD-AS-qBw" id="dVY-x9-KUR"/>
             </connections>

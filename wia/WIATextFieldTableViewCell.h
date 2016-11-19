@@ -29,7 +29,6 @@
 @property (strong, nonatomic) NSIndexPath *cellIndexPath;
 @property (strong, nonatomic) NSString *cellText;
 @property (strong, nonatomic) NSString *cellPlaceHolder;
-@property (strong, nonatomic) UIImage *cellImage;
 @property (strong, nonatomic) UICollectionView *cellInputAccessoryView;
 
 @property (weak, nonatomic) id <WIATextFieldTableViewCellDelegate> delegate;

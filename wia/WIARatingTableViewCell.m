@@ -70,7 +70,7 @@
         self.ratingLabel.text = @"5.0";
     }
     else if (value > 7){
-        self.viewNine.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
+        self.viewNine.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewEight.backgroundColor = [WIAColor colorForRating:4.5];
         self.viewSeven.backgroundColor = [WIAColor colorForRating:4];
         self.viewSix.backgroundColor = [WIAColor colorForRating:3.5];
@@ -82,8 +82,8 @@
         self.ratingLabel.text = @"4.5";
     }
     else if (value > 6){
-        self.viewNine.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewEight.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
+        self.viewNine.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewEight.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewSeven.backgroundColor = [WIAColor colorForRating:4];
         self.viewSix.backgroundColor = [WIAColor colorForRating:3.5];
         self.viewFive.backgroundColor = [WIAColor colorForRating:3];
@@ -94,9 +94,9 @@
         self.ratingLabel.text = @"4.0";
     }
     else if (value > 5){
-        self.viewNine.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewEight.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewSeven.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
+        self.viewNine.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewEight.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewSeven.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewSix.backgroundColor = [WIAColor colorForRating:3.5];
         self.viewFive.backgroundColor = [WIAColor colorForRating:3];
         self.viewFour.backgroundColor = [WIAColor colorForRating:2.5];
@@ -106,10 +106,10 @@
         self.ratingLabel.text = @"3.5";
     }
     else if (value > 4){
-        self.viewNine.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewEight.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewSeven.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewSix.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
+        self.viewNine.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewEight.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewSeven.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewSix.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewFive.backgroundColor = [WIAColor colorForRating:3];
         self.viewFour.backgroundColor = [WIAColor colorForRating:2.5];
         self.viewThree.backgroundColor = [WIAColor colorForRating:2];
@@ -118,11 +118,11 @@
         self.ratingLabel.text = @"3.0";
     }
     else if (value > 3){
-        self.viewNine.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewEight.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewSeven.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewSix.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewFive.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
+        self.viewNine.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewEight.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewSeven.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewSix.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewFive.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewFour.backgroundColor = [WIAColor colorForRating:2.5];
         self.viewThree.backgroundColor = [WIAColor colorForRating:2];
         self.viewTwo.backgroundColor = [WIAColor colorForRating:1.5];
@@ -130,38 +130,38 @@
         self.ratingLabel.text = @"2.5";
     }
     else if (value > 2){
-        self.viewNine.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewEight.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewSeven.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewSix.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewFive.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewFour.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
+        self.viewNine.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewEight.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewSeven.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewSix.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewFive.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewFour.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewThree.backgroundColor = [WIAColor colorForRating:2];
         self.viewTwo.backgroundColor = [WIAColor colorForRating:1.5];
         self.viewOne.backgroundColor = [WIAColor colorForRating:1];
         self.ratingLabel.text = @"2.0";
     }
     else if (value > 1){
-        self.viewNine.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewEight.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewSeven.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewSix.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewFive.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewFour.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewThree.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
+        self.viewNine.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewEight.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewSeven.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewSix.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewFive.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewFour.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewThree.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewTwo.backgroundColor = [WIAColor colorForRating:1.5];
         self.viewOne.backgroundColor = [WIAColor colorForRating:1];
         self.ratingLabel.text = @"1.5";
     }
     else{
-        self.viewNine.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewEight.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewSeven.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewSix.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewFive.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewFour.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewThree.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
-        self.viewTwo.backgroundColor = [WIAColor colorWithWhite:0 alpha:0.05];
+        self.viewNine.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewEight.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewSeven.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewSix.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewFive.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewFour.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewThree.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
+        self.viewTwo.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewOne.backgroundColor = [WIAColor colorForRating:1];
         self.ratingLabel.text = @"1.0";
     }

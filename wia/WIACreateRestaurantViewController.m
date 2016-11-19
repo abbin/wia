@@ -7,6 +7,17 @@
 //
 
 #import "WIACreateRestaurantViewController.h"
+#import "WIATextFieldTableViewCell.h"
+
+typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
+    WIARestaurantDetailTableViewSectionName = 0,
+    WIARestaurantDetailTableViewSectionAddress,
+    WIARestaurantDetailTableViewSectionCity,
+    WIARestaurantDetailTableViewSectionCoordinates,
+    WIARestaurantDetailTableViewSectionPhoneNumber,
+    WIARestaurantDetailTableViewSectionWorkingDays,
+    WIARestaurantDetailTableViewSectionWorkingHours
+};
 
 @interface WIACreateRestaurantViewController ()
 
@@ -16,22 +27,91 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"WIATextFieldTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"WIATextFieldTableViewCell"];
+    
+    self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
+    
+    self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.tableView.frame];
+    imageView.image = [UIImage imageNamed:@"FirstLaunchBackground"];
+    imageView.alpha  = 0.5;
+    self.tableView.backgroundView = imageView;
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UITableViewDataSource
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 6;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
 }
-*/
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == WIARestaurantDetailTableViewSectionName) {
+        WIATextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATextFieldTableViewCell"];
+        cell.cellPlaceHolder = @"type here";
+        return cell;
+    }
+    else if (indexPath.section == WIARestaurantDetailTableViewSectionAddress){
+        WIATextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATextFieldTableViewCell"];
+        cell.cellPlaceHolder = @"type here";
+        return cell;
+    }
+    else if (indexPath.section == WIARestaurantDetailTableViewSectionCity){
+        WIATextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATextFieldTableViewCell"];
+        cell.cellPlaceHolder = @"tap here";
+        return cell;
+    }
+    else if (indexPath.section == WIARestaurantDetailTableViewSectionCoordinates){
+        WIATextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATextFieldTableViewCell"];
+        cell.cellPlaceHolder = @"tap here";
+        return cell;
+    }
+    else if (indexPath.section == WIARestaurantDetailTableViewSectionPhoneNumber){
+        WIATextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATextFieldTableViewCell"];
+        cell.cellPlaceHolder = @"type here";
+        return cell;
+    }
+    else if (indexPath.section == WIARestaurantDetailTableViewSectionWorkingDays){
+        WIATextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATextFieldTableViewCell"];
+        cell.cellPlaceHolder = @"tap here";
+        return cell;
+    }
+    else{
+        return nil;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UITableViewDelegate
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (section == WIARestaurantDetailTableViewSectionName) {
+        return @"Restaurant name";
+    }
+    else if (section == WIARestaurantDetailTableViewSectionAddress){
+        return @"Address";
+    }
+    else if (section == WIARestaurantDetailTableViewSectionCity){
+        return @"City";
+    }
+    else if (section == WIARestaurantDetailTableViewSectionCoordinates){
+        return @"Coordinates";
+    }
+    else if (section == WIARestaurantDetailTableViewSectionPhoneNumber){
+        return @"Phone Number (optional)";
+    }
+    else if (section == WIARestaurantDetailTableViewSectionWorkingDays){
+        return @"Working days (optional)";
+    }
+    else{
+        return nil;
+    }
+}
 
 @end

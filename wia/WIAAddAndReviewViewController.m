@@ -44,6 +44,11 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
     self.restaurantSearchResults = [NSMutableArray arrayWithObject:@"Start typing..."];
     
     self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.tableView.frame];
+    imageView.image = [UIImage imageNamed:@"FirstLaunchBackground"];
+    imageView.alpha  = 0.5;
+    self.tableView.backgroundView = imageView;
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"WIATextFieldTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"WIATextFieldTableViewCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"WIARatingTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"WIARatingTableViewCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"WIACollectionViewTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"WIACollectionViewTableViewCell"];
@@ -149,12 +154,10 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
         cell.cellAutocorrectionType = UITextAutocorrectionTypeNo;
         
         if (indexPath.section == WIADetailTablewViewSectionItem) {
-            cell.cellImage = [UIImage imageNamed:@"Burger"];
             cell.cellPlaceHolder = @"tag an item";
             cell.cellInputAccessoryView = self.itemSearchResultCollectionView;
         }
         else if (indexPath.section == WIADetailTablewViewSectionRestaurant){
-            cell.cellImage = [UIImage imageNamed:@"Restaurant"];
             cell.cellPlaceHolder = @"tag a restaurant";
             cell.cellInputAccessoryView = self.restaurantSearchResultCollectionView;
         }
@@ -194,7 +197,7 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
         return 100;
     }
     else{
-        return 50;
+        return 44;
     }
 }
 
