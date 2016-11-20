@@ -24,6 +24,8 @@
 		ED9E4A581DE182B000C23F80 /* WIATagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9E4A561DE182B000C23F80 /* WIATagTableViewCell.m */; };
 		ED9E4A591DE182B000C23F80 /* WIATagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED9E4A571DE182B000C23F80 /* WIATagTableViewCell.xib */; };
 		ED9E4A5C1DE1852000C23F80 /* TLTagsControl.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9E4A5B1DE1852000C23F80 /* TLTagsControl.m */; };
+		ED9E4A621DE1A1C100C23F80 /* WIADualTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9E4A601DE1A1C100C23F80 /* WIADualTextFieldTableViewCell.m */; };
+		ED9E4A631DE1A1C100C23F80 /* WIADualTextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED9E4A611DE1A1C100C23F80 /* WIADualTextFieldTableViewCell.xib */; };
 		EDA121931DDECCD1004E4A11 /* WIATextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA121911DDECCD1004E4A11 /* WIATextViewTableViewCell.m */; };
 		EDA121941DDECCD1004E4A11 /* WIATextViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDA121921DDECCD1004E4A11 /* WIATextViewTableViewCell.xib */; };
 		EDA1219D1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA1219B1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.m */; };
@@ -100,6 +102,9 @@
 		ED9E4A571DE182B000C23F80 /* WIATagTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WIATagTableViewCell.xib; sourceTree = "<group>"; };
 		ED9E4A5A1DE1852000C23F80 /* TLTagsControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTagsControl.h; sourceTree = "<group>"; };
 		ED9E4A5B1DE1852000C23F80 /* TLTagsControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTagsControl.m; sourceTree = "<group>"; };
+		ED9E4A5F1DE1A1C100C23F80 /* WIADualTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIADualTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		ED9E4A601DE1A1C100C23F80 /* WIADualTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIADualTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		ED9E4A611DE1A1C100C23F80 /* WIADualTextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WIADualTextFieldTableViewCell.xib; sourceTree = "<group>"; };
 		EDA121901DDECCD1004E4A11 /* WIATextViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIATextViewTableViewCell.h; sourceTree = "<group>"; };
 		EDA121911DDECCD1004E4A11 /* WIATextViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIATextViewTableViewCell.m; sourceTree = "<group>"; };
 		EDA121921DDECCD1004E4A11 /* WIATextViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WIATextViewTableViewCell.xib; sourceTree = "<group>"; };
@@ -323,6 +328,7 @@
 		ED9E4A4E1DE181D800C23F80 /* TableView Cell */ = {
 			isa = PBXGroup;
 			children = (
+				ED9E4A5E1DE1A19E00C23F80 /* Dual TextField */,
 				ED9E4A541DE1828800C23F80 /* Tag */,
 				ED9E4A521DE1822900C23F80 /* TextField */,
 				ED9E4A511DE1821900C23F80 /* Rating */,
@@ -398,6 +404,16 @@
 				ED9E4A5B1DE1852000C23F80 /* TLTagsControl.m */,
 			);
 			name = TLTagsControl;
+			sourceTree = "<group>";
+		};
+		ED9E4A5E1DE1A19E00C23F80 /* Dual TextField */ = {
+			isa = PBXGroup;
+			children = (
+				ED9E4A5F1DE1A1C100C23F80 /* WIADualTextFieldTableViewCell.h */,
+				ED9E4A601DE1A1C100C23F80 /* WIADualTextFieldTableViewCell.m */,
+				ED9E4A611DE1A1C100C23F80 /* WIADualTextFieldTableViewCell.xib */,
+			);
+			name = "Dual TextField";
 			sourceTree = "<group>";
 		};
 		EDB974D51DDC57C400CB7AD1 /* Color */ = {
@@ -632,6 +648,7 @@
 				ED9E4A591DE182B000C23F80 /* WIATagTableViewCell.xib in Resources */,
 				EDF6D3581DD968AE000CED9D /* Main.storyboard in Resources */,
 				EDA1219E1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.xib in Resources */,
+				ED9E4A631DE1A1C100C23F80 /* WIADualTextFieldTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -817,6 +834,7 @@
 				EDF6D3A51DD97357000CED9D /* WIAImagePickerController.m in Sources */,
 				EDF6D3A81DD9747E000CED9D /* UIViewController+WIAImagePickerController.m in Sources */,
 				EDF6D34F1DD968AE000CED9D /* AppDelegate.m in Sources */,
+				ED9E4A621DE1A1C100C23F80 /* WIADualTextFieldTableViewCell.m in Sources */,
 				EDA121A41DDF43CD004E4A11 /* WIACreateItemViewController.m in Sources */,
 				EDA121A71DDF44A4004E4A11 /* WIACreateRestaurantViewController.m in Sources */,
 				EDF6D3521DD968AE000CED9D /* FirstViewController.m in Sources */,
@@ -983,7 +1001,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = wia/wia.entitlements;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = EDXP6Y48QS;
 				INFOPLIST_FILE = wia/Info.plist;
@@ -1000,7 +1018,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = wia/wia.entitlements;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = EDXP6Y48QS;
 				INFOPLIST_FILE = wia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

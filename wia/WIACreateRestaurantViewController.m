@@ -9,6 +9,7 @@
 #import "WIACreateRestaurantViewController.h"
 #import "WIATextFieldTableViewCell.h"
 #import "WIATagTableViewCell.h"
+#import "WIADualTextFieldTableViewCell.h"
 
 typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
     WIARestaurantDetailTableViewSectionName = 0,
@@ -30,6 +31,7 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
     
     [self.tableView registerNib:[UINib nibWithNibName:@"WIATextFieldTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"WIATextFieldTableViewCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"WIATagTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"WIATagTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"WIADualTextFieldTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"WIADualTextFieldTableViewCell"];
     
     self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
     
@@ -45,7 +47,7 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
 #pragma mark - UITableViewDataSource
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 5;
+    return 6;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -78,7 +80,8 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
         return cell;
     }
     else{
-        return nil;
+        WIADualTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIADualTextFieldTableViewCell"];
+        return cell;
     }
 }
 
@@ -102,7 +105,16 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
         return @"Working days (optional)";
     }
     else{
-        return nil;
+        return @"Working Hours (optional)";
+    }
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == WIARestaurantDetailTableViewSectionWorkingHours) {
+        return 70;
+    }
+    else{
+        return 44;
     }
 }
 

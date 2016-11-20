@@ -278,6 +278,7 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
             
         }
         else{
+            
             NSString *string = self.restaurantSearchResults[indexPath.row];
             if (![string isEqualToString:@"Start typing..."]) {
                 WIACreateRestaurantViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"WIACreateRestaurantViewController"];
