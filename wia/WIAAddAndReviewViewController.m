@@ -193,7 +193,10 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == WIADetailTablewViewSectionImagePreview || indexPath.section == WIADetailTablewViewSectionReview) {
+    if (indexPath.section == WIADetailTablewViewSectionImagePreview) {
+        return self.tableView.frame.size.height/4;
+    }
+    else if (indexPath.section == WIADetailTablewViewSectionReview){
         return 100;
     }
     else{

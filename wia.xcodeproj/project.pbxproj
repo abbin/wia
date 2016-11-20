@@ -21,6 +21,9 @@
 		ED828B901DDDF92900B6BD25 /* WIAImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED828B8E1DDDF92900B6BD25 /* WIAImageCollectionViewCell.m */; };
 		ED828B911DDDF92900B6BD25 /* WIAImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED828B8F1DDDF92900B6BD25 /* WIAImageCollectionViewCell.xib */; };
 		ED91A8BA1DDC3BFE008D98E7 /* IMG_0102.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED91A8B91DDC3BFE008D98E7 /* IMG_0102.mp4 */; };
+		ED9E4A581DE182B000C23F80 /* WIATagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9E4A561DE182B000C23F80 /* WIATagTableViewCell.m */; };
+		ED9E4A591DE182B000C23F80 /* WIATagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED9E4A571DE182B000C23F80 /* WIATagTableViewCell.xib */; };
+		ED9E4A5C1DE1852000C23F80 /* TLTagsControl.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9E4A5B1DE1852000C23F80 /* TLTagsControl.m */; };
 		EDA121931DDECCD1004E4A11 /* WIATextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA121911DDECCD1004E4A11 /* WIATextViewTableViewCell.m */; };
 		EDA121941DDECCD1004E4A11 /* WIATextViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDA121921DDECCD1004E4A11 /* WIATextViewTableViewCell.xib */; };
 		EDA1219D1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA1219B1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.m */; };
@@ -92,6 +95,11 @@
 		ED828B8E1DDDF92900B6BD25 /* WIAImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIAImageCollectionViewCell.m; sourceTree = "<group>"; };
 		ED828B8F1DDDF92900B6BD25 /* WIAImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WIAImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		ED91A8B91DDC3BFE008D98E7 /* IMG_0102.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_0102.mp4; sourceTree = "<group>"; };
+		ED9E4A551DE182B000C23F80 /* WIATagTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIATagTableViewCell.h; sourceTree = "<group>"; };
+		ED9E4A561DE182B000C23F80 /* WIATagTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIATagTableViewCell.m; sourceTree = "<group>"; };
+		ED9E4A571DE182B000C23F80 /* WIATagTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WIATagTableViewCell.xib; sourceTree = "<group>"; };
+		ED9E4A5A1DE1852000C23F80 /* TLTagsControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTagsControl.h; sourceTree = "<group>"; };
+		ED9E4A5B1DE1852000C23F80 /* TLTagsControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTagsControl.m; sourceTree = "<group>"; };
 		EDA121901DDECCD1004E4A11 /* WIATextViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIATextViewTableViewCell.h; sourceTree = "<group>"; };
 		EDA121911DDECCD1004E4A11 /* WIATextViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIATextViewTableViewCell.m; sourceTree = "<group>"; };
 		EDA121921DDECCD1004E4A11 /* WIATextViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WIATextViewTableViewCell.xib; sourceTree = "<group>"; };
@@ -222,8 +230,6 @@
 				EDA121A31DDF43CD004E4A11 /* WIACreateItemViewController.m */,
 				EDA121A51DDF44A4004E4A11 /* WIACreateRestaurantViewController.h */,
 				EDA121A61DDF44A4004E4A11 /* WIACreateRestaurantViewController.m */,
-				EDA121991DDED837004E4A11 /* CollectionView cell */,
-				ED828B791DDDB2DC00B6BD25 /* TableView cell */,
 			);
 			name = Add;
 			sourceTree = "<group>";
@@ -233,20 +239,10 @@
 			children = (
 				EDF6D3A31DD97357000CED9D /* WIAImagePickerController.h */,
 				EDF6D3A41DD97357000CED9D /* WIAImagePickerController.m */,
-				ED515FF21DDB5EC2005621D0 /* CollectionView cell */,
 				ED515FF31DDB5EDA005621D0 /* Image preview */,
 				ED515FF41DDB5EE4005621D0 /* Helper */,
 			);
 			name = "Image picker";
-			sourceTree = "<group>";
-		};
-		ED515FF21DDB5EC2005621D0 /* CollectionView cell */ = {
-			isa = PBXGroup;
-			children = (
-				EDF6D3AC1DD98B0B000CED9D /* WIAImagePickerCollectionViewCell.h */,
-				EDF6D3AD1DD98B0B000CED9D /* WIAImagePickerCollectionViewCell.m */,
-			);
-			name = "CollectionView cell";
 			sourceTree = "<group>";
 		};
 		ED515FF31DDB5EDA005621D0 /* Image preview */ = {
@@ -284,76 +280,124 @@
 			name = "First launch";
 			sourceTree = "<group>";
 		};
-		ED828B791DDDB2DC00B6BD25 /* TableView cell */ = {
+		ED9E4A4A1DE1816600C23F80 /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
-				EDA1218F1DDECCB1004E4A11 /* TextView cell */,
-				ED828B861DDDF5D700B6BD25 /* CollectionView cell */,
-				ED828B801DDDC86100B6BD25 /* Rating Cell */,
-				ED828B7F1DDDC85500B6BD25 /* TextField cell */,
+				ED9E4A5D1DE1852C00C23F80 /* TLTagsControl */,
+				ED9E4A4E1DE181D800C23F80 /* TableView Cell */,
+				ED9E4A4B1DE1817700C23F80 /* CollectionView Cell */,
 			);
-			name = "TableView cell";
+			name = "UI Elements";
 			sourceTree = "<group>";
 		};
-		ED828B7F1DDDC85500B6BD25 /* TextField cell */ = {
+		ED9E4A4B1DE1817700C23F80 /* CollectionView Cell */ = {
 			isa = PBXGroup;
 			children = (
-				ED828B7A1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.h */,
-				ED828B7B1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.m */,
-				ED828B7C1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.xib */,
+				ED9E4A531DE1824600C23F80 /* ImagePicker */,
+				ED9E4A4D1DE181C300C23F80 /* Image */,
+				ED9E4A4C1DE1819000C23F80 /* Search Result */,
 			);
-			name = "TextField cell";
+			name = "CollectionView Cell";
 			sourceTree = "<group>";
 		};
-		ED828B801DDDC86100B6BD25 /* Rating Cell */ = {
-			isa = PBXGroup;
-			children = (
-				ED828B811DDDC87600B6BD25 /* WIARatingTableViewCell.h */,
-				ED828B821DDDC87600B6BD25 /* WIARatingTableViewCell.m */,
-				ED828B831DDDC87600B6BD25 /* WIARatingTableViewCell.xib */,
-			);
-			name = "Rating Cell";
-			sourceTree = "<group>";
-		};
-		ED828B861DDDF5D700B6BD25 /* CollectionView cell */ = {
-			isa = PBXGroup;
-			children = (
-				ED828B871DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.h */,
-				ED828B881DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.m */,
-				ED828B891DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.xib */,
-				ED828B8C1DDDF90D00B6BD25 /* CollectionView cell */,
-			);
-			name = "CollectionView cell";
-			sourceTree = "<group>";
-		};
-		ED828B8C1DDDF90D00B6BD25 /* CollectionView cell */ = {
-			isa = PBXGroup;
-			children = (
-				ED828B8D1DDDF92900B6BD25 /* WIAImageCollectionViewCell.h */,
-				ED828B8E1DDDF92900B6BD25 /* WIAImageCollectionViewCell.m */,
-				ED828B8F1DDDF92900B6BD25 /* WIAImageCollectionViewCell.xib */,
-			);
-			name = "CollectionView cell";
-			sourceTree = "<group>";
-		};
-		EDA1218F1DDECCB1004E4A11 /* TextView cell */ = {
-			isa = PBXGroup;
-			children = (
-				EDA121901DDECCD1004E4A11 /* WIATextViewTableViewCell.h */,
-				EDA121911DDECCD1004E4A11 /* WIATextViewTableViewCell.m */,
-				EDA121921DDECCD1004E4A11 /* WIATextViewTableViewCell.xib */,
-			);
-			name = "TextView cell";
-			sourceTree = "<group>";
-		};
-		EDA121991DDED837004E4A11 /* CollectionView cell */ = {
+		ED9E4A4C1DE1819000C23F80 /* Search Result */ = {
 			isa = PBXGroup;
 			children = (
 				EDA1219A1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.h */,
 				EDA1219B1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.m */,
 				EDA1219C1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.xib */,
 			);
-			name = "CollectionView cell";
+			name = "Search Result";
+			sourceTree = "<group>";
+		};
+		ED9E4A4D1DE181C300C23F80 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				ED828B8D1DDDF92900B6BD25 /* WIAImageCollectionViewCell.h */,
+				ED828B8E1DDDF92900B6BD25 /* WIAImageCollectionViewCell.m */,
+				ED828B8F1DDDF92900B6BD25 /* WIAImageCollectionViewCell.xib */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		ED9E4A4E1DE181D800C23F80 /* TableView Cell */ = {
+			isa = PBXGroup;
+			children = (
+				ED9E4A541DE1828800C23F80 /* Tag */,
+				ED9E4A521DE1822900C23F80 /* TextField */,
+				ED9E4A511DE1821900C23F80 /* Rating */,
+				ED9E4A501DE1820400C23F80 /* CollectionView */,
+				ED9E4A4F1DE181F000C23F80 /* TextView */,
+			);
+			name = "TableView Cell";
+			sourceTree = "<group>";
+		};
+		ED9E4A4F1DE181F000C23F80 /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				EDA121901DDECCD1004E4A11 /* WIATextViewTableViewCell.h */,
+				EDA121911DDECCD1004E4A11 /* WIATextViewTableViewCell.m */,
+				EDA121921DDECCD1004E4A11 /* WIATextViewTableViewCell.xib */,
+			);
+			name = TextView;
+			sourceTree = "<group>";
+		};
+		ED9E4A501DE1820400C23F80 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				ED828B871DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.h */,
+				ED828B881DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.m */,
+				ED828B891DDDF5FE00B6BD25 /* WIACollectionViewTableViewCell.xib */,
+			);
+			name = CollectionView;
+			sourceTree = "<group>";
+		};
+		ED9E4A511DE1821900C23F80 /* Rating */ = {
+			isa = PBXGroup;
+			children = (
+				ED828B811DDDC87600B6BD25 /* WIARatingTableViewCell.h */,
+				ED828B821DDDC87600B6BD25 /* WIARatingTableViewCell.m */,
+				ED828B831DDDC87600B6BD25 /* WIARatingTableViewCell.xib */,
+			);
+			name = Rating;
+			sourceTree = "<group>";
+		};
+		ED9E4A521DE1822900C23F80 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				ED828B7A1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.h */,
+				ED828B7B1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.m */,
+				ED828B7C1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.xib */,
+			);
+			name = TextField;
+			sourceTree = "<group>";
+		};
+		ED9E4A531DE1824600C23F80 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				EDF6D3AC1DD98B0B000CED9D /* WIAImagePickerCollectionViewCell.h */,
+				EDF6D3AD1DD98B0B000CED9D /* WIAImagePickerCollectionViewCell.m */,
+			);
+			name = ImagePicker;
+			sourceTree = "<group>";
+		};
+		ED9E4A541DE1828800C23F80 /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				ED9E4A551DE182B000C23F80 /* WIATagTableViewCell.h */,
+				ED9E4A561DE182B000C23F80 /* WIATagTableViewCell.m */,
+				ED9E4A571DE182B000C23F80 /* WIATagTableViewCell.xib */,
+			);
+			name = Tag;
+			sourceTree = "<group>";
+		};
+		ED9E4A5D1DE1852C00C23F80 /* TLTagsControl */ = {
+			isa = PBXGroup;
+			children = (
+				ED9E4A5A1DE1852000C23F80 /* TLTagsControl.h */,
+				ED9E4A5B1DE1852000C23F80 /* TLTagsControl.m */,
+			);
+			name = TLTagsControl;
 			sourceTree = "<group>";
 		};
 		EDB974D51DDC57C400CB7AD1 /* Color */ = {
@@ -395,10 +439,11 @@
 				EDF6D34E1DD968AE000CED9D /* AppDelegate.m */,
 				EDA1219F1DDEF5FC004E4A11 /* WIAManager.h */,
 				EDA121A01DDEF5FC004E4A11 /* WIAManager.m */,
+				ED515FF11DDB5EB5005621D0 /* Image picker */,
+				ED9E4A4A1DE1816600C23F80 /* UI Elements */,
 				EDB974D51DDC57C400CB7AD1 /* Color */,
 				ED515FF51DDB5F0E005621D0 /* First launch */,
 				ED515FED1DDB5E65005621D0 /* Tab bar */,
-				ED515FF11DDB5EB5005621D0 /* Image picker */,
 				EDF6D3561DD968AE000CED9D /* Main.storyboard */,
 				EDF6D3591DD968AE000CED9D /* Assets.xcassets */,
 				EDF6D35B1DD968AE000CED9D /* LaunchScreen.storyboard */,
@@ -584,6 +629,7 @@
 				ED828B851DDDC87600B6BD25 /* WIARatingTableViewCell.xib in Resources */,
 				EDF6D35A1DD968AE000CED9D /* Assets.xcassets in Resources */,
 				ED91A8BA1DDC3BFE008D98E7 /* IMG_0102.mp4 in Resources */,
+				ED9E4A591DE182B000C23F80 /* WIATagTableViewCell.xib in Resources */,
 				EDF6D3581DD968AE000CED9D /* Main.storyboard in Resources */,
 				EDA1219E1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.xib in Resources */,
 			);
@@ -774,6 +820,7 @@
 				EDA121A41DDF43CD004E4A11 /* WIACreateItemViewController.m in Sources */,
 				EDA121A71DDF44A4004E4A11 /* WIACreateRestaurantViewController.m in Sources */,
 				EDF6D3521DD968AE000CED9D /* FirstViewController.m in Sources */,
+				ED9E4A581DE182B000C23F80 /* WIATagTableViewCell.m in Sources */,
 				ED828B841DDDC87600B6BD25 /* WIARatingTableViewCell.m in Sources */,
 				ED828B901DDDF92900B6BD25 /* WIAImageCollectionViewCell.m in Sources */,
 				EDEB3E561DDB1A84009A49F6 /* WIAAddAndReviewViewController.m in Sources */,
@@ -784,6 +831,7 @@
 				EDA121931DDECCD1004E4A11 /* WIATextViewTableViewCell.m in Sources */,
 				ED515FF81DDB5F28005621D0 /* WIAFirstLaunchViewController.m in Sources */,
 				EDF6D34C1DD968AE000CED9D /* main.m in Sources */,
+				ED9E4A5C1DE1852000C23F80 /* TLTagsControl.m in Sources */,
 				EDA1219D1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

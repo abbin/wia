@@ -8,11 +8,11 @@
 
 #import "WIACreateRestaurantViewController.h"
 #import "WIATextFieldTableViewCell.h"
+#import "WIATagTableViewCell.h"
 
 typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
     WIARestaurantDetailTableViewSectionName = 0,
     WIARestaurantDetailTableViewSectionAddress,
-    WIARestaurantDetailTableViewSectionCity,
     WIARestaurantDetailTableViewSectionCoordinates,
     WIARestaurantDetailTableViewSectionPhoneNumber,
     WIARestaurantDetailTableViewSectionWorkingDays,
@@ -29,6 +29,7 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
     [super viewDidLoad];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"WIATextFieldTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"WIATextFieldTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"WIATagTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"WIATagTableViewCell"];
     
     self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
     
@@ -44,7 +45,7 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
 #pragma mark - UITableViewDataSource
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 6;
+    return 5;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -62,19 +63,13 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
         cell.cellPlaceHolder = @"type here";
         return cell;
     }
-    else if (indexPath.section == WIARestaurantDetailTableViewSectionCity){
-        WIATextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATextFieldTableViewCell"];
-        cell.cellPlaceHolder = @"tap here";
-        return cell;
-    }
     else if (indexPath.section == WIARestaurantDetailTableViewSectionCoordinates){
         WIATextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATextFieldTableViewCell"];
         cell.cellPlaceHolder = @"tap here";
         return cell;
     }
     else if (indexPath.section == WIARestaurantDetailTableViewSectionPhoneNumber){
-        WIATextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATextFieldTableViewCell"];
-        cell.cellPlaceHolder = @"type here";
+        WIATagTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATagTableViewCell"];
         return cell;
     }
     else if (indexPath.section == WIARestaurantDetailTableViewSectionWorkingDays){
@@ -96,9 +91,6 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
     }
     else if (section == WIARestaurantDetailTableViewSectionAddress){
         return @"Address";
-    }
-    else if (section == WIARestaurantDetailTableViewSectionCity){
-        return @"City";
     }
     else if (section == WIARestaurantDetailTableViewSectionCoordinates){
         return @"Coordinates";
