@@ -18,7 +18,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.tagView.tagPlaceholder = @"type here";
     self.tagView.tagsBackgroundColor = [UIColor colorWithWhite:0.8 alpha:1];
 }
 
@@ -30,6 +29,19 @@
 
 -(void)setTapDelegate:(id<TLTagsControlDelegate>)tapDelegate{
     _tagView.tapDelegate = tapDelegate;
+}
+
+-(void)setCellIndexPath:(NSIndexPath *)cellIndexPath{
+    _tagView.tagIndexPath = cellIndexPath;
+}
+
+-(void)setCellPlaceHolder:(NSString *)cellPlaceHolder{
+    _tagView.tagPlaceholder = cellPlaceHolder;
+}
+
+-(void)setCellTags:(NSArray *)cellTags{
+    _tagView.tags = [cellTags mutableCopy];
+    [_tagView reloadTagSubviews];
 }
 
 @end

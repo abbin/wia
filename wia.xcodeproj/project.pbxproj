@@ -35,6 +35,9 @@
 		EDA121A41DDF43CD004E4A11 /* WIACreateItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA121A31DDF43CD004E4A11 /* WIACreateItemViewController.m */; };
 		EDA121A71DDF44A4004E4A11 /* WIACreateRestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA121A61DDF44A4004E4A11 /* WIACreateRestaurantViewController.m */; };
 		EDAB6D981DE306BD0050CD24 /* WIACoordinatesPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDAB6D971DE306BD0050CD24 /* WIACoordinatesPickerController.m */; };
+		EDAB6D9C1DE334260050CD24 /* WIADaysPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDAB6D9B1DE334260050CD24 /* WIADaysPickerController.m */; };
+		EDAB6DA01DE3451C0050CD24 /* WIADayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDAB6D9E1DE3451C0050CD24 /* WIADayTableViewCell.m */; };
+		EDAB6DA11DE3451C0050CD24 /* WIADayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDAB6D9F1DE3451C0050CD24 /* WIADayTableViewCell.xib */; };
 		EDB974D81DDC57DA00CB7AD1 /* WIAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB974D71DDC57DA00CB7AD1 /* WIAColor.m */; };
 		EDB974DB1DDC5CD700CB7AD1 /* WIAPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB974DA1DDC5CD700CB7AD1 /* WIAPageContentViewController.m */; };
 		EDB974DE1DDC73E700CB7AD1 /* WIANameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB974DD1DDC73E700CB7AD1 /* WIANameViewController.m */; };
@@ -123,6 +126,11 @@
 		EDA121A61DDF44A4004E4A11 /* WIACreateRestaurantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIACreateRestaurantViewController.m; sourceTree = "<group>"; };
 		EDAB6D961DE306BD0050CD24 /* WIACoordinatesPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIACoordinatesPickerController.h; sourceTree = "<group>"; };
 		EDAB6D971DE306BD0050CD24 /* WIACoordinatesPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIACoordinatesPickerController.m; sourceTree = "<group>"; };
+		EDAB6D9A1DE334260050CD24 /* WIADaysPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIADaysPickerController.h; sourceTree = "<group>"; };
+		EDAB6D9B1DE334260050CD24 /* WIADaysPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIADaysPickerController.m; sourceTree = "<group>"; };
+		EDAB6D9D1DE3451C0050CD24 /* WIADayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIADayTableViewCell.h; sourceTree = "<group>"; };
+		EDAB6D9E1DE3451C0050CD24 /* WIADayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIADayTableViewCell.m; sourceTree = "<group>"; };
+		EDAB6D9F1DE3451C0050CD24 /* WIADayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WIADayTableViewCell.xib; sourceTree = "<group>"; };
 		EDB974D61DDC57DA00CB7AD1 /* WIAColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIAColor.h; sourceTree = "<group>"; };
 		EDB974D71DDC57DA00CB7AD1 /* WIAColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIAColor.m; sourceTree = "<group>"; };
 		EDB974D91DDC5CD700CB7AD1 /* WIAPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIAPageContentViewController.h; sourceTree = "<group>"; };
@@ -340,6 +348,7 @@
 				ED9E4A511DE1821900C23F80 /* Rating */,
 				ED9E4A501DE1820400C23F80 /* CollectionView */,
 				ED9E4A4F1DE181F000C23F80 /* TextView */,
+				EDAB6DA21DE345220050CD24 /* Day */,
 			);
 			name = "TableView Cell";
 			sourceTree = "<group>";
@@ -431,6 +440,25 @@
 			name = "Coordinates picker";
 			sourceTree = "<group>";
 		};
+		EDAB6D991DE334090050CD24 /* Days Picker */ = {
+			isa = PBXGroup;
+			children = (
+				EDAB6D9A1DE334260050CD24 /* WIADaysPickerController.h */,
+				EDAB6D9B1DE334260050CD24 /* WIADaysPickerController.m */,
+			);
+			name = "Days Picker";
+			sourceTree = "<group>";
+		};
+		EDAB6DA21DE345220050CD24 /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				EDAB6D9D1DE3451C0050CD24 /* WIADayTableViewCell.h */,
+				EDAB6D9E1DE3451C0050CD24 /* WIADayTableViewCell.m */,
+				EDAB6D9F1DE3451C0050CD24 /* WIADayTableViewCell.xib */,
+			);
+			name = Day;
+			sourceTree = "<group>";
+		};
 		EDB974D51DDC57C400CB7AD1 /* Color */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +500,7 @@
 				EDA121A01DDEF5FC004E4A11 /* WIAManager.m */,
 				ED7CD5A31DE2CA4400BD72DB /* WIAConstants.h */,
 				ED7CD5A41DE2CA4400BD72DB /* WIAConstants.m */,
+				EDAB6D991DE334090050CD24 /* Days Picker */,
 				EDAB6D951DE3067A0050CD24 /* Coordinates picker */,
 				ED515FF11DDB5EB5005621D0 /* Image picker */,
 				ED9E4A4A1DE1816600C23F80 /* UI Elements */,
@@ -664,6 +693,7 @@
 				EDF6D35A1DD968AE000CED9D /* Assets.xcassets in Resources */,
 				ED91A8BA1DDC3BFE008D98E7 /* IMG_0102.mp4 in Resources */,
 				ED9E4A591DE182B000C23F80 /* WIATagTableViewCell.xib in Resources */,
+				EDAB6DA11DE3451C0050CD24 /* WIADayTableViewCell.xib in Resources */,
 				EDF6D3581DD968AE000CED9D /* Main.storyboard in Resources */,
 				EDA1219E1DDED85D004E4A11 /* WIASearchResultCollectionViewCell.xib in Resources */,
 				ED9E4A631DE1A1C100C23F80 /* WIADualTextFieldTableViewCell.xib in Resources */,
@@ -846,12 +876,14 @@
 				EDB974E41DDCB5CD00CB7AD1 /* WIAAccountSetUpViewController.m in Sources */,
 				EDF6D3AB1DD989A3000CED9D /* WIAImagePickerPreviewViewController.m in Sources */,
 				EDA121A11DDEF5FC004E4A11 /* WIAManager.m in Sources */,
+				EDAB6DA01DE3451C0050CD24 /* WIADayTableViewCell.m in Sources */,
 				EDB974DB1DDC5CD700CB7AD1 /* WIAPageContentViewController.m in Sources */,
 				EDAB6D981DE306BD0050CD24 /* WIACoordinatesPickerController.m in Sources */,
 				ED828B7D1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.m in Sources */,
 				EDF6D3551DD968AE000CED9D /* SecondViewController.m in Sources */,
 				ED7CD5A51DE2CA4400BD72DB /* WIAConstants.m in Sources */,
 				EDF6D3A51DD97357000CED9D /* WIAImagePickerController.m in Sources */,
+				EDAB6D9C1DE334260050CD24 /* WIADaysPickerController.m in Sources */,
 				EDF6D3A81DD9747E000CED9D /* UIViewController+WIAImagePickerController.m in Sources */,
 				EDF6D34F1DD968AE000CED9D /* AppDelegate.m in Sources */,
 				ED9E4A621DE1A1C100C23F80 /* WIADualTextFieldTableViewCell.m in Sources */,

@@ -289,8 +289,8 @@
     NSInteger index = [tagSubviews_ indexOfObject:view];
     [_tags removeObjectAtIndex:index];
     [self reloadTagSubviews];
-    if ([self.tapDelegate respondsToSelector:@selector(tagsControl:didUpdateTags:)]) {
-        [self.tapDelegate tagsControl:self didUpdateTags:self.tags];
+    if ([self.tapDelegate respondsToSelector:@selector(tagsControl:didUpdateTags:withIndexPath:)]) {
+        [self.tapDelegate tagsControl:self didUpdateTags:self.tags withIndexPath:self.tagIndexPath];
     }
 }
 
@@ -308,8 +308,8 @@
         NSString *tag = textField.text;
         textField.text = @"";
         [self addTag:tag];
-        if ([self.tapDelegate respondsToSelector:@selector(tagsControl:didUpdateTags:)]) {
-            [self.tapDelegate tagsControl:self didUpdateTags:self.tags];
+        if ([self.tapDelegate respondsToSelector:@selector(tagsControl:didUpdateTags:withIndexPath:)]) {
+            [self.tapDelegate tagsControl:self didUpdateTags:self.tags withIndexPath:self.tagIndexPath];
         }
     }
 }
@@ -319,12 +319,21 @@
         NSString *tag = textField.text;
         textField.text = @"";
         [self addTag:tag];
-        if ([self.tapDelegate respondsToSelector:@selector(tagsControl:didUpdateTags:)]) {
-            [self.tapDelegate tagsControl:self didUpdateTags:self.tags];
+        if ([self.tapDelegate respondsToSelector:@selector(tagsControl:didUpdateTags:withIndexPath:)]) {
+            [self.tapDelegate tagsControl:self didUpdateTags:self.tags withIndexPath:self.tagIndexPath];
         }
     }
     
     return YES;
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    if ([self.tapDelegate respondsToSelector:@selector(tagsControlShouldBeginEditing:withIndexPath:)]) {
+        return [self.tapDelegate tagsControlShouldBeginEditing:self withIndexPath:self.tagIndexPath];
+    }
+    else{
+        return YES;
+    }
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {

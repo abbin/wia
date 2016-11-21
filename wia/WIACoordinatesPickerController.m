@@ -7,7 +7,6 @@
 //
 
 #import "WIACoordinatesPickerController.h"
-#import <GoogleMaps/GoogleMaps.h>
 
 @interface WIACoordinatesPickerController ()<CLLocationManagerDelegate>
 
@@ -40,7 +39,9 @@
 
 - (IBAction)donePicking:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^{
-        
+        if ([self.delegate respondsToSelector:@selector(WIACoordinatesPickerController:didFinishWithCoordinates:)]) {
+            [self.delegate WIACoordinatesPickerController:self didFinishWithCoordinates:self.mapView.camera.target];
+        }
     }];
 }
 

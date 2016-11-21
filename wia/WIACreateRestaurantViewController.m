@@ -12,6 +12,7 @@
 #import "WIADualTextFieldTableViewCell.h"
 #import "TLTagsControl.h"
 #import "WIACoordinatesPickerController.h"
+#import "WIADaysPickerController.h"
 
 typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
     WIARestaurantDetailTableViewSectionName = 0,
@@ -22,10 +23,12 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
     WIARestaurantDetailTableViewSectionWorkingHours
 };
 
-@interface WIACreateRestaurantViewController ()<WIATextFieldTableViewCellDelegate,TLTagsControlDelegate>
+@interface WIACreateRestaurantViewController ()<WIATextFieldTableViewCellDelegate,TLTagsControlDelegate,WIACoordinatesPickerControllerDelegate,WIADaysPickerControllerDelegate>
 
 @property (strong, nonatomic) NSString *restaurantAddress;
 @property (strong, nonatomic) NSArray *restaurantPhoneNumbers;
+@property (strong, nonatomic) NSArray *restaurantWorkingDays;
+@property (assign, nonatomic) CLLocationCoordinate2D restaurantCoordinates;
 
 @end
 
@@ -85,13 +88,15 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
     else if (indexPath.section == WIARestaurantDetailTableViewSectionPhoneNumber){
         WIATagTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATagTableViewCell"];
         cell.tapDelegate = self;
+        cell.cellIndexPath = indexPath;
+        cell.cellPlaceHolder = @"type here";
         return cell;
     }
     else if (indexPath.section == WIARestaurantDetailTableViewSectionWorkingDays){
-        WIATextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATextFieldTableViewCell"];
-        cell.cellPlaceHolder = @"tap here";
-        cell.delegate = self;
+        WIATagTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATagTableViewCell"];
+        cell.tapDelegate = self;
         cell.cellIndexPath = indexPath;
+        cell.cellPlaceHolder = @"tap here";
         return cell;
     }
     else{
@@ -147,13 +152,10 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
 
 -(BOOL)WIATextFieldTableViewCellShouldBeginEditing:(UITextField *)textField withIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == WIARestaurantDetailTableViewSectionCoordinates) {
-        
         UINavigationController *pickerNav = [self.storyboard instantiateViewControllerWithIdentifier:@"WIACoordinatesPickerController"];
+        WIACoordinatesPickerController *picker = [pickerNav.viewControllers firstObject];
+        picker.delegate = self;
         [self presentViewController:pickerNav animated:YES completion:nil];
-        
-        return NO;
-    }
-    else if (indexPath.section == WIARestaurantDetailTableViewSectionWorkingDays){
         return NO;
     }
     else{
@@ -164,8 +166,47 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - TLTagsControlDelegate
 
--(void)tagsControl:(TLTagsControl *)tagsControl didUpdateTags:(NSArray *)tagArray{
-    self.restaurantPhoneNumbers = tagArray;
+-(void)tagsControl:(TLTagsControl *)tagsControl didUpdateTags:(NSArray *)tagArray withIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == WIARestaurantDetailTableViewSectionPhoneNumber) {
+        self.restaurantPhoneNumbers = tagArray;
+    }
+}
+
+-(BOOL)tagsControlShouldBeginEditing:(TLTagsControl *)tagsControl withIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == WIARestaurantDetailTableViewSectionPhoneNumber) {
+        return YES;
+    }
+    else{
+        UINavigationController *pickerNav = [self.storyboard instantiateViewControllerWithIdentifier:@"WIADaysPickerController"];
+        WIADaysPickerController *picker = [pickerNav.viewControllers firstObject];
+        picker.delegate = self;
+        picker.workingDaysArray = [self.restaurantWorkingDays mutableCopy];
+        [self presentViewController:pickerNav animated:YES completion:nil];
+        return NO;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - WIACoordinatesPickerControllerDelegate
+
+-(void)WIACoordinatesPickerController:(WIACoordinatesPickerController *)picker didFinishWithCoordinates:(CLLocationCoordinate2D)coordinates{
+    WIATextFieldTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:WIARestaurantDetailTableViewSectionCoordinates]];
+    cell.cellText = [NSString stringWithFormat:@"%f, %f",coordinates.latitude,coordinates.longitude];
+    self.restaurantCoordinates = coordinates;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - WIADaysPickerControllerDelegate
+
+-(void)WIADaysPickerController:(WIADaysPickerController *)picker didFinishWithdays:(NSArray *)daysArray{
+    WIATagTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:WIARestaurantDetailTableViewSectionWorkingDays]];
+    NSMutableArray *tagsArray = [NSMutableArray new];
+    for (NSDictionary *dict in daysArray) {
+        NSString *tag = [[dict objectForKey:@"close"] objectForKey:@"dayName"];
+        [tagsArray addObject:tag];
+    }
+    cell.cellTags = tagsArray;
+    self.restaurantWorkingDays = daysArray;
 }
 
 @end

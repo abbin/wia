@@ -15,7 +15,8 @@
 @optional
 
 - (void)tagsControl:(TLTagsControl *)tagsControl tappedAtIndex:(NSInteger)index;
-- (void)tagsControl:(TLTagsControl *)tagsControl didUpdateTags:(NSArray*)tagArray;
+- (void)tagsControl:(TLTagsControl *)tagsControl didUpdateTags:(NSArray*)tagArray withIndexPath:(NSIndexPath*)indexPath;
+- (BOOL)tagsControlShouldBeginEditing:(TLTagsControl *)tagsControl withIndexPath:(NSIndexPath*)indexPath;
 
 @end
 
@@ -26,6 +27,7 @@ typedef NS_ENUM(NSUInteger, TLTagsControlMode) {
 
 @interface TLTagsControl : UIScrollView
 
+@property (nonatomic, strong) NSIndexPath *tagIndexPath;
 @property (nonatomic, strong) NSMutableArray *tags;
 @property (nonatomic, strong) UIColor *tagsBackgroundColor;
 @property (nonatomic, strong) UIColor *tagsTextColor;

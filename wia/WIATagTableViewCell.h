@@ -13,4 +13,8 @@
 
 @property (assign, nonatomic) id<TLTagsControlDelegate> tapDelegate;
 
+@property (strong, nonatomic) NSIndexPath *cellIndexPath;
+@property (strong, nonatomic) NSString *cellPlaceHolder;
+@property (strong, nonatomic) NSArray *cellTags;
+
 @end

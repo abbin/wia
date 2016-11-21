@@ -240,6 +240,55 @@
             </objects>
             <point key="canvasLocation" x="933.60000000000002" y="1898.5007496251876"/>
         </scene>
+        <!--Choose days-->
+        <scene sceneID="A7o-79-ie6">
+            <objects>
+                <viewController id="nXX-hp-ckS" customClass="WIADaysPickerController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HCV-Jr-mmx"/>
+                        <viewControllerLayoutGuide type="bottom" id="rcF-A6-EbV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Il-HW-PU0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="50" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Wh9-AK-3Qf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="nXX-hp-ckS" id="HJy-By-zGZ"/>
+                                    <outlet property="delegate" destination="nXX-hp-ckS" id="sTs-vn-uLZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wh9-AK-3Qf" firstAttribute="leading" secondItem="0Il-HW-PU0" secondAttribute="leading" id="BR1-1f-oAt"/>
+                            <constraint firstItem="Wh9-AK-3Qf" firstAttribute="top" secondItem="0Il-HW-PU0" secondAttribute="top" id="MAt-2j-Xuf"/>
+                            <constraint firstAttribute="bottom" secondItem="Wh9-AK-3Qf" secondAttribute="bottom" id="Qm2-tw-D4W"/>
+                            <constraint firstAttribute="trailing" secondItem="Wh9-AK-3Qf" secondAttribute="trailing" id="Tjh-jC-vz5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Choose days" id="tic-Ht-ZKR">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="SVS-7y-wrp">
+                            <connections>
+                                <action selector="cancelPicker:" destination="nXX-hp-ckS" id="HRg-a4-jDp"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="lMl-XD-ljd">
+                            <connections>
+                                <action selector="donePickingDays:" destination="nXX-hp-ckS" id="xDU-wR-0Sh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dayTableView" destination="Wh9-AK-3Qf" id="Smn-uP-Kfc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="de7-ms-6ch" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="934" y="2606"/>
+        </scene>
         <!--Image Picker Preview View Controller-->
         <scene sceneID="KLN-bt-JYA">
             <objects>
@@ -854,6 +903,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PkT-O8-HCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1" y="1899"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="l9A-7M-3iV">
+            <objects>
+                <navigationController storyboardIdentifier="WIADaysPickerController" automaticallyAdjustsScrollViewInsets="NO" id="aYV-b0-2Sy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e0U-CL-URs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nXX-hp-ckS" kind="relationship" relationship="rootViewController" id="Eck-zy-HME"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="su7-hJ-Mr0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1" y="2606"/>
         </scene>
     </scenes>
     <resources>

@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GoogleMaps/GoogleMaps.h>
+
+@class WIACoordinatesPickerController;
+
+@protocol WIACoordinatesPickerControllerDelegate <NSObject>
+
+- (void) WIACoordinatesPickerController:(WIACoordinatesPickerController*)picker didFinishWithCoordinates:(CLLocationCoordinate2D)coordinates;
+
+@end
 
 @interface WIACoordinatesPickerController : UIViewController
+
+@property (weak, nonatomic) id <WIACoordinatesPickerControllerDelegate> delegate;
 
 @end
