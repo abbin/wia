@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		2D84F9B8477E212B8F14425BC2BA1B03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		5496F742020305D74E516FBB5747D4C1 /* GreedoCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAEBC51E45E7985DDC02057DBDDF2F8 /* GreedoCollectionViewLayout.m */; };
+		5496F742020305D74E516FBB5747D4C1 /* GreedoCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4DDC786B8128FC08C99B4C2DEDAD03 /* GreedoCollectionViewLayout.m */; };
 		5B19AC06F719F71045D38D60CF14B285 /* Pods-wiaUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E83F8587A1875F1610F7EB617675F5AD /* Pods-wiaUITests-dummy.m */; };
 		5E4B9A8EE839607C43D67D339E2C154B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		658084A074EB5961FA51FE5C874F0D31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		6973A99869C17B1DE91C6057D185ADB6 /* GreedoLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B5DF3F8CC27FE5B6A301C4865B6561 /* GreedoLayout-dummy.m */; };
-		82AC387D0FE7D993D1A99E94F7006ED5 /* GreedoCollectionViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 8147E41C03EB49AF048571282A0C23C6 /* GreedoCollectionViewLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6973A99869C17B1DE91C6057D185ADB6 /* GreedoLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C231E6B488986CC3350E065E6F9AF4 /* GreedoLayout-dummy.m */; };
+		82AC387D0FE7D993D1A99E94F7006ED5 /* GreedoCollectionViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9239EA1AB4B6376E5C37EA8B84CEE0CF /* GreedoCollectionViewLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9360D41AA0D48919FA92BDAF0A4E2F24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		A4A2041AF571A99D886C8CEFD9B5AB4D /* GreedoSizeCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = A4BA29D025BC15B80605A7635C34B836 /* GreedoSizeCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4A2041AF571A99D886C8CEFD9B5AB4D /* GreedoSizeCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5F317B71A0E87CD4730989A022C988 /* GreedoSizeCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA7D527D3A700486C2CF47175B13B903 /* Pods-wiaTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED15BCD0523561EC82BDABFF980D4F2E /* Pods-wiaTests-dummy.m */; };
-		C79BBF2D414FAD6949EFB64C0245A2D5 /* GreedoSizeCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A74AD8A7FD3757764AA80008B32B25 /* GreedoSizeCalculator.m */; };
+		C79BBF2D414FAD6949EFB64C0245A2D5 /* GreedoSizeCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C309B7E460E2FE1AA9ACD8DE7CDBEC /* GreedoSizeCalculator.m */; };
 		CD933246CB1E384FFC14DA52EFE82D7A /* Pods-wia-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B963C100C7203B83D7DB69EF8B9036B4 /* Pods-wia-dummy.m */; };
 /* End PBXBuildFile section */
 
@@ -33,49 +33,55 @@
 
 /* Begin PBXFileReference section */
 		00887BC7544B0661054D89E98BF1B2FF /* Pods-wiaUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-wiaUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		06D72E8C152316140B2FE1DB06D05040 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Subspecs/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		0B5F317B71A0E87CD4730989A022C988 /* GreedoSizeCalculator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GreedoSizeCalculator.h; path = GreedoLayout/GreedoSizeCalculator.h; sourceTree = "<group>"; };
+		0F08399CE1CE02BF2F6506243E5169EF /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Subspecs/Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
 		0FE6B2F09783566A70C403C77D348BC8 /* Pods-wia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-wia.release.xcconfig"; sourceTree = "<group>"; };
-		1E8B3B375F9F3D3E22756E43C596F2FE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
-		1FA034D31E4B7C76069951A52F9AF506 /* GreedoLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GreedoLayout-prefix.pch"; sourceTree = "<group>"; };
-		2E872A1E4F8521C11BDD0FC8A1C2D426 /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
-		359E1254A0312F34DD742A8F6A733AE8 /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
+		1B8A33EC92FFC570BDC60BC4B773FD95 /* GreedoLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GreedoLayout.xcconfig; sourceTree = "<group>"; };
+		23A303365B991277BFAEDD684903F937 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Subspecs/Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
 		35C9ADBEF7B73C10D4A7B6DEAE8D3231 /* Pods-wiaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-wiaTests.release.xcconfig"; sourceTree = "<group>"; };
+		385CBDF7B2A7105A50DD78C521F90568 /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
 		3AEAB8B1C6C47ECA31986140C9D74247 /* Pods-wiaTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-wiaTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3C4F13021BFAC0368E66BAA864325D55 /* Pods-wia-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-wia-resources.sh"; sourceTree = "<group>"; };
-		3CD5A24E91261B8D90B6082ABF735990 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
+		3E4DDC786B8128FC08C99B4C2DEDAD03 /* GreedoCollectionViewLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GreedoCollectionViewLayout.m; path = GreedoLayout/GreedoCollectionViewLayout.m; sourceTree = "<group>"; };
 		3E55226C9171557FE4F5A957F10B74A6 /* Pods-wiaTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-wiaTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		48236EDD898A7E00DB446308DE95F871 /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = iOS/Fabric.framework/Headers/FABAttributes.h; sourceTree = "<group>"; };
 		482A0135F89CA3A021240B8BCCBE027A /* libGreedoLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libGreedoLayout.a; path = libGreedoLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		49C231E6B488986CC3350E065E6F9AF4 /* GreedoLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GreedoLayout-dummy.m"; sourceTree = "<group>"; };
+		4EB2655DC57D74517B0E2FFFB50948C3 /* GreedoLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GreedoLayout-prefix.pch"; sourceTree = "<group>"; };
 		51F009442EDEFA02890825F74A3A70A5 /* Pods-wiaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-wiaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		573B2CA9EF94B18DEAD825D9E0BE8D35 /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
 		5ECEE3E9A3187C34107855CDDD368AD1 /* Pods-wiaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-wiaUITests.release.xcconfig"; sourceTree = "<group>"; };
-		65B5DF3F8CC27FE5B6A301C4865B6561 /* GreedoLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GreedoLayout-dummy.m"; sourceTree = "<group>"; };
 		6682CFE817E39A32401CF31DA57D8EE8 /* libPods-wia.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-wia.a"; path = "libPods-wia.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		689D2A7E9B938B7C24B91001961A7869 /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
-		69AFCBD833BFD9218A69E1F9B7EBC648 /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
 		7045FE9375FB1D82FA28EBA30143ADB4 /* Pods-wiaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-wiaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		714A02DAACA08086ADFB4E7469DEBFE1 /* Pods-wiaTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-wiaTests-resources.sh"; sourceTree = "<group>"; };
 		72CE13F5FCB61168AD428F1C41C76F92 /* Pods-wia-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-wia-acknowledgements.plist"; sourceTree = "<group>"; };
 		75884870FD09C3F065E3DA23F06B4AB8 /* libPods-wiaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-wiaTests.a"; path = "libPods-wiaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7C879A26F6E72B0F35A18F1815C6C1D9 /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = iOS/Fabric.framework/Headers/Fabric.h; sourceTree = "<group>"; };
-		8147E41C03EB49AF048571282A0C23C6 /* GreedoCollectionViewLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GreedoCollectionViewLayout.h; path = GreedoLayout/GreedoCollectionViewLayout.h; sourceTree = "<group>"; };
+		786F2AC5882AB8B5EBB70EF9CA8D9D17 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
+		793B49B796075773CC00524EC2B8941D /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
 		86D0940639756F8BEEB19B983E8E7AC9 /* Pods-wia-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-wia-frameworks.sh"; sourceTree = "<group>"; };
+		9239EA1AB4B6376E5C37EA8B84CEE0CF /* GreedoCollectionViewLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GreedoCollectionViewLayout.h; path = GreedoLayout/GreedoCollectionViewLayout.h; sourceTree = "<group>"; };
+		9327C1E06FECA17CD13856979476EC4E /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F0D220FA768514B8438EAA834F5ABD0 /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
-		A4BA29D025BC15B80605A7635C34B836 /* GreedoSizeCalculator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GreedoSizeCalculator.h; path = GreedoLayout/GreedoSizeCalculator.h; sourceTree = "<group>"; };
-		A5A74AD8A7FD3757764AA80008B32B25 /* GreedoSizeCalculator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GreedoSizeCalculator.m; path = GreedoLayout/GreedoSizeCalculator.m; sourceTree = "<group>"; };
+		A4089B01C7779AE3E7158B15DD9B663F /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
+		A469AE2824C68267E7C6A1B4478AD334 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Subspecs/Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
 		A6D16F1E2710226202D34A50FC506153 /* Pods-wia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-wia.debug.xcconfig"; sourceTree = "<group>"; };
-		A957F3B9ED8B46C35BC3EE4720C28F71 /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = iOS/Fabric.framework/Headers/FABAttributes.h; sourceTree = "<group>"; };
-		AEAEBC51E45E7985DDC02057DBDDF2F8 /* GreedoCollectionViewLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GreedoCollectionViewLayout.m; path = GreedoLayout/GreedoCollectionViewLayout.m; sourceTree = "<group>"; };
+		A958BDCC5E268093202588642524722A /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
 		B2B6F6B49710891071D8067F7C3507CB /* Pods-wia-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-wia-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B5E9EFF4B563FD4D90960617FAA6D62B /* Pods-wiaUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-wiaUITests-resources.sh"; sourceTree = "<group>"; };
 		B963C100C7203B83D7DB69EF8B9036B4 /* Pods-wia-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-wia-dummy.m"; sourceTree = "<group>"; };
 		B9DCB5AEFAEF28125FEA39E8EA7577CE /* Pods-wiaUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-wiaUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C05686E1D3F9D1096124B3CF6B483634 /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CE1945CB851409B3EE8D10C2E167B0CE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
 		D81CAF055DE4FCD49F756BDD54A77BE9 /* libPods-wiaUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-wiaUITests.a"; path = "libPods-wiaUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA82E317F187A1645A468EE06D58F575 /* GreedoLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GreedoLayout.xcconfig; sourceTree = "<group>"; };
-		E7A6DBE0B120AA37482F8B278C4B0464 /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
+		E24F21F7E6F53AA221FE1FC258EDD457 /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = iOS/Fabric.framework/Headers/Fabric.h; sourceTree = "<group>"; };
 		E83F8587A1875F1610F7EB617675F5AD /* Pods-wiaUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-wiaUITests-dummy.m"; sourceTree = "<group>"; };
 		ED15BCD0523561EC82BDABFF980D4F2E /* Pods-wiaTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-wiaTests-dummy.m"; sourceTree = "<group>"; };
+		EF12DB332AD9AAD98AEC0F7CE4C9C480 /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		F0C309B7E460E2FE1AA9ACD8DE7CDBEC /* GreedoSizeCalculator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GreedoSizeCalculator.m; path = GreedoLayout/GreedoSizeCalculator.m; sourceTree = "<group>"; };
 		F0C977A48AB287A7602EEC9D487817B5 /* Pods-wiaUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-wiaUITests-frameworks.sh"; sourceTree = "<group>"; };
-		FB67E135B3F6134A8F89B4547E51CF39 /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
+		FC1E4652CF269BD93DC9102EA1C8D39B /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
 		FFA7F966974E57E0BB01C6192D9D962A /* Pods-wiaTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-wiaTests-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +121,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02CEBFECE61D58F8DDE4B4611B71CD71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A469AE2824C68267E7C6A1B4478AD334 /* GoogleMaps.framework */,
+				0F08399CE1CE02BF2F6506243E5169EF /* GoogleMapsCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0807111F387F191637D53ECFAB6795BF /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				48236EDD898A7E00DB446308DE95F871 /* FABAttributes.h */,
+				E24F21F7E6F53AA221FE1FC258EDD457 /* Fabric.h */,
+				475A246A974ADB009B3245451B46A083 /* Frameworks */,
+			);
+			name = Fabric;
+			path = Fabric;
+			sourceTree = "<group>";
+		};
+		162D058D0786BE7B866976ACB96077A4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EF12DB332AD9AAD98AEC0F7CE4C9C480 /* GooglePlaces.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1CAB9C552F6419A85A72A486A9F3469E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E6A72DB3E8B98151711A44B0FC5386A /* Crashlytics */,
+				0807111F387F191637D53ECFAB6795BF /* Fabric */,
+				A2B3E677C9AE132FE976FB7BCA7DBAAE /* GoogleMaps */,
+				BEE1D148761A0E7C5C1865278B4DE152 /* GooglePlaces */,
+				209EA4E5366307C999B20F349D51BD47 /* GreedoLayout */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1E6A72DB3E8B98151711A44B0FC5386A /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				573B2CA9EF94B18DEAD825D9E0BE8D35 /* ANSCompatibility.h */,
+				793B49B796075773CC00524EC2B8941D /* Answers.h */,
+				C05686E1D3F9D1096124B3CF6B483634 /* CLSAttributes.h */,
+				A958BDCC5E268093202588642524722A /* CLSLogging.h */,
+				FC1E4652CF269BD93DC9102EA1C8D39B /* CLSReport.h */,
+				385CBDF7B2A7105A50DD78C521F90568 /* CLSStackFrame.h */,
+				A4089B01C7779AE3E7158B15DD9B663F /* Crashlytics.h */,
+				1EABF5E3AC0E5A8EFEC9E902726A4814 /* Frameworks */,
+			);
+			name = Crashlytics;
+			path = Crashlytics;
+			sourceTree = "<group>";
+		};
+		1EABF5E3AC0E5A8EFEC9E902726A4814 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE1945CB851409B3EE8D10C2E167B0CE /* Crashlytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1F9A7A4AD88011F011F32E7EE0B69226 /* Pods-wiaTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +198,28 @@
 			);
 			name = "Pods-wiaTests";
 			path = "Target Support Files/Pods-wiaTests";
+			sourceTree = "<group>";
+		};
+		209EA4E5366307C999B20F349D51BD47 /* GreedoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				9239EA1AB4B6376E5C37EA8B84CEE0CF /* GreedoCollectionViewLayout.h */,
+				3E4DDC786B8128FC08C99B4C2DEDAD03 /* GreedoCollectionViewLayout.m */,
+				0B5F317B71A0E87CD4730989A022C988 /* GreedoSizeCalculator.h */,
+				F0C309B7E460E2FE1AA9ACD8DE7CDBEC /* GreedoSizeCalculator.m */,
+				FE679DF2D3233FB66948D9FEB16D9212 /* Support Files */,
+			);
+			name = GreedoLayout;
+			path = GreedoLayout;
+			sourceTree = "<group>";
+		};
+		278647A998D23C380B10D48A4565F2A6 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				02CEBFECE61D58F8DDE4B4611B71CD71 /* Frameworks */,
+				AB2169A1BCAE8216DE57C1B80084A748 /* Resources */,
+			);
+			name = Maps;
 			sourceTree = "<group>";
 		};
 		3FC5EB5C8F4F1768D2539FC66D1C1567 /* Pods-wia */ = {
@@ -145,10 +237,10 @@
 			path = "Target Support Files/Pods-wia";
 			sourceTree = "<group>";
 		};
-		54313EAA0B8A4690F96DDCD8E548D5F0 /* Frameworks */ = {
+		475A246A974ADB009B3245451B46A083 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1E8B3B375F9F3D3E22756E43C596F2FE /* Crashlytics.framework */,
+				786F2AC5882AB8B5EBB70EF9CA8D9D17 /* Fabric.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,6 +253,14 @@
 				65FA2AF2FE1C8DE9393455C070C7047D /* Pods-wiaUITests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		65A764D614FC517D25937FF46C397F20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9327C1E06FECA17CD13856979476EC4E /* GooglePlaces.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		65FA2AF2FE1C8DE9393455C070C7047D /* Pods-wiaUITests */ = {
@@ -191,58 +291,36 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				DC2BFCE2D34436EE4643DA76692E6278 /* Pods */,
+				1CAB9C552F6419A85A72A486A9F3469E /* Pods */,
 				B889D5A06C3FFE91D87A19E24084F9CA /* Products */,
 				6404532780B0818B9B5289E344A85B66 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		819D62638090CFF148AB545C2EC916F5 /* GreedoLayout */ = {
+		88962475DD20D5DC6DDF25EEF22A40DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8147E41C03EB49AF048571282A0C23C6 /* GreedoCollectionViewLayout.h */,
-				AEAEBC51E45E7985DDC02057DBDDF2F8 /* GreedoCollectionViewLayout.m */,
-				A4BA29D025BC15B80605A7635C34B836 /* GreedoSizeCalculator.h */,
-				A5A74AD8A7FD3757764AA80008B32B25 /* GreedoSizeCalculator.m */,
-				E064410AFB99323B22A009798E4DF6C2 /* Support Files */,
-			);
-			name = GreedoLayout;
-			path = GreedoLayout;
-			sourceTree = "<group>";
-		};
-		8D3B77DBA697CBA9B2E45EE78D67B1C6 /* Fabric */ = {
-			isa = PBXGroup;
-			children = (
-				A957F3B9ED8B46C35BC3EE4720C28F71 /* FABAttributes.h */,
-				7C879A26F6E72B0F35A18F1815C6C1D9 /* Fabric.h */,
-				9077E1AD77680103EBE171598A1F5E63 /* Frameworks */,
-			);
-			name = Fabric;
-			path = Fabric;
-			sourceTree = "<group>";
-		};
-		9077E1AD77680103EBE171598A1F5E63 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3CD5A24E91261B8D90B6082ABF735990 /* Fabric.framework */,
+				23A303365B991277BFAEDD684903F937 /* GoogleMapsBase.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AF455D2A6F0960E429734F8425EDDE7F /* Crashlytics */ = {
+		A2B3E677C9AE132FE976FB7BCA7DBAAE /* GoogleMaps */ = {
 			isa = PBXGroup;
 			children = (
-				9F0D220FA768514B8438EAA834F5ABD0 /* ANSCompatibility.h */,
-				FB67E135B3F6134A8F89B4547E51CF39 /* Answers.h */,
-				2E872A1E4F8521C11BDD0FC8A1C2D426 /* CLSAttributes.h */,
-				359E1254A0312F34DD742A8F6A733AE8 /* CLSLogging.h */,
-				E7A6DBE0B120AA37482F8B278C4B0464 /* CLSReport.h */,
-				69AFCBD833BFD9218A69E1F9B7EBC648 /* CLSStackFrame.h */,
-				689D2A7E9B938B7C24B91001961A7869 /* Crashlytics.h */,
-				54313EAA0B8A4690F96DDCD8E548D5F0 /* Frameworks */,
+				D164ACB7D27FD2EDD5792345AB7D1939 /* Base */,
+				278647A998D23C380B10D48A4565F2A6 /* Maps */,
 			);
-			name = Crashlytics;
-			path = Crashlytics;
+			name = GoogleMaps;
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
+		AB2169A1BCAE8216DE57C1B80084A748 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				06D72E8C152316140B2FE1DB06D05040 /* GoogleMaps.bundle */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		B889D5A06C3FFE91D87A19E24084F9CA /* Products */ = {
@@ -264,22 +342,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DC2BFCE2D34436EE4643DA76692E6278 /* Pods */ = {
+		BEE1D148761A0E7C5C1865278B4DE152 /* GooglePlaces */ = {
 			isa = PBXGroup;
 			children = (
-				AF455D2A6F0960E429734F8425EDDE7F /* Crashlytics */,
-				8D3B77DBA697CBA9B2E45EE78D67B1C6 /* Fabric */,
-				819D62638090CFF148AB545C2EC916F5 /* GreedoLayout */,
+				65A764D614FC517D25937FF46C397F20 /* Frameworks */,
+				162D058D0786BE7B866976ACB96077A4 /* Resources */,
 			);
-			name = Pods;
+			name = GooglePlaces;
+			path = GooglePlaces;
 			sourceTree = "<group>";
 		};
-		E064410AFB99323B22A009798E4DF6C2 /* Support Files */ = {
+		D164ACB7D27FD2EDD5792345AB7D1939 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				DA82E317F187A1645A468EE06D58F575 /* GreedoLayout.xcconfig */,
-				65B5DF3F8CC27FE5B6A301C4865B6561 /* GreedoLayout-dummy.m */,
-				1FA034D31E4B7C76069951A52F9AF506 /* GreedoLayout-prefix.pch */,
+				88962475DD20D5DC6DDF25EEF22A40DA /* Frameworks */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		FE679DF2D3233FB66948D9FEB16D9212 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B8A33EC92FFC570BDC60BC4B773FD95 /* GreedoLayout.xcconfig */,
+				49C231E6B488986CC3350E065E6F9AF4 /* GreedoLayout-dummy.m */,
+				4EB2655DC57D74517B0E2FFFB50948C3 /* GreedoLayout-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/GreedoLayout";
@@ -444,7 +530,7 @@
 /* Begin XCBuildConfiguration section */
 		13385B81E53830B84775E9B667DC5D22 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA82E317F187A1645A468EE06D58F575 /* GreedoLayout.xcconfig */;
+			baseConfigurationReference = 1B8A33EC92FFC570BDC60BC4B773FD95 /* GreedoLayout.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -467,7 +553,7 @@
 		};
 		41682BEBE0A55B6EF13D053E30A29741 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA82E317F187A1645A468EE06D58F575 /* GreedoLayout.xcconfig */;
+			baseConfigurationReference = 1B8A33EC92FFC570BDC60BC4B773FD95 /* GreedoLayout.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

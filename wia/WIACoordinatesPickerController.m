@@ -7,8 +7,16 @@
 //
 
 #import "WIACoordinatesPickerController.h"
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface WIACoordinatesPickerController ()
+@interface WIACoordinatesPickerController ()<CLLocationManagerDelegate>
+
+@property (weak, nonatomic) IBOutlet GMSMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIImageView *pinHeadImageView;
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (assign, nonatomic) BOOL firstUpdateFinished;
+@property (nonatomic, strong) CLLocation *currentLocation;
 
 @end
 
@@ -16,8 +24,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager startUpdatingLocation];
+    self.pinHeadImageView.image = [self.pinHeadImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - IBAction
 
 - (IBAction)cancelPicker:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -27,6 +42,31 @@
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
+}
+
+- (IBAction)goTocurrentLocation:(id)sender {
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:self.currentLocation.coordinate.latitude
+                                                            longitude:self.currentLocation.coordinate.longitude
+                                                                 zoom:15];
+    [self.mapView animateToCameraPosition:camera];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - CLLocationManagerDelegate
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    if (!self.firstUpdateFinished) {
+        self.currentLocation = [locations lastObject];
+        GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:self.currentLocation.coordinate.latitude
+                                                                longitude:self.currentLocation.coordinate.longitude
+                                                                     zoom:15];
+        [self.mapView animateToCameraPosition:camera];
+    }
+    [self.locationManager stopUpdatingLocation];
 }
 
 @end

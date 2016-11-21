@@ -12,6 +12,8 @@
 #import <CloudKit/CloudKit.h>
 #import "WIAFirstLaunchViewController.h"
 #import "WIAColor.h"
+#import <GoogleMaps/GoogleMaps.h>
+#import <GooglePlaces/GooglePlaces.h>
 
 @interface AppDelegate ()
 
@@ -27,6 +29,9 @@
 #else
     [self initilizeFabric];
 #endif
+    
+    [GMSServices provideAPIKey:@"AIzaSyA68xxrM0-IpriUnNvxu-wz8BTN9cGEhSI"];
+    [GMSPlacesClient provideAPIKey:@"AIzaSyDMGccE_ROa_aX8UL5-6Xgw-bTOz7hf2Mo"];
     
 //    if (YES) {
 //        UINavigationController *firstLaunch = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"WIAFirstLaunchViewController"];
