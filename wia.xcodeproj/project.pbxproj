@@ -34,6 +34,7 @@
 		EDA121A11DDEF5FC004E4A11 /* WIAManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA121A01DDEF5FC004E4A11 /* WIAManager.m */; };
 		EDA121A41DDF43CD004E4A11 /* WIACreateItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA121A31DDF43CD004E4A11 /* WIACreateItemViewController.m */; };
 		EDA121A71DDF44A4004E4A11 /* WIACreateRestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA121A61DDF44A4004E4A11 /* WIACreateRestaurantViewController.m */; };
+		EDAB6D981DE306BD0050CD24 /* WIACoordinatesPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDAB6D971DE306BD0050CD24 /* WIACoordinatesPickerController.m */; };
 		EDB974D81DDC57DA00CB7AD1 /* WIAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB974D71DDC57DA00CB7AD1 /* WIAColor.m */; };
 		EDB974DB1DDC5CD700CB7AD1 /* WIAPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB974DA1DDC5CD700CB7AD1 /* WIAPageContentViewController.m */; };
 		EDB974DE1DDC73E700CB7AD1 /* WIANameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB974DD1DDC73E700CB7AD1 /* WIANameViewController.m */; };
@@ -120,6 +121,8 @@
 		EDA121A31DDF43CD004E4A11 /* WIACreateItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIACreateItemViewController.m; sourceTree = "<group>"; };
 		EDA121A51DDF44A4004E4A11 /* WIACreateRestaurantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIACreateRestaurantViewController.h; sourceTree = "<group>"; };
 		EDA121A61DDF44A4004E4A11 /* WIACreateRestaurantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIACreateRestaurantViewController.m; sourceTree = "<group>"; };
+		EDAB6D961DE306BD0050CD24 /* WIACoordinatesPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIACoordinatesPickerController.h; sourceTree = "<group>"; };
+		EDAB6D971DE306BD0050CD24 /* WIACoordinatesPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIACoordinatesPickerController.m; sourceTree = "<group>"; };
 		EDB974D61DDC57DA00CB7AD1 /* WIAColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIAColor.h; sourceTree = "<group>"; };
 		EDB974D71DDC57DA00CB7AD1 /* WIAColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIAColor.m; sourceTree = "<group>"; };
 		EDB974D91DDC5CD700CB7AD1 /* WIAPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIAPageContentViewController.h; sourceTree = "<group>"; };
@@ -419,6 +422,15 @@
 			name = "Dual TextField";
 			sourceTree = "<group>";
 		};
+		EDAB6D951DE3067A0050CD24 /* Coordinates picker */ = {
+			isa = PBXGroup;
+			children = (
+				EDAB6D961DE306BD0050CD24 /* WIACoordinatesPickerController.h */,
+				EDAB6D971DE306BD0050CD24 /* WIACoordinatesPickerController.m */,
+			);
+			name = "Coordinates picker";
+			sourceTree = "<group>";
+		};
 		EDB974D51DDC57C400CB7AD1 /* Color */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,6 +472,7 @@
 				EDA121A01DDEF5FC004E4A11 /* WIAManager.m */,
 				ED7CD5A31DE2CA4400BD72DB /* WIAConstants.h */,
 				ED7CD5A41DE2CA4400BD72DB /* WIAConstants.m */,
+				EDAB6D951DE3067A0050CD24 /* Coordinates picker */,
 				ED515FF11DDB5EB5005621D0 /* Image picker */,
 				ED9E4A4A1DE1816600C23F80 /* UI Elements */,
 				EDB974D51DDC57C400CB7AD1 /* Color */,
@@ -834,6 +847,7 @@
 				EDF6D3AB1DD989A3000CED9D /* WIAImagePickerPreviewViewController.m in Sources */,
 				EDA121A11DDEF5FC004E4A11 /* WIAManager.m in Sources */,
 				EDB974DB1DDC5CD700CB7AD1 /* WIAPageContentViewController.m in Sources */,
+				EDAB6D981DE306BD0050CD24 /* WIACoordinatesPickerController.m in Sources */,
 				ED828B7D1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.m in Sources */,
 				EDF6D3551DD968AE000CED9D /* SecondViewController.m in Sources */,
 				ED7CD5A51DE2CA4400BD72DB /* WIAConstants.m in Sources */,

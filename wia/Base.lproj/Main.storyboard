@@ -175,6 +175,48 @@
             </objects>
             <point key="canvasLocation" x="933.60000000000002" y="1148.2758620689656"/>
         </scene>
+        <!--Choose location-->
+        <scene sceneID="MLN-wJ-hve">
+            <objects>
+                <viewController id="oGH-gw-HFg" customClass="WIACoordinatesPickerController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hT6-Iq-3t1"/>
+                        <viewControllerLayoutGuide type="bottom" id="ydi-p9-99F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AMT-NL-lvy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pte-D1-w4I">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pte-D1-w4I" firstAttribute="top" secondItem="AMT-NL-lvy" secondAttribute="top" id="FM5-Xv-zG0"/>
+                            <constraint firstItem="pte-D1-w4I" firstAttribute="leading" secondItem="AMT-NL-lvy" secondAttribute="leading" id="RFu-3r-4tS"/>
+                            <constraint firstAttribute="trailing" secondItem="pte-D1-w4I" secondAttribute="trailing" id="WBV-l5-taP"/>
+                            <constraint firstAttribute="bottom" secondItem="pte-D1-w4I" secondAttribute="bottom" id="u1v-4r-c9X"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Choose location" id="97o-GA-q3s">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="4L0-Mc-b8a">
+                            <connections>
+                                <action selector="cancelPicker:" destination="oGH-gw-HFg" id="7Xl-Yr-Jua"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="c9x-3Z-gvB">
+                            <connections>
+                                <action selector="donePicking:" destination="oGH-gw-HFg" id="5bq-CH-ytD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LxJ-Yo-CbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="934" y="1899"/>
+        </scene>
         <!--Image Picker Preview View Controller-->
         <scene sceneID="KLN-bt-JYA">
             <objects>
@@ -771,6 +813,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ayR-1P-YFJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="335" y="-1344"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qvf-D9-sMl">
+            <objects>
+                <navigationController storyboardIdentifier="WIACoordinatesPickerController" automaticallyAdjustsScrollViewInsets="NO" id="Ft8-K8-Pe4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QvM-cK-922">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oGH-gw-HFg" kind="relationship" relationship="rootViewController" id="ciV-1J-SXR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PkT-O8-HCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1" y="1899"/>
         </scene>
     </scenes>
     <resources>

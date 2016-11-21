@@ -11,6 +11,7 @@
 #import "WIATagTableViewCell.h"
 #import "WIADualTextFieldTableViewCell.h"
 #import "TLTagsControl.h"
+#import "WIACoordinatesPickerController.h"
 
 typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
     WIARestaurantDetailTableViewSectionName = 0,
@@ -24,6 +25,7 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
 @interface WIACreateRestaurantViewController ()<WIATextFieldTableViewCellDelegate,TLTagsControlDelegate>
 
 @property (strong, nonatomic) NSString *restaurantAddress;
+@property (strong, nonatomic) NSArray *restaurantPhoneNumbers;
 
 @end
 
@@ -145,6 +147,10 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
 
 -(BOOL)WIATextFieldTableViewCellShouldBeginEditing:(UITextField *)textField withIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == WIARestaurantDetailTableViewSectionCoordinates) {
+        
+        UINavigationController *pickerNav = [self.storyboard instantiateViewControllerWithIdentifier:@"WIACoordinatesPickerController"];
+        [self presentViewController:pickerNav animated:YES completion:nil];
+        
         return NO;
     }
     else if (indexPath.section == WIARestaurantDetailTableViewSectionWorkingDays){
@@ -159,7 +165,7 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
 #pragma mark - TLTagsControlDelegate
 
 -(void)tagsControl:(TLTagsControl *)tagsControl didUpdateTags:(NSArray *)tagArray{
-    
+    self.restaurantPhoneNumbers = tagArray;
 }
 
 @end

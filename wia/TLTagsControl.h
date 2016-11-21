@@ -12,6 +12,8 @@
 
 @protocol TLTagsControlDelegate <NSObject>
 
+@optional
+
 - (void)tagsControl:(TLTagsControl *)tagsControl tappedAtIndex:(NSInteger)index;
 - (void)tagsControl:(TLTagsControl *)tagsControl didUpdateTags:(NSArray*)tagArray;
 
