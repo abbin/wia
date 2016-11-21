@@ -11,7 +11,6 @@
 #import "WIATextViewTableViewCell.h"
 #import "WIAColor.h"
 #import "WIASearchResultCollectionViewCell.h"
-#import "WIAManager.h"
 
 typedef NS_ENUM(NSInteger, WIAItemDetailTableViewSection) {
     WIAItemDetailTablewViewSectionName = 0,
@@ -20,10 +19,14 @@ typedef NS_ENUM(NSInteger, WIAItemDetailTableViewSection) {
     WIAItemDetailTablewViewSectionDescription
 };
 
-@interface WIACreateItemViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,WIATextFieldTableViewCellDelegate>
+@interface WIACreateItemViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,WIATextFieldTableViewCellDelegate,WIATextViewTableViewCellDelegate>
 
 @property (strong, nonatomic) NSMutableArray *cuisineSearchResults;
-@property (nonatomic, strong) UICollectionView *cuisineSearchResultCollectionView;
+@property (strong, nonatomic) UICollectionView *cuisineSearchResultCollectionView;
+
+@property (strong, nonatomic) NSNumber *itemPrice;
+@property (strong, nonatomic) CKRecord *itemCuisine;
+@property (strong, nonatomic) NSString *itemDescription;
 
 @end
 
@@ -57,6 +60,34 @@ typedef NS_ENUM(NSInteger, WIAItemDetailTableViewSection) {
     [self.cuisineSearchResultCollectionView registerNib:[UINib nibWithNibName:@"WIASearchResultCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"WIASearchResultCollectionViewCell"];
     
     self.cuisineSearchResults = [NSMutableArray arrayWithObject:@"Start typing..."];
+    
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(createRecord:)];
+    self.navigationItem.rightBarButtonItem = saveButton;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - IBAction
+
+- (void)createRecord:(id)sender{
+    if (self.itemName.length>0 && self.itemPrice>0 && self.itemCuisine != nil) {
+        CKRecord *itemRecord = [[CKRecord alloc] initWithRecordType:kWIARecordTypeItem];
+        itemRecord[kWIAItemName ] = self.itemName;
+        itemRecord[kWIAItemPrice] = self.itemPrice;
+        
+        CKReference *cuisineReference = [[CKReference alloc] initWithRecord:self.itemCuisine action:CKReferenceActionNone];
+        
+        itemRecord[kWIAItemCuisine] = cuisineReference;
+        if (self.itemDescription.length>0){
+            itemRecord[kWIAItemDescription] = self.itemDescription;
+        }
+        else{
+            itemRecord[kWIAItemDescription] = @"";
+        }
+        if ([self.delegate respondsToSelector:@selector(WIACreateItemViewController:didFinishWithRecord:)]) {
+            [self.delegate WIACreateItemViewController:self didFinishWithRecord:itemRecord];
+        }
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -73,6 +104,7 @@ typedef NS_ENUM(NSInteger, WIAItemDetailTableViewSection) {
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == WIAItemDetailTablewViewSectionDescription) {
         WIATextViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATextViewTableViewCell"];
+        cell.delegate = self;
         return cell;
     }
     else{
@@ -82,6 +114,7 @@ typedef NS_ENUM(NSInteger, WIAItemDetailTableViewSection) {
         
         if (indexPath.section == WIAItemDetailTablewViewSectionName) {
             cell.cellPlaceHolder = @"type here";
+            cell.cellText = self.itemName;
         }
         else if (indexPath.section == WIAItemDetailTablewViewSectionPrice){
             cell.cellPlaceHolder = @"type here";
@@ -110,7 +143,7 @@ typedef NS_ENUM(NSInteger, WIAItemDetailTableViewSection) {
         return @"Cuisine";
     }
     else {
-        return @"Description";
+        return @"Description (Optional)";
     }
 }
 
@@ -160,7 +193,14 @@ typedef NS_ENUM(NSInteger, WIAItemDetailTableViewSection) {
         
     }
     else{
-        
+        NSString *cuisineName = self.cuisineSearchResults[indexPath.row];
+        if (![cuisineName isEqualToString:@"Start typing..."]) {
+            CKRecordID *cusineRecordID = [[CKRecordID alloc] initWithRecordName:cuisineName];
+            CKRecord *cusineRecord = [[CKRecord alloc] initWithRecordType:kWIARecordTypeCuisine recordID:cusineRecordID];
+            cusineRecord[kWIACuisineName] = cuisineName;
+            self.itemCuisine = cusineRecord;
+            [self.tableView endEditing:YES];
+        }
     }
 }
 
@@ -179,6 +219,14 @@ typedef NS_ENUM(NSInteger, WIAItemDetailTableViewSection) {
     if (indexPath.section == WIAItemDetailTablewViewSectionPrice) {
         if ([textField.text isEqualToString:[[NSLocale currentLocale] objectForKey:NSLocaleCurrencySymbol]]) {
             textField.text = @"";
+        }
+    }
+    else if (indexPath.section == WIAItemDetailTablewViewSectionCusine){
+        if (self.itemCuisine == nil) {
+            textField.text = @"";
+        }
+        else{
+            textField.text = self.itemCuisine[kWIACuisineName];
         }
     }
 }
@@ -203,6 +251,16 @@ typedef NS_ENUM(NSInteger, WIAItemDetailTableViewSection) {
         }
         [self.cuisineSearchResultCollectionView reloadData];
     }
+    else if (indexPath.section == WIAItemDetailTablewViewSectionPrice){
+        NSString *priceString = [textField.text substringFromIndex:1];
+        NSNumberFormatter *format = [[NSNumberFormatter alloc] init];
+        NSNumber *priceNum = [format numberFromString:priceString];
+        self.itemPrice = priceNum;
+    }
+    else if (indexPath.section == WIAItemDetailTablewViewSectionName){
+        NSString *itemNameString = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        self.itemName = itemNameString;
+    }
 }
 
 -(BOOL)WIATextFieldTableViewCell:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string withIndexPath:(NSIndexPath *)indexPath{
@@ -217,6 +275,14 @@ typedef NS_ENUM(NSInteger, WIAItemDetailTableViewSection) {
     else{
         return YES;
     }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - WIATextViewTableViewCellDelegate
+
+-(void)WIATextViewTableViewCellDidChange:(UITextView *)textView{
+    self.itemDescription = textView.text;
+    NSLog(@"%@",self.itemDescription);
 }
 
 @end

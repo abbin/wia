@@ -24,6 +24,6 @@
 @property (strong, nonatomic) UIView *cellInputViewTwo;
 
 
-@property id <WIADualTextFieldTableViewCellDelegate> delegate;
+@property (weak, nonatomic) id <WIADualTextFieldTableViewCellDelegate> delegate;
 
 @end

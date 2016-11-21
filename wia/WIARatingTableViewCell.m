@@ -58,6 +58,9 @@
 
 - (void)updateViewWithValue:(CGFloat)value{
     if (value > 8) {
+        if ([self.delegate respondsToSelector:@selector(WIARatingTableViewCellRatingChanged:)]) {
+            [self.delegate WIARatingTableViewCellRatingChanged:[NSNumber numberWithFloat:5.0]];
+        }
         self.viewNine.backgroundColor = [WIAColor colorForRating:5];
         self.viewEight.backgroundColor = [WIAColor colorForRating:4.5];
         self.viewSeven.backgroundColor = [WIAColor colorForRating:4];
@@ -70,6 +73,9 @@
         self.ratingLabel.text = @"5.0";
     }
     else if (value > 7){
+        if ([self.delegate respondsToSelector:@selector(WIARatingTableViewCellRatingChanged:)]) {
+            [self.delegate WIARatingTableViewCellRatingChanged:[NSNumber numberWithFloat:4.5]];
+        }
         self.viewNine.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewEight.backgroundColor = [WIAColor colorForRating:4.5];
         self.viewSeven.backgroundColor = [WIAColor colorForRating:4];
@@ -82,6 +88,9 @@
         self.ratingLabel.text = @"4.5";
     }
     else if (value > 6){
+        if ([self.delegate respondsToSelector:@selector(WIARatingTableViewCellRatingChanged:)]) {
+            [self.delegate WIARatingTableViewCellRatingChanged:[NSNumber numberWithFloat:4.0]];
+        }
         self.viewNine.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewEight.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewSeven.backgroundColor = [WIAColor colorForRating:4];
@@ -94,6 +103,9 @@
         self.ratingLabel.text = @"4.0";
     }
     else if (value > 5){
+        if ([self.delegate respondsToSelector:@selector(WIARatingTableViewCellRatingChanged:)]) {
+            [self.delegate WIARatingTableViewCellRatingChanged:[NSNumber numberWithFloat:3.5]];
+        }
         self.viewNine.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewEight.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewSeven.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
@@ -106,6 +118,9 @@
         self.ratingLabel.text = @"3.5";
     }
     else if (value > 4){
+        if ([self.delegate respondsToSelector:@selector(WIARatingTableViewCellRatingChanged:)]) {
+            [self.delegate WIARatingTableViewCellRatingChanged:[NSNumber numberWithFloat:3.0]];
+        }
         self.viewNine.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewEight.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewSeven.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
@@ -118,6 +133,9 @@
         self.ratingLabel.text = @"3.0";
     }
     else if (value > 3){
+        if ([self.delegate respondsToSelector:@selector(WIARatingTableViewCellRatingChanged:)]) {
+            [self.delegate WIARatingTableViewCellRatingChanged:[NSNumber numberWithFloat:2.5]];
+        }
         self.viewNine.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewEight.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewSeven.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
@@ -130,6 +148,9 @@
         self.ratingLabel.text = @"2.5";
     }
     else if (value > 2){
+        if ([self.delegate respondsToSelector:@selector(WIARatingTableViewCellRatingChanged:)]) {
+            [self.delegate WIARatingTableViewCellRatingChanged:[NSNumber numberWithFloat:2.0]];
+        }
         self.viewNine.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewEight.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewSeven.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
@@ -142,6 +163,9 @@
         self.ratingLabel.text = @"2.0";
     }
     else if (value > 1){
+        if ([self.delegate respondsToSelector:@selector(WIARatingTableViewCellRatingChanged:)]) {
+            [self.delegate WIARatingTableViewCellRatingChanged:[NSNumber numberWithFloat:1.5]];
+        }
         self.viewNine.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewEight.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewSeven.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
@@ -154,6 +178,9 @@
         self.ratingLabel.text = @"1.5";
     }
     else{
+        if ([self.delegate respondsToSelector:@selector(WIARatingTableViewCellRatingChanged:)]) {
+            [self.delegate WIARatingTableViewCellRatingChanged:[NSNumber numberWithFloat:1.0]];
+        }
         self.viewNine.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewEight.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];
         self.viewSeven.backgroundColor = [WIAColor colorWithWhite:0.9 alpha:1];

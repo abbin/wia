@@ -25,11 +25,15 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
     WIADetailTablewViewSectionReview
 };
 
-@interface WIAAddAndReviewViewController ()<UITableViewDelegate,UITableViewDataSource,WIATextViewTableViewCellDelegate,UICollectionViewDelegate,UICollectionViewDataSource,WIATextFieldTableViewCellDelegate>
+@interface WIAAddAndReviewViewController ()<UITableViewDelegate,UITableViewDataSource,WIATextViewTableViewCellDelegate,UICollectionViewDelegate,UICollectionViewDataSource,WIATextFieldTableViewCellDelegate,WIARatingTableViewCellDelegate,WIACreateItemViewControllerDelegate>
 
 @property (strong, nonatomic) NSArray *images;
 @property (strong, nonatomic) NSMutableArray *itemSearchResults;
 @property (strong, nonatomic) NSMutableArray *restaurantSearchResults;
+
+@property (strong, nonatomic) CKRecord *itemRecord;
+@property (strong, nonatomic) NSNumber *itemRating;
+@property (strong, nonatomic) NSString *itemReview;
 
 @property (nonatomic, strong) UICollectionView *itemSearchResultCollectionView;
 @property (nonatomic, strong) UICollectionView *restaurantSearchResultCollectionView;
@@ -135,6 +139,7 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == WIADetailTablewViewSectionRating) {
         WIARatingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIARatingTableViewCell"];
+        cell.delegate = self;
         return cell;
     }
     else if (indexPath.section == WIADetailTablewViewSectionImagePreview){
@@ -269,6 +274,8 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
             NSString *string = self.itemSearchResults[indexPath.row];
             if (![string isEqualToString:@"Start typing..."]) {
                 WIACreateItemViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"WIACreateItemViewController"];
+                vc.itemName = self.itemSearchResults[indexPath.row];
+                vc.delegate = self;
                 [self.navigationController pushViewController:vc animated:YES];
             }
         }
@@ -282,6 +289,7 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
             NSString *string = self.restaurantSearchResults[indexPath.row];
             if (![string isEqualToString:@"Start typing..."]) {
                 WIACreateRestaurantViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"WIACreateRestaurantViewController"];
+                vc.restaurantName = self.restaurantSearchResults[indexPath.row];
                 [self.navigationController pushViewController:vc animated:YES];
             }
         }
@@ -332,11 +340,41 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
     }
 }
 
+-(void)WIATextFieldTableViewCellDidEndEditing:(UITextField *)textField withIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == WIADetailTablewViewSectionItem) {
+        if (self.itemRecord == nil) {
+            textField.text = @"";
+        }
+        else{
+            
+        }
+    }
+    else if (indexPath.section == WIADetailTablewViewSectionRestaurant){
+        textField.text = @"";
+    }
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - WIATextViewTableViewCellDelegate
 
 -(void)WIATextViewTableViewCellDidChange:(UITextView *)textView{
-    
+    self.itemReview = textView.text;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - WIARatingTableViewCellDelegate
+
+-(void)WIARatingTableViewCellRatingChanged:(NSNumber *)rating{
+    self.itemRating = rating;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - WIACreateItemViewControllerDelegate
+
+-(void)WIACreateItemViewController:(WIACreateItemViewController *)controller didFinishWithRecord:(CKRecord *)record{
+    self.itemRecord = record;
+    WIATextFieldTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:WIADetailTablewViewSectionItem]];
+    cell.cellText = self.itemRecord[kWIAItemName];
 }
 
 @end

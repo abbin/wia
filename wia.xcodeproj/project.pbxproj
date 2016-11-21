@@ -12,6 +12,7 @@
 		E13183BCCE102C14214D17FE /* libPods-wiaUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F39C99D367901380FF3EC8CD /* libPods-wiaUITests.a */; };
 		ED515FEC1DDB488C005621D0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED515FEB1DDB488C005621D0 /* CloudKit.framework */; };
 		ED515FF81DDB5F28005621D0 /* WIAFirstLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED515FF71DDB5F28005621D0 /* WIAFirstLaunchViewController.m */; };
+		ED7CD5A51DE2CA4400BD72DB /* WIAConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7CD5A41DE2CA4400BD72DB /* WIAConstants.m */; };
 		ED828B7D1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED828B7B1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.m */; };
 		ED828B7E1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED828B7C1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.xib */; };
 		ED828B841DDDC87600B6BD25 /* WIARatingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED828B821DDDC87600B6BD25 /* WIARatingTableViewCell.m */; };
@@ -84,6 +85,8 @@
 		ED515FEB1DDB488C005621D0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		ED515FF61DDB5F28005621D0 /* WIAFirstLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIAFirstLaunchViewController.h; sourceTree = "<group>"; };
 		ED515FF71DDB5F28005621D0 /* WIAFirstLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIAFirstLaunchViewController.m; sourceTree = "<group>"; };
+		ED7CD5A31DE2CA4400BD72DB /* WIAConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIAConstants.h; sourceTree = "<group>"; };
+		ED7CD5A41DE2CA4400BD72DB /* WIAConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIAConstants.m; sourceTree = "<group>"; };
 		ED828B7A1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIATextFieldTableViewCell.h; sourceTree = "<group>"; };
 		ED828B7B1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIATextFieldTableViewCell.m; sourceTree = "<group>"; };
 		ED828B7C1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WIATextFieldTableViewCell.xib; sourceTree = "<group>"; };
@@ -455,6 +458,8 @@
 				EDF6D34E1DD968AE000CED9D /* AppDelegate.m */,
 				EDA1219F1DDEF5FC004E4A11 /* WIAManager.h */,
 				EDA121A01DDEF5FC004E4A11 /* WIAManager.m */,
+				ED7CD5A31DE2CA4400BD72DB /* WIAConstants.h */,
+				ED7CD5A41DE2CA4400BD72DB /* WIAConstants.m */,
 				ED515FF11DDB5EB5005621D0 /* Image picker */,
 				ED9E4A4A1DE1816600C23F80 /* UI Elements */,
 				EDB974D51DDC57C400CB7AD1 /* Color */,
@@ -831,6 +836,7 @@
 				EDB974DB1DDC5CD700CB7AD1 /* WIAPageContentViewController.m in Sources */,
 				ED828B7D1DDDB30F00B6BD25 /* WIATextFieldTableViewCell.m in Sources */,
 				EDF6D3551DD968AE000CED9D /* SecondViewController.m in Sources */,
+				ED7CD5A51DE2CA4400BD72DB /* WIAConstants.m in Sources */,
 				EDF6D3A51DD97357000CED9D /* WIAImagePickerController.m in Sources */,
 				EDF6D3A81DD9747E000CED9D /* UIViewController+WIAImagePickerController.m in Sources */,
 				EDF6D34F1DD968AE000CED9D /* AppDelegate.m in Sources */,

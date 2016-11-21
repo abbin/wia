@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CloudKit/CloudKit.h>
+#import "WIAConstants.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

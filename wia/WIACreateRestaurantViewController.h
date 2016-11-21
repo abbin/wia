@@ -10,4 +10,6 @@
 
 @interface WIACreateRestaurantViewController : UITableViewController
 
+@property (strong, nonatomic) NSString *restaurantName;
+
 @end

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TLTagsControl.h"
 
 @interface WIATagTableViewCell : UITableViewCell
+
+@property (assign, nonatomic) id<TLTagsControlDelegate> tapDelegate;
 
 @end

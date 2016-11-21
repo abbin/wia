@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol WIARatingTableViewCellDelegate <NSObject>
+
+- (void)WIARatingTableViewCellRatingChanged:(NSNumber*)rating;
+
+@end
+
 @interface WIARatingTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) id <WIARatingTableViewCellDelegate> delegate;
 
 @end

@@ -289,6 +289,9 @@
     NSInteger index = [tagSubviews_ indexOfObject:view];
     [_tags removeObjectAtIndex:index];
     [self reloadTagSubviews];
+    if ([self.tapDelegate respondsToSelector:@selector(tagsControl:didUpdateTags:)]) {
+        [self.tapDelegate tagsControl:self didUpdateTags:self.tags];
+    }
 }
 
 - (void)tagButtonPressed:(id)sender {
@@ -305,6 +308,9 @@
         NSString *tag = textField.text;
         textField.text = @"";
         [self addTag:tag];
+        if ([self.tapDelegate respondsToSelector:@selector(tagsControl:didUpdateTags:)]) {
+            [self.tapDelegate tagsControl:self didUpdateTags:self.tags];
+        }
     }
 }
 
@@ -313,6 +319,9 @@
         NSString *tag = textField.text;
         textField.text = @"";
         [self addTag:tag];
+        if ([self.tapDelegate respondsToSelector:@selector(tagsControl:didUpdateTags:)]) {
+            [self.tapDelegate tagsControl:self didUpdateTags:self.tags];
+        }
     }
     
     return YES;

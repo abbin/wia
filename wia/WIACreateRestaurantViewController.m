@@ -10,6 +10,7 @@
 #import "WIATextFieldTableViewCell.h"
 #import "WIATagTableViewCell.h"
 #import "WIADualTextFieldTableViewCell.h"
+#import "TLTagsControl.h"
 
 typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
     WIARestaurantDetailTableViewSectionName = 0,
@@ -20,7 +21,9 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
     WIARestaurantDetailTableViewSectionWorkingHours
 };
 
-@interface WIACreateRestaurantViewController ()
+@interface WIACreateRestaurantViewController ()<WIATextFieldTableViewCellDelegate,TLTagsControlDelegate>
+
+@property (strong, nonatomic) NSString *restaurantAddress;
 
 @end
 
@@ -58,25 +61,35 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
     if (indexPath.section == WIARestaurantDetailTableViewSectionName) {
         WIATextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATextFieldTableViewCell"];
         cell.cellPlaceHolder = @"type here";
+        cell.cellText = self.restaurantName;
+        cell.delegate = self;
+        cell.cellIndexPath = indexPath;
         return cell;
     }
     else if (indexPath.section == WIARestaurantDetailTableViewSectionAddress){
         WIATextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATextFieldTableViewCell"];
         cell.cellPlaceHolder = @"type here";
+        cell.delegate = self;
+        cell.cellIndexPath = indexPath;
         return cell;
     }
     else if (indexPath.section == WIARestaurantDetailTableViewSectionCoordinates){
         WIATextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATextFieldTableViewCell"];
         cell.cellPlaceHolder = @"tap here";
+        cell.delegate = self;
+        cell.cellIndexPath = indexPath;
         return cell;
     }
     else if (indexPath.section == WIARestaurantDetailTableViewSectionPhoneNumber){
         WIATagTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATagTableViewCell"];
+        cell.tapDelegate = self;
         return cell;
     }
     else if (indexPath.section == WIARestaurantDetailTableViewSectionWorkingDays){
         WIATextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIATextFieldTableViewCell"];
         cell.cellPlaceHolder = @"tap here";
+        cell.delegate = self;
+        cell.cellIndexPath = indexPath;
         return cell;
     }
     else{
@@ -116,6 +129,37 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
     else{
         return 44;
     }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - WIATextFieldTableViewCellDelegate
+
+-(void)WIATextFieldTableViewCellEditingChanged:(UITextField *)textField withIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == WIARestaurantDetailTableViewSectionName) {
+        self.restaurantName = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    }
+    else if (indexPath.section == WIARestaurantDetailTableViewSectionAddress){
+        self.restaurantAddress = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    }
+}
+
+-(BOOL)WIATextFieldTableViewCellShouldBeginEditing:(UITextField *)textField withIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == WIARestaurantDetailTableViewSectionCoordinates) {
+        return NO;
+    }
+    else if (indexPath.section == WIARestaurantDetailTableViewSectionWorkingDays){
+        return NO;
+    }
+    else{
+        return YES;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - TLTagsControlDelegate
+
+-(void)tagsControl:(TLTagsControl *)tagsControl didUpdateTags:(NSArray *)tagArray{
+    
 }
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "WIATagTableViewCell.h"
-#import "TLTagsControl.h"
 
 @interface WIATagTableViewCell ()
 
@@ -27,6 +26,10 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+-(void)setTapDelegate:(id<TLTagsControlDelegate>)tapDelegate{
+    _tagView.tapDelegate = tapDelegate;
 }
 
 @end
