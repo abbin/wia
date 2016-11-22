@@ -12,12 +12,20 @@
 
 NSString *const kWIARecordTypeCuisine = @"Cuisine";
 NSString *const kWIARecordTypeItem = @"Item";
+NSString *const kWIARecordTypeRestaurant = @"Restaurant";
 
 NSString *const kWIACuisineName = @"cuisineName";
 
+NSString *const kWIAItemRestaurant = @"itemRestaurant";
 NSString *const kWIAItemName = @"itemName";
 NSString *const kWIAItemPrice = @"itemPrice";
 NSString *const kWIAItemCuisine = @"itemCuisine";
 NSString *const kWIAItemDescription = @"itemDescription";
+
+NSString *const kWIARestaurantName = @"restaurantName";
+NSString *const kWIARestaurantAddress = @"restaurantAddress";
+NSString *const kWIARestaurantCoordinates = @"restaurantCoordinates";
+NSString *const kWIARestaurantPhoneNumber = @"restaurantPhoneNumber";
+NSString *const kWIARestaurantWorkingdays = @"restaurantWorkingdays";
 
 @end

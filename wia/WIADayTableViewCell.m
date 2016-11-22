@@ -7,6 +7,7 @@
 //
 
 #import "WIADayTableViewCell.h"
+#import "WIAColor.h"
 
 @interface WIADayTableViewCell ()
 
@@ -19,7 +20,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    self.cellSwitch.onTintColor = [WIAColor mainColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

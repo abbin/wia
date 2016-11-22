@@ -33,10 +33,10 @@
     [GMSServices provideAPIKey:@"AIzaSyA68xxrM0-IpriUnNvxu-wz8BTN9cGEhSI"];
     [GMSPlacesClient provideAPIKey:@"AIzaSyDMGccE_ROa_aX8UL5-6Xgw-bTOz7hf2Mo"];
     
-//    if (YES) {
-//        UINavigationController *firstLaunch = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"WIAFirstLaunchViewController"];
-//        self.window.rootViewController = firstLaunch;
-//    }
+    if (YES) {
+        UINavigationController *firstLaunch = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"WIAFirstLaunchViewController"];
+        self.window.rootViewController = firstLaunch;
+    }
     
     [[UIView appearance] setTintColor:[WIAColor mainColor]];
     

@@ -77,6 +77,7 @@ typedef NS_ENUM(NSInteger, WIAItemDetailTableViewSection) {
         CKReference *cuisineReference = [[CKReference alloc] initWithRecord:self.itemCuisine action:CKReferenceActionNone];
         
         itemRecord[kWIAItemCuisine] = cuisineReference;
+        
         if (self.itemDescription.length>0){
             itemRecord[kWIAItemDescription] = self.itemDescription;
         }

@@ -110,7 +110,12 @@ typedef NS_ENUM(NSInteger, WIADayStatus) {
     WIADayTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIADayTableViewCell" forIndexPath:indexPath];
     cell.delegate = self;
     cell.cellIndexPath = indexPath;
-    
+    if ([self.daysArray containsObject:[NSNumber numberWithInteger:indexPath.row]]) {
+        cell.cellIsOn = YES;
+    }
+    else{
+        cell.cellIsOn = NO;
+    }
     if (indexPath.row == WIADaySectionSunday) {
         cell.cellText = @"Sunday";
     }

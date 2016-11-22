@@ -23,11 +23,13 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
     WIARestaurantDetailTableViewSectionWorkingHours
 };
 
-@interface WIACreateRestaurantViewController ()<WIATextFieldTableViewCellDelegate,TLTagsControlDelegate,WIACoordinatesPickerControllerDelegate,WIADaysPickerControllerDelegate>
+@interface WIACreateRestaurantViewController ()<WIATextFieldTableViewCellDelegate,TLTagsControlDelegate,WIACoordinatesPickerControllerDelegate,WIADaysPickerControllerDelegate,WIADualTextFieldTableViewCellDelegate>
 
+@property (strong, nonatomic) NSString *fromString;
+@property (strong, nonatomic) NSString *tillString;
 @property (strong, nonatomic) NSString *restaurantAddress;
 @property (strong, nonatomic) NSArray *restaurantPhoneNumbers;
-@property (strong, nonatomic) NSArray *restaurantWorkingDays;
+@property (strong, nonatomic) NSMutableArray *restaurantWorkingDays;
 @property (assign, nonatomic) CLLocationCoordinate2D restaurantCoordinates;
 
 @end
@@ -49,6 +51,51 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
     imageView.alpha  = 0.5;
     self.tableView.backgroundView = imageView;
     
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(createRecord:)];
+    self.navigationItem.rightBarButtonItem = saveButton;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - IBAction
+
+- (void)createRecord:(id)sender{
+    if (self.restaurantName.length > 0 && self.restaurantAddress.length > 0 && CLLocationCoordinate2DIsValid(self.restaurantCoordinates)) {
+        if (self.restaurantWorkingDays.count > 0) {
+            if (self.tillString.length > 0 && self.fromString.length > 0) {
+                [self initRecord];
+            }
+            else{
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Missing hours" message:@"Working hours are needed along with working days" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:ok];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
+        }
+        else{
+            [self initRecord];
+        }
+    }
+}
+
+- (void)initRecord{
+    CKRecord *restRecord = [[CKRecord alloc] initWithRecordType:kWIARecordTypeRestaurant];
+    restRecord[kWIARestaurantName] = self.restaurantName;
+    restRecord[kWIARestaurantAddress] = self.restaurantAddress;
+    restRecord[kWIARestaurantCoordinates] = [[CLLocation alloc]initWithLatitude:self.restaurantCoordinates.latitude longitude:self.restaurantCoordinates.longitude];
+    if (self.restaurantPhoneNumbers.count > 0) {
+        restRecord[kWIARestaurantPhoneNumber] = self.restaurantPhoneNumbers;
+    }
+//    if (self.restaurantWorkingDays.count > 0) {
+//        for (NSMutableDictionary *dict in self.restaurantWorkingDays) {
+//            [[dict objectForKey:@"close"] setObject:self.tillString forKey:@"time"];
+//            [[dict objectForKey:@"open"] setObject:self.fromString forKey:@"time"];
+//        }
+////        restRecord[kWIARestaurantWorkingdays] = self.restaurantWorkingDays;
+//    }
+    if ([self.delegate respondsToSelector:@selector(WIACreateRestaurantViewController:didFinishWithRecord:)]) {
+        [self.delegate WIACreateRestaurantViewController:self didFinishWithRecord:restRecord];
+    }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -101,6 +148,7 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
     }
     else{
         WIADualTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WIADualTextFieldTableViewCell"];
+        cell.delegate = self;
         return cell;
     }
 }
@@ -198,7 +246,7 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - WIADaysPickerControllerDelegate
 
--(void)WIADaysPickerController:(WIADaysPickerController *)picker didFinishWithdays:(NSArray *)daysArray{
+-(void)WIADaysPickerController:(WIADaysPickerController *)picker didFinishWithdays:(NSMutableArray *)daysArray{
     WIATagTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:WIARestaurantDetailTableViewSectionWorkingDays]];
     NSMutableArray *tagsArray = [NSMutableArray new];
     for (NSDictionary *dict in daysArray) {
@@ -207,6 +255,17 @@ typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
     }
     cell.cellTags = tagsArray;
     self.restaurantWorkingDays = daysArray;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - WIADualTextFieldTableViewCellDelegate
+
+-(void)WIADualTextFieldTableViewCellTextFieldOneDidChangeEditing:(NSString *)string{
+    self.fromString = string;
+}
+
+-(void)WIADualTextFieldTableViewCellTextFieldTwoDidChangeEditing:(NSString *)string{
+    self.tillString = string;
 }
 
 @end

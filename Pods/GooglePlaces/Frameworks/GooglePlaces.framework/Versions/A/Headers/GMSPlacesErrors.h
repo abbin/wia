@@ -29,14 +29,14 @@ typedef NS_ENUM(NSInteger, GMSPlacesErrorCode) {
    * The Places API server returned a response that we couldn't understand.
    * <p>
    * If you believe this error represents a bug, please file a report using the instructions on our
-   * <a href=https://developers.google.com/places/support">community and support page</a>.
+   * <a href="https://developers.google.com/places/support">community and support page</a>.
    */
   kGMSPlacesServerError = -2,
   /**
    * An internal error occurred in the Places API library.
    * <p>
    * If you believe this error represents a bug, please file a report using the instructions on our
-   * <a href=https://developers.google.com/places/support">community and support page</a>.
+   * <a href="https://developers.google.com/places/support">community and support page</a>.
    */
   kGMSPlacesInternalError = -3,
   /**
@@ -64,8 +64,7 @@ typedef NS_ENUM(NSInteger, GMSPlacesErrorCode) {
    * Operation failed due to exceeding the usage rate limit for the API key.
    * <p>
    * This status code shouldn't be returned during normal usage of the API. It relates to usage of
-   * the API that far exceeds normal request levels. See the <a
-   * href="https://developers.google.com/places/ios-api/usage">usage limits guide</a> for more
+   * the API that far exceeds normal request levels. See the <a href="https://developers.google.com/places/ios-api/usage">usage limits guide</a> for more
    * information.
    */
   kGMSPlacesRateLimitExceeded = -7,
@@ -73,8 +72,7 @@ typedef NS_ENUM(NSInteger, GMSPlacesErrorCode) {
    * Operation failed due to exceeding the per-device usage rate limit.
    * <p>
    * This status code shouldn't be returned during normal usage of the API. It relates to usage of
-   * the API that far exceeds normal request levels. See the <a
-   * href="https://developers.google.com/places/ios-api/usage">usage limits guide</a> for more
+   * the API that far exceeds normal request levels. See the <a href="https://developers.google.com/places/ios-api/usage">usage limits guide</a> for more
    * information.
    */
   kGMSPlacesDeviceRateLimitExceeded = -8,

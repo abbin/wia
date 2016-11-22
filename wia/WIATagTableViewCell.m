@@ -41,6 +41,9 @@
 
 -(void)setCellTags:(NSArray *)cellTags{
     _tagView.tags = [cellTags mutableCopy];
+    if (cellTags.count>0) {
+        _tagView.mode = TLTagsControlModeList;
+    }
     [_tagView reloadTagSubviews];
 }
 

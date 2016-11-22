@@ -19,7 +19,8 @@
     // UIColorFromRGB(0xFF2D55); - darkbright red from apple
     // UIColorFromRGB(0xdb3236); - google red
     // UIColorFromRGB(0xCB212D); - zomato red
-    return UIColorFromRGB(0x345EF2);
+    // UIColorFromRGB(0x345EF2); - iOS blue
+    return UIColorFromRGB(0xCB212D);
 }
 
 + (UIColor*)keyBoardColor{

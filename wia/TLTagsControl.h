@@ -14,7 +14,6 @@
 
 @optional
 
-- (void)tagsControl:(TLTagsControl *)tagsControl tappedAtIndex:(NSInteger)index;
 - (void)tagsControl:(TLTagsControl *)tagsControl didUpdateTags:(NSArray*)tagArray withIndexPath:(NSIndexPath*)indexPath;
 - (BOOL)tagsControlShouldBeginEditing:(TLTagsControl *)tagsControl withIndexPath:(NSIndexPath*)indexPath;
 

@@ -80,6 +80,7 @@
     tagInputField_.delegate = self;
     tagInputField_.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     tagInputField_.autocorrectionType = UITextAutocorrectionTypeNo;
+    tagInputField_.keyboardType = UIKeyboardTypeNumberPad;
     
     if (_mode == TLTagsControlModeEdit) {
         [self addSubview:tagInputField_];
@@ -108,12 +109,7 @@
         
         if (_mode == TLTagsControlModeList) {
             view.tag = tagIndex;
-            
-            UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(gestureAction:)];
-            [tapRecognizer setNumberOfTapsRequired:1];
-            [tapRecognizer setDelegate:self];
-            [view setUserInteractionEnabled:YES];
-            [view addGestureRecognizer:tapRecognizer];
+            [view setUserInteractionEnabled:NO];
         }
         
         tagIndex++;
@@ -384,11 +380,6 @@
 
 - (void)setPlaceholder:(NSString *)tagPlaceholder {
     _tagPlaceholder = tagPlaceholder;
-}
-
-- (void)gestureAction:(id)sender {
-    UITapGestureRecognizer *tapRecognizer = (UITapGestureRecognizer *)sender;
-    [tapDelegate tagsControl:self tappedAtIndex:tapRecognizer.view.tag];
 }
 
 @end

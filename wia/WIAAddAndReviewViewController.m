@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
     WIADetailTablewViewSectionReview
 };
 
-@interface WIAAddAndReviewViewController ()<UITableViewDelegate,UITableViewDataSource,WIATextViewTableViewCellDelegate,UICollectionViewDelegate,UICollectionViewDataSource,WIATextFieldTableViewCellDelegate,WIARatingTableViewCellDelegate,WIACreateItemViewControllerDelegate>
+@interface WIAAddAndReviewViewController ()<UITableViewDelegate,UITableViewDataSource,WIATextViewTableViewCellDelegate,UICollectionViewDelegate,UICollectionViewDataSource,WIATextFieldTableViewCellDelegate,WIARatingTableViewCellDelegate,WIACreateItemViewControllerDelegate,WIACreateRestaurantViewControllerDelegate>
 
 @property (strong, nonatomic) NSArray *images;
 @property (strong, nonatomic) NSMutableArray *itemSearchResults;
@@ -94,7 +94,11 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
 #pragma mark - IBAction
 
 - (IBAction)saveUpload:(id)sender {
-    
+    if (self.itemRecord != nil && self.itemRecord[kWIAItemRestaurant] != nil && self.itemRating > 0 && self.itemReview.length > 0) {
+        [self dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    }
 }
 
 - (IBAction)cancelUpload:(id)sender {
@@ -290,6 +294,7 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
             if (![string isEqualToString:@"Start typing..."]) {
                 WIACreateRestaurantViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"WIACreateRestaurantViewController"];
                 vc.restaurantName = self.restaurantSearchResults[indexPath.row];
+                vc.delegate = self;
                 [self.navigationController pushViewController:vc animated:YES];
             }
         }
@@ -375,6 +380,18 @@ typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
     self.itemRecord = record;
     WIATextFieldTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:WIADetailTablewViewSectionItem]];
     cell.cellText = self.itemRecord[kWIAItemName];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - WIACreateRestaurantViewControllerDelegate
+
+-(void)WIACreateRestaurantViewController:(WIACreateRestaurantViewController *)controller didFinishWithRecord:(CKRecord *)record{
+    if (self.itemRecord != nil) {
+        CKReference *restaurantReference = [[CKReference alloc] initWithRecord:record action:CKReferenceActionNone];
+        self.itemRecord[kWIAItemRestaurant] = restaurantReference;
+    }
+    WIATextFieldTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:WIADetailTablewViewSectionRestaurant]];
+    cell.cellText = record[kWIARestaurantName];
 }
 
 @end

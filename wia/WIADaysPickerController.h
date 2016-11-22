@@ -12,7 +12,7 @@
 
 @protocol WIADaysPickerControllerDelegate <NSObject>
 
-- (void)WIADaysPickerController:(WIADaysPickerController*)picker didFinishWithdays:(NSArray*)daysArray;
+- (void)WIADaysPickerController:(WIADaysPickerController*)picker didFinishWithdays:(NSMutableArray*)daysArray;
 
 @end
 
