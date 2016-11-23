@@ -9,6 +9,8 @@
 #import "FirstViewController.h"
 #import "UIViewController+WIAImagePickerController.m"
 #import "WIAAddAndReviewViewController.h"
+#import <PINCache.h>
+#import "WIAConstants.h"
 
 @interface FirstViewController ()
 
@@ -18,7 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    PINCache *userCache = [[PINCache alloc]initWithName:kWIARecordTypeUserProfile];
+    self.title = [userCache objectForKey:kWIAUserLocationName];
 }
 
 -(BOOL)prefersStatusBarHidden{

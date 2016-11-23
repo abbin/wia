@@ -12,6 +12,7 @@ pod 'Fabric'
 pod 'Crashlytics'
 pod 'GoogleMaps'
 pod 'GooglePlaces'
+pod 'PINCache'
 
   target 'wiaTests' do
     inherit! :search_paths

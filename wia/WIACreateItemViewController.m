@@ -11,6 +11,7 @@
 #import "WIATextViewTableViewCell.h"
 #import "WIAColor.h"
 #import "WIASearchResultCollectionViewCell.h"
+#import "WIAConstants.h"
 
 typedef NS_ENUM(NSInteger, WIAItemDetailTableViewSection) {
     WIAItemDetailTablewViewSectionName = 0,
@@ -173,7 +174,8 @@ typedef NS_ENUM(NSInteger, WIAItemDetailTableViewSection) {
     WIASearchResultCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WIASearchResultCollectionViewCell" forIndexPath:indexPath];
     
     if ([self.cuisineSearchResults[indexPath.row] isKindOfClass:[CKRecord class]]) {
-        
+        CKRecord *cuisine = self.cuisineSearchResults[indexPath.row];
+        cell.cellText = cuisine[kWIACuisineName];
     }
     else{
         if ([self.cuisineSearchResults[indexPath.row] isEqualToString:@"Start typing..."]) {
@@ -236,21 +238,22 @@ typedef NS_ENUM(NSInteger, WIAItemDetailTableViewSection) {
     if (indexPath.section == WIAItemDetailTablewViewSectionCusine) {
         if (textField.text.length>0) {
             NSString *searchText = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            [WIAManager searchForCuisineWith:searchText completionHandler:^(NSArray<CKRecord *> * _Nullable results, NSError * _Nullable error) {
+            [WIAManager searchForCuisineWith:searchText completionHandler:^(NSMutableArray<CKRecord *> * _Nullable results, NSError * _Nullable error) {
                 if (results.count>0) {
-                    
+                    self.cuisineSearchResults = results;
                 }
                 else{
                     [self.cuisineSearchResults removeAllObjects];
                     [self.cuisineSearchResults addObject:searchText];
                 }
+                [self.cuisineSearchResultCollectionView reloadData];
             }];
         }
         else{
             [self.cuisineSearchResults removeAllObjects];
             [self.cuisineSearchResults addObject:@"Start typing..."];
+            [self.cuisineSearchResultCollectionView reloadData];
         }
-        [self.cuisineSearchResultCollectionView reloadData];
     }
     else if (indexPath.section == WIAItemDetailTablewViewSectionPrice){
         NSString *priceString = [textField.text substringFromIndex:1];

@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PINCache.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-wia.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +42,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>351D34E91C04881A75841EC8BEC5BD11</key>
+		<key>4AF35EB22760A54F17C72CC7D6B49A65</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4AF35EB22760A54F17C72CC7D6B49A65</key>
+		<key>78C2DE91AC6E56BA6EF260131F3CA481</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F661699B393218C5C8AA4BC51E3E4E84</key>
 		<dict>
 			<key>primary</key>
 			<true/>

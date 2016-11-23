@@ -7,6 +7,8 @@
 //
 
 #import "WIACoordinatesPickerController.h"
+#import <PINCache.h>
+#import "WIAConstants.h"
 
 @interface WIACoordinatesPickerController ()<CLLocationManagerDelegate>
 
@@ -56,7 +58,15 @@
 #pragma mark - CLLocationManagerDelegate
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
-    
+    if (!self.firstUpdateFinished) {
+        PINCache *userCache = [[PINCache alloc]initWithName:kWIARecordTypeUserProfile];
+        self.currentLocation = [userCache objectForKey:kWIAUserLocation];
+        GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:self.currentLocation.coordinate.latitude
+                                                                longitude:self.currentLocation.coordinate.longitude
+                                                                     zoom:15];
+        [self.mapView animateToCameraPosition:camera];
+    }
+    [self.locationManager stopUpdatingLocation];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{

@@ -18,37 +18,31 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chillax" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEI-qX-MUE">
-                        <rect key="frame" x="10" y="5" width="324" height="19.5"/>
+                        <rect key="frame" x="5" y="5" width="334" height="34"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NH 47, Bypass, Chalikkavattom, Kochi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEK-QR-czC">
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NH 47, Bypass, Chalikkavattom, Kochi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEK-QR-czC">
                         <rect key="frame" x="10" y="24.5" width="324" height="14.5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TY8-03-359">
+                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TY8-03-359">
                         <rect key="frame" x="343" y="0.0" width="1" height="44"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="1" id="1kV-A2-ypf"/>
-                        </constraints>
                     </view>
                 </subviews>
             </view>
+            <color key="backgroundColor" red="0.29730179909999999" green="0.84926223749999996" blue="0.39087057110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="SEK-QR-czC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="9gI-KE-tPf"/>
-                <constraint firstAttribute="trailing" secondItem="kEI-qX-MUE" secondAttribute="trailing" constant="10" id="CxX-vo-Tb0"/>
-                <constraint firstAttribute="bottom" secondItem="SEK-QR-czC" secondAttribute="bottom" constant="5" id="DQY-zo-lFZ"/>
-                <constraint firstAttribute="bottom" secondItem="TY8-03-359" secondAttribute="bottom" id="FSu-LW-wue"/>
-                <constraint firstItem="TY8-03-359" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KS6-Al-D8U"/>
-                <constraint firstItem="kEI-qX-MUE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Xih-iG-7WC"/>
-                <constraint firstItem="kEI-qX-MUE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="Yqr-WT-z1T"/>
-                <constraint firstItem="SEK-QR-czC" firstAttribute="top" secondItem="kEI-qX-MUE" secondAttribute="bottom" id="bBP-gr-rfQ"/>
-                <constraint firstAttribute="trailing" secondItem="SEK-QR-czC" secondAttribute="trailing" constant="10" id="fU6-gL-1po"/>
-                <constraint firstAttribute="trailing" secondItem="TY8-03-359" secondAttribute="trailing" id="hbH-eX-haI"/>
+                <constraint firstAttribute="bottom" secondItem="kEI-qX-MUE" secondAttribute="bottom" constant="5" id="46o-6o-qDx"/>
+                <constraint firstItem="kEI-qX-MUE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="IBY-6P-bku"/>
+                <constraint firstAttribute="trailing" secondItem="kEI-qX-MUE" secondAttribute="trailing" constant="5" id="g94-kK-OTe"/>
+                <constraint firstItem="kEI-qX-MUE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="tBF-mD-nUb"/>
             </constraints>
             <size key="customSize" width="344" height="44"/>
             <connections>

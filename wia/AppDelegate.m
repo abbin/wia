@@ -14,6 +14,7 @@
 #import "WIAColor.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import <GooglePlaces/GooglePlaces.h>
+#import "WIAManager.h"
 
 @interface AppDelegate ()
 
@@ -33,7 +34,7 @@
     [GMSServices provideAPIKey:@"AIzaSyA68xxrM0-IpriUnNvxu-wz8BTN9cGEhSI"];
     [GMSPlacesClient provideAPIKey:@"AIzaSyDMGccE_ROa_aX8UL5-6Xgw-bTOz7hf2Mo"];
     
-//    if (YES) {
+//    if (![WIAManager isUserSet]) {
 //        UINavigationController *firstLaunch = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"WIAFirstLaunchViewController"];
 //        self.window.rootViewController = firstLaunch;
 //    }

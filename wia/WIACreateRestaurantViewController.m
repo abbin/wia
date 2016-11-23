@@ -13,6 +13,7 @@
 #import "TLTagsControl.h"
 #import "WIACoordinatesPickerController.h"
 #import "WIADaysPickerController.h"
+#import "WIAConstants.h"
 
 typedef NS_ENUM(NSInteger, WIARestaurantDetailTableViewSection) {
     WIARestaurantDetailTableViewSectionName = 0,

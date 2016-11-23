@@ -10,6 +10,4 @@
 
 @interface WIALocationViewController : UIViewController
 
-@property (nonatomic, strong) NSString *userName;
-
 @end

@@ -10,6 +10,8 @@
 #import "WIAColor.h"
 #import <CoreLocation/CoreLocation.h>
 #import "WIAAccountSetUpViewController.h"
+#import <PINCache.h>
+#import "WIAConstants.h"
 
 @interface WIALocationViewController ()<CLLocationManagerDelegate>
 

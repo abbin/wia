@@ -310,7 +310,7 @@ typedef void(^imageFetchBlock)(NSMutableArray *images);
 }
 
 - (void)getImagesFromAssets:(imageFetchBlock)completionBlock{
-    PHImageManager *imageManager = [[PHImageManager alloc] init];
+    PHImageManager *imageManager = self.imageManager;
     
     PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
     options.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
@@ -320,12 +320,16 @@ typedef void(^imageFetchBlock)(NSMutableArray *images);
     
     for (PHAsset *asset in self.selectedPhotos) {
         CGSize targetSize = CGSizeMake(asset.pixelWidth, asset.pixelHeight);
-        [imageManager requestImageForAsset:asset targetSize:targetSize contentMode:PHImageContentModeDefault options:options resultHandler:^(UIImage *image, NSDictionary *info) {
-            [mutableImages addObject:image];
-            if (self.selectedPhotos.count == mutableImages.count) {
-                completionBlock(mutableImages);
-            }
-        }];
+        [imageManager requestImageForAsset:asset
+                                targetSize:targetSize
+                               contentMode:PHImageContentModeAspectFill
+                                   options:options
+                             resultHandler:^(UIImage *image, NSDictionary *info) {
+                                 [mutableImages addObject:image];
+                                 if (self.selectedPhotos.count == mutableImages.count) {
+                                     completionBlock(mutableImages);
+                                 }
+                             }];
     }
 }
 

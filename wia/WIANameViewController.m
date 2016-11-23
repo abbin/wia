@@ -8,6 +8,8 @@
 
 #import "WIANameViewController.h"
 #import "WIALocationViewController.h"
+#import <PINCache.h>
+#import "WIAConstants.h"
 
 @interface WIANameViewController ()
 
@@ -42,9 +44,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"WIALocationViewControllerSegue"]) {
-        WIALocationViewController *vc = segue.destinationViewController;
         NSString* result = [self.nameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        vc.userName = result;
+        [[PINCache sharedCache] setObject:result forKey:kWIAUserName];
     }
 }
 

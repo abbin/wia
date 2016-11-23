@@ -13,8 +13,10 @@
 FOUNDATION_EXPORT NSString *const kWIARecordTypeCuisine;
 FOUNDATION_EXPORT NSString *const kWIARecordTypeItem;
 FOUNDATION_EXPORT NSString *const kWIARecordTypeRestaurant;
+FOUNDATION_EXPORT NSString *const kWIARecordTypeUserProfile;
 
 FOUNDATION_EXPORT NSString *const kWIACuisineName;
+FOUNDATION_EXPORT NSString *const kWIACuisineCappedName;
 
 FOUNDATION_EXPORT NSString *const kWIAItemRestaurant;
 FOUNDATION_EXPORT NSString *const kWIAItemName;
@@ -28,4 +30,7 @@ FOUNDATION_EXPORT NSString *const kWIARestaurantCoordinates;
 FOUNDATION_EXPORT NSString *const kWIARestaurantPhoneNumber;
 FOUNDATION_EXPORT NSString *const kWIARestaurantWorkingdays;
 
+FOUNDATION_EXPORT NSString *const kWIAUserName;
+FOUNDATION_EXPORT NSString *const kWIAUserLocation;
+FOUNDATION_EXPORT NSString *const kWIAUserLocationName;
 @end

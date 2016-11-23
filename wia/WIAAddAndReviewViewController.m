@@ -16,6 +16,7 @@
 #import "WIAManager.h"
 #import "WIACreateItemViewController.h"
 #import "WIACreateRestaurantViewController.h"
+#import "WIAConstants.h"
 
 typedef NS_ENUM(NSInteger, WIADetailTablewViewSection) {
     WIADetailTablewViewSectionImagePreview = 0,
